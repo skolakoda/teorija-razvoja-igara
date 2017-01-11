@@ -125,3 +125,9 @@ while Open is not empty
    push n onto Closed
 return failure
 ```
+
+https://gamedevelopment.tutsplus.com/tutorials/a-pathfinding-for-2d-grid-based-platformers-making-a-bot-follow-the-path--cms-24913
+
+https://gamedevelopment.tutsplus.com/tutorials/how-to-adapt-a-pathfinding-to-a-2d-grid-based-platformer-theory--cms-24662
+
+https://gamedevelopment.tutsplus.com/tutorials/how-to-adapt-a-pathfinding-to-a-2d-grid-based-platformer-implementation--cms-24679

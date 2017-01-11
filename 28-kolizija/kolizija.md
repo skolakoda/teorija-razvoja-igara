@@ -73,3 +73,7 @@ vector2D axisAlignedCollision(vector2D vect, char b)
 ```
 
 Ako zid nije uspravan ni horizontalan, the first thing you need to find is the normal (N) to the line of the stationary object. The slopes are negative reciprocals of each other. So if the slope of the boundary line (B) is Dy/Dx, the slope of the normal (N) must be –Dx/Dy.
+
+https://gamedevelopment.tutsplus.com/tutorials/basic-2d-platformer-physics-part-1--cms-25799
+
+https://gamedevelopment.tutsplus.com/tutorials/basic-platformer-physics-part-5-object-vs-object-collision-detection--cms-27594
