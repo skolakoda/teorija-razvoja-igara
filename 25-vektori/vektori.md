@@ -131,7 +131,7 @@ If you think of vectors in terms of Cartesian coordinates, inverting is a simple
 
 ## Trigonometrijske funkcije
 
-The sine can be used to calculate the y-coordinate of a vector, and the cosine can be used to calculate the x-coordinate. The sin() and cos() functions take only one parameter: the angle. They return a number between -1 and 1. If you multiply this number by the length of the vector, you will get the exact Cartesian coordinates of the vector:
+The sine can be used to calculate the y-coordinate of a vector, and the cosine can be used to calculate the x-coordinate. The sin() and cos() functions take the angle, and return a number between -1 and 1. If you multiply this number by the length of the vector, you will get the exact Cartesian coordinates of the vector:
 ```
 speed_x = speed * cos(angle);
 speed_y = speed * sin(angle);

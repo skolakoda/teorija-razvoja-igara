@@ -1,11 +1,25 @@
-### Pitagorina teorema
+# Pitagorina teorema
 
-Often in programming, you want to know the distance between two points on the screen. The easiest way to do that is to use the Pythagorean theorem:
+Pitagorina teorema glasi:
 ```
 a^2 + b^2 = c^2
 ```
-where `a` and `b` are the legs of a right triangle and `c` is the hypotenuse. The Pythagorean theorem works only for right triangles.
+gde su `a` i `b` kraće stranice trougla a `c` je hipotenuza.
 
 ![pitagorina-teorema-primena](slike/pitagorina-teorema-primena.jpg?row=true)
 
-![rastojanje-izmedju-tacaka](slike/rastojanje-izmedju-tacaka.png?row=true)
+Pitagorina teorema važi samo za pravougle trouglove.
+
+# Primena
+
+## Rastojanje između dve tačke
+
+Often in programming, you want to know the distance between two points on the screen. The easiest way to do that is to use the Pythagorean theorem.
+
+![rastojanje-izmedju-tacaka](slike/distance.png?row=true)
+
+```js
+a = x1 - x2
+b = y1 - y2
+c = Math.sqrt(a*a + b*b);
+```
