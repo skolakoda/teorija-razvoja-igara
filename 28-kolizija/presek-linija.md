@@ -1,6 +1,6 @@
 ### Linearna jednačina
 
-Linearna jednačina se grafički može predstaviti pravom linijom. Primer:
+Linearna jednačina se grafički može predstaviti pravom linijom. Na primer:
 ```
 y = 2x
 ```
@@ -12,7 +12,7 @@ One of the most important elements of a line is its slope (nagib).
 
 ### Applications in Collision Detection
 
-There will be times in game programming when you'll want to know if and where two lines intersect. The lines might represent two walls. After you set the equations of these lines, you can put the two equations together to form a system of linear equations. Then you can solve the system mathematically.
+Kako saznati da li se dve linije (koje mogu biti zidovi) seku? Postaviš linearne jednačine za njih, povežeš ih u sistem linearnih jednačina, te rešiš matematički.
 
 When solving a system of two linear equations, you're really searching for the intersection of two lines. The solution set is the set of all the points that satisfy both equations.
 

@@ -1,10 +1,14 @@
 # Vektori
 
-Vektor je veličina koja ima intenzitet i smer.
-
-A vector can be visualized as a directed line segment, extending from the tail to the head. A vector is "carried" the point A to the point B; the Latin word vector means "carrier". Vectors entered math in the 19 century, as mathematicians and physicists wrestled to describe motion, rather than static position.
+Vektor je veličina koja ima intenzitet i smer. Možemo je vizuelizovati kao duž koja ima glavu i rep.
 
 ![vektori](slike/vectori.png?row=true)
+
+Intenzitet je dužina vektora. We can use the Pythagorean theorem to calculate a vector’s magnitude.
+
+![vector-magnitude](slike/vector-magnitude.jpg?row=true)
+
+Vectors entered math in the 19 century, as mathematicians and physicists wrestled to describe motion, rather than static position.
 
 There are no built-in data types for storing vectors. Vectors can be coded as an array of numbers or as a user-defined structure.
 
@@ -33,12 +37,6 @@ In one dimension there are only two possible directions, positive or negative. I
 
 There are two ways for describing a vector in 2D: polar coordinates and Cartesian coordinates. Polar coordinates describe its length and direction, Cartesian coordinates describe its horizontal and vertical displacement.
 
-## Magnitude
-
-The magnitude of a vector is a scalar representing the length of the vector. We can use the Pythagorean theorem to calculate a vector’s magnitude.
-
-![vector-magnitude](slike/vector-magnitude.jpg?row=true)
-
 ## Jedinični vektor (normalizacija vektora)
 
 A unit vector is a vector with a magnitude of one. We can convert any vector to a unit vector that points in the same direction, but has unit length.
@@ -48,69 +46,6 @@ X-axis of unit vector is typically called `i`, y-axis is `j`, and z-axis is `k`.
 ## Normal Vectors
 
 A vector is said to be normal to a surface if it is perpendicular to it. Be careful not to confuse the term “normalization” with the term “normal vector.”
-
-## Sabiranje i oduzimanje vektora
-
-Vektori su mogu sabirati prema pravilima linearne algebre.
-
-Think of vector addition bellow as displacement on a road map. If you travel along vector `v` and then turn and follow vector `w`, you really go from the beginning of `v` to the end of `w`.
-
-![vector_addition](slike/vector_addition.png?row=true)
-
-We can also subtract one vector from another:
-* first we reverse the direction of the vector we want to subtract,
-* then add them as usual:
-
-![vector-subtract](slike/vector-subtract.gif?row=true)
-
-![sabiranje-vektora](slike/sabiranje-vektora.png?row=true)
-
-![vector-airplane](slike/vector-airplane.gif?row=true)
-
-```
-a + b = [ (a x + b x ), (a y + b y ), (a z + b z ) ]
-```
-
-Vector subtraction `a – b` is nothing more than addition of `a` and `–b`:
-```
-a – b = [ (a x – b x ), (a y – b y ), (a z – b z ) ]
-```
-
-## Množenje vektora
-
-When you multiply a scalar by the vector, you're actually scaling its magnitude, while leaving its direction unchanged.
-
-Multiplication of a vector `a` by a scalar s is accomplished by multiplying the individual components of `a` by `s`:
-```
-s * a = ( s * ax, s * ay, s * az)
-```
-
-## Dot Product
-
-The dot product is an operation that, given two vectors, returns a floating-point value. It is usually depicted as:
-```
-u • v
-```
-It is computed as follows:
-```
-ux*vx + uy*vy + uz*vz
-```
-Dot products can be computed on any vectors, but usually on normalized vectors. When applied to unit vectors, the dot product can be interpreted as the cosine of the angle between the two vectors being multiplied. Thus, the dot product of two parallel vectors equals one, and the dot product of two perpendicular vectors equals zero.
-
-## Cross Product
-
-The cross product is an operation that, given two vectors, returns a third vector. It is usually expressed as:
-```
-u * v
-```
-the preceding equation can be expressed as:
-
-```
-[uy*vz - uz*vy, uz*vx - ux*vz, ux*vy - uy*vx]
-```
-But notice how cross products are more expensive to compute than the dot version.
-
-![cross-product](slike/cross-product.gif?row=true)
 
 ## Vector unit circle
 
@@ -127,7 +62,7 @@ Na kraju dobijamo neku vrstu jediničnog kruga, gde je dot proizvod zapravo kosi
 
 Geometrically, direction Inversion of the vector is very simple. Just switch the tail and the head.
 
-If you think of vectors in terms of Cartesian coordinates, inverting is a simple matter of swapping the two coordinates — which is the same as multiplying everything by Ϫ1.
+If you think of vectors in terms of Cartesian coordinates, inverting is a simple matter of swapping the two coordinates.
 
 ## Trigonometrijske funkcije
 

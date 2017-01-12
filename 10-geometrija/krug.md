@@ -11,13 +11,3 @@ The Equation of a Circle:
 (x – h)^2 + (y – k)^2 = r2
 ```
 where the center is (h,k) and the radius is r.
-
-### Detekcija kolizije krugom
-
-Krug se koristi u detekciji kolizije tako što se centar kruga postavi u centar predmeta, pa se meri rastojanje poluprečnikom. Ova metoda je neprecizna i ne odgovara za sve predmete.
-
-![circle_collide](slike/circle_collide.png?row=true)
-
-![kolizija-krug](slike/kolizija-krug.png?row=true)
-
-You can extend this process to 3D.
