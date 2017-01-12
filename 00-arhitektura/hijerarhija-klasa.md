@@ -19,3 +19,11 @@ You might have a base control class to handle things like mouse and keyboard eve
 ## Actor class
 
 A game actor is an object that represents a single entity in your game world. It could be an ammo pickup, a tank, a couch, an NPC, or anything you can think of.
+
+## Inheritance vs. Composition
+
+Inheritance is used when an object has evolved from another object, or when a child object is a version of the parent object. Composition is used when an object is composed of multiple discrete components, or when an aggregate object has a version of the contained object.
+
+![sistem-komponenti](slike/sistem-komponenti.png?row=true)
+
+Converting “is-a” relationships into “has-a” relationships can be a useful technique for reducing the width, depth, and complexity of a game’s class hierarchy.
