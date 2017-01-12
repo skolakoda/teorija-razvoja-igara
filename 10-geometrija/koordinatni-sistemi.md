@@ -1,4 +1,5 @@
 ## Koordinatni sistemi
+> If you use the x- and y-coordinates, you are using Cartesian coordinates. If you use the angle and length of the vector, you are using polar coordinates. 
 
 ### Cartesian coordinate system
 
