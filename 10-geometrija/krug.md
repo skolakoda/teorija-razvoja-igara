@@ -1,4 +1,6 @@
-## Krug
+# Krug
+
+Kružnica je skup tačaka u ravni čija su rastojanja od centra jednaka poluprečniku.
 
 You might want to draw a circle on the screen, which means graphing the equation. You might want to trace the motion of an object on a circular path.
 
@@ -8,6 +10,27 @@ The Pythagorean theorem gives you the distance between the center and a point on
 
 The Equation of a Circle:
 ```
-(x – h)^2 + (y – k)^2 = r2
+(x – a)^2 + (y – b)^2 = r2
 ```
-where the center is (h,k) and the radius is r.
+where the center is (a, b) and the radius is r.
+
+## Formule
+(obično se koristi `r` za poluprečnik i `d` za prečnik)
+
+Obim kruga:
+```
+obim = 2 * poluprecnik * PI
+```
+ili
+```
+obim = precnik * PI
+```
+
+Površina kruga:
+```
+povrsina = r^2 * PI
+```
+ili
+```
+povrsina = poluprecnik * obim / 2
+```

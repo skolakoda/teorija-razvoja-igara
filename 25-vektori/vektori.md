@@ -1,6 +1,8 @@
 # Vektori
 
-Vektor je veličina koja ima intenzitet i smer. Možemo je vizuelizovati kao duž koja ima glavu i rep.
+Vektor je veličina koja ima intenzitet i smer. Vektore i matrice proučava linearna algebra.
+
+Vektor možemo vizuelizovati kao duž koja ima glavu i rep.
 
 ![vektori](slike/vectori.png?row=true)
 
@@ -9,6 +11,14 @@ Intenzitet je dužina vektora. We can use the Pythagorean theorem to calculate a
 ![vector-magnitude](slike/vector-magnitude.jpg?row=true)
 
 Vectors entered math in the 19 century, as mathematicians and physicists wrestled to describe motion, rather than static position.
+
+## Vektori u igrama
+
+In games, vectors are used to store positions, directions, and velocities. Here are some 2-Dimensional examples:
+
+![vektori](slike/vektori-u-igrama.jpg?row=true)
+
+The position vector indicates that the man is standing two meters east of the origin, and one meter north. The velocity vector shows that in one minute, the plane moves three kilometers up, and two to the left. The direction vector tells us that the pistol is pointing to the right. As you can see, a vector by itself is just a set of numbers -- it is only given meaning by its context. For this reason, it's important to keep track of your units. Let's say we have a vector V (3,5,2). This doesn't mean much by itself. Three what? Five what? In some games, positions are always given in meters, and velocities in meters per second.
 
 There are no built-in data types for storing vectors. Vectors can be coded as an array of numbers or as a user-defined structure.
 
@@ -24,6 +34,8 @@ It is possible to create an extremely powerful structure or class which can enco
 ## Skalari
 
 Scalars are any quantity that can be measured using a number (temperature, length, mass...). It have magnitude but no direction.
+
+Zove se skalar jer samo skalira vektor.
 
 ## Vector vs. Scalar
 
