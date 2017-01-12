@@ -128,3 +128,5 @@ Na kraju dobijamo neku vrstu jediničnog kruga, gde je dot proizvod zapravo kosi
 Geometrically, direction Inversion of the vector is very simple. Just switch the tail and the head.
 
 If you think of vectors in terms of Cartesian coordinates, inverting is a simple matter of swapping the two coordinates — which is the same as multiplying everything by Ϫ1.
+
+http://alfonse.bitbucket.org/oldtut/Basics/Introduction.html
