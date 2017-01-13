@@ -1,5 +1,9 @@
 # 2D rotacija
 
+Since there is only one possible axis of rotation (the axis going into the screen), the only information we need is the angle.
+
+## Tarzan
+
 For example, the player can jump on to a rope and swing from one platform to another. You can implement the swinging motion as a rotation around the point where the rope is attached. In order to do this, you need to calculate the vector going from the player to the center of rotation, take the ugao of this vector, increase it a bit, and recalculate the player's position.
 
 You have to calculate the ugao of the vector from the player to the center of rotation with atan2(). After you have increased the ugao, you can calculate the new x- and y-coordinates with sin and cos:
@@ -51,11 +55,64 @@ Ovde su svi specijalni slučajevi, tj. četvrtine kruga:
 | x       | -y | -x  | y   | x   |
 | y       | x  | -y  | -x  | y   |
 
+## Brodić
+
+Let's say we're making an Asteroids game, and we have a simple 2D space ship that can rotate freely. The ship model looks like this: 
+
+![](slike/spaceship.jpg)
+
+So how do we draw it when the player rotates by an arbitrary amount, like 49 degrees counter-clockwise? Well, trigonometry we can create a function for 2D rotation that inputs a point and an angle, and outputs a rotated point:
+
+```java
+vec2 rotate(vec2 point, float angle){
+   vec2 rotated_point;
+   rotated_point.x = point.x * cos(angle) - point.y * sin(angle);
+   rotated_point.y = point.x * sin(angle) + point.y * cos(angle);
+   return rotated_point;
+}
+```
+
+Applying this to our three points gives us the following shape: 
+
+![](slike/spaceshiprotated.jpg)
+
+Cosine and sine operations are pretty slow, but we're only doing them on three points. But now we decide to upgrade the ship to look like this: 
+
+![](slike/fancyspaceship.jpg)
+
+Now our old method is too slow! There are many ways to solve this problem, but an elegant solution comes to us like this: "What if instead of rotating each point in the model, we just rotate the model's x and y axes instead?" 
+
+![](slike/spaceshiprotated2.jpg)
+
+How does this work? Well, let's look at what coordinates mean. When we talk about the point (3,2), we are saying that its position is three times the x-axis plus two times the y-axis. The default axes are (1,0) for the x-axis and (0,1) for the y-axis, so we get the position 3(1,0) + 2(0,1). But the axes don't have to be (1,0) and (0,1). If we rotate these axes, then we can rotate every point at the same time.
+
+To get the rotated x and y axes we just use the trigonometric function above. For example, if we are rotating by 49 degrees, then we get the new x-axis by rotating (1,0) by 49 degrees and we get the y-axis by rotating (0,1) by 49 degrees. Our new x-axis is (0.66, 0.75), and our new y-axis is (-0.75, 0.66). 
+
+Whenever you have modified the basis vectors (1,0) and (0,1) to (a,b) and (c,d), then the modified point (x,y) can be found using this expression:
+```
+x(a,b) + y(c,d)
+```
+
+`rotate` function is more elegantly expressed in matrix form: 
+
+```
+[cos(θ) -sin(θ) 
+ sin(θ)  cos(θ)]
+```
+
 # 3D rotacija
 
-There are actually two different approaches to rotating 3D objects. One method uses quaternions, but the math is complex. This second method is Euler rotation. It is very similar to scaling and translating.
+Rotation about the Z axis works just like in 2D. We just have to add an extra column and row:
+
+[cos(θ) -sin(θ) 0 
+ sin(θ)  cos(θ) 0 
+ 0       0      1]
 
 By default, the rotation matrix rotates objects with respect to the origin, just like the scaling matrix does. The resulting effect is that the object appears to be orbiting about the origin.
 
+There are actually two different approaches to rotating 3D objects. One method uses quaternions, but the math is complex. This second method is Euler rotation. It is very similar to scaling and translating.
+
+
 http://ogldev.atspace.co.uk/www/tutorial07/tutorial07.html
 http://alfonse.bitbucket.org/oldtut/Positioning/Tut06%20Rotation.html
+http://blog.wolfire.com/2010/07/Linear-algebra-for-game-developers-part-4
