@@ -21,7 +21,7 @@ void chase(point myPos, float myYaw, point hisPos)
 
 One alternative to ensure a better chase is to use predictive techniques. Here we will not aim at the target directly, but try to anticipate his movements. This idea is really straightforward. Keep track of the position history of the opponent and use that information to create a "predicted position" some time in the future.
 
-![predictive-chasing](slike/predictive-chasing.jpg?row=true)
+![predictive-chasing](slike/predictive-chasing.jpg)
 
 Instead of aiming and advancing, we will use a three-step approach, which involves:
 * Calculating a projected position

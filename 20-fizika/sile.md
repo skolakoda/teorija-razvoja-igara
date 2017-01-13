@@ -6,13 +6,13 @@ Gravitacija i otpor okruženja: trenje (po tlu) i vučenje (kroz vodu i vazduh).
 
 Friction resist motion due to the interaction between contacting surfaces. Thus, it is a contact force. The magnitude of the friction is a function of the normal force between the contacting surfaces and the surface roughness.
 
-![trenje](slike/trenje.png?row=true)
+![trenje](slike/trenje.png)
 
 There are two types of friction: static and kinetic. Static friction is the force that keeps an object from moving initially, and kinetic friction is the force that slows down an object after it gets moving. Oddly enough, friction changes drastically in these two conditions. This is why it’s so hard to regain control of a car once it’s in a skid — the dynamic friction is lower than the static friction. Always calculate static friction first. If all the other forces added up are less than the static friction, the object will not move. As soon as the other forces become greater than the static friction, the object starts to move, and kinetic friction takes over.
 
 The friction between two objects has everything to do with what those objects are made of. When you calculate friction, you need a table of coefficients. The coefficient of friction is ratio of the force required to move an object over the normal force. The Greek letter μ (mu) is the standard symbol for the coefficient of friction.
 
-![friction-coefficients](slike/friction-coefficients.gif?row=true)
+![friction-coefficients](slike/friction-coefficients.gif)
 
 Static friction:
 ```
@@ -32,9 +32,9 @@ Wind resistance, a type of drag, is the relative opposing force imparted on an o
 
 ### Teža (gravitacija)
 
-![gravitacija](slike/gravitacija.png?row=true)
+![gravitacija](slike/gravitacija.png)
 
-![gravitacija-planeta](slike/gravitacija-planeta.jpg?row=true)
+![gravitacija-planeta](slike/gravitacija-planeta.jpg)
 
 Think of gravity as a constant force always pulling down a small amount every frame. Whenever we looked at the vertical components of the motion, we used `–g` for the acceleration. You can use that gravitational constant to calculate the force due to gravity, weight. Weight is actually a vector force, and its direction is always down toward the center of the earth. The magnitude of weight is the object's mass times the acceleration due to gravity:
 ```
@@ -57,4 +57,4 @@ Have you ever wondered why, if gravity is always pulling you down, you don't per
 
 Weight is always a negative value, because the direction is down toward the center of the Earth. That is why the normal force must always have a positive value.
 
-![normal-force](slike/normal-force.png?row=true)
+![normal-force](slike/normal-force.png)

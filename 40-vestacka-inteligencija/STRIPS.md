@@ -8,23 +8,23 @@ STRIPS (Stanford Research Institute Problem Solver) je tehnika razvijena 1971. D
   * preconditions (what must be established before the action is performed);
   * postconditions (what is established after the action is performed).
 
-![strips-dijagram](slike/strips-dijagram.png?row=true)
+![strips-dijagram](slike/strips-dijagram.png)
 
 The planner uses a strategy known as means-end. This works by looking at what needs to change in the world model, and selecting an appropriate operator to perform this task. For example, if the goal position is different then use a move-to operator.
 
 The system uses dependency tracking to figure out preconditions for all the operators in a plan. When something unexpected happens, the system knows if replanning is necessary or not, and for which reason.
 
-![STRIPS-algorithm](slike/STRIPS-algorithm.png?row=true)
-![intro-to-strips-planning](slike/intro-to-strips-planning.jpg?row=true)
-![intro-to-strips-planning-02](slike/intro-to-strips-planning-02.jpg?row=true)
+![STRIPS-algorithm](slike/STRIPS-algorithm.png)
+![intro-to-strips-planning](slike/intro-to-strips-planning.jpg)
+![intro-to-strips-planning-02](slike/intro-to-strips-planning-02.jpg)
 
 Tri različita objekta imaju različite akcije na raspolaganju da ostvare zadate ciljeve:
 
-![ai-akcije](slike/ai-akcije.png?row=true)
+![ai-akcije](slike/ai-akcije.png)
 
 STRIPS samo zadaje stanja (slika levo), ali ne i putanje između njih, kao FSM (slika desno).
 
-![strips-vs-fsm](slike/strips-vs-fsm.png?row=true)
+![strips-vs-fsm](slike/strips-vs-fsm.png)
 
 AI pokušava da ostvari svoj cilj na sve raspoložive načine, npr:
 * A.I. try to open the door and fail.

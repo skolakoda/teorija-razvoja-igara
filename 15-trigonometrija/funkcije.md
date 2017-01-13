@@ -8,7 +8,7 @@ The most familiar trigonometric functions are the sine, cosine, and tangent:
 * tan = opposite / adjacent
 You can memorize them with SOH, CAH, TOA.
 
-![trigonometrijske-funkcije](slike/trigonometrijske-funkcije.png?row=true)
+![trigonometrijske-funkcije](slike/trigonometrijske-funkcije.png)
 
 ## Sinus i kosinus
 
@@ -16,7 +16,7 @@ The sin() and cos() functions take only one parameter, the angle, and return a n
 
 Sinusoidal graph pattern repeats every 360°; this is called the fundamental period. To change the period, just place a number in front of the x.
 
-![sinus-kosinus-graf.png](slike/sinus-kosinus-graf.png?row=true)
+![sinus-kosinus-graf.png](slike/sinus-kosinus-graf.png)
 
 C program prikazuje sinusnu funkciju:
 ```c
@@ -43,7 +43,7 @@ void draw_sine ()
 }
 ```
 
-![](slike/sine.gif?row=true)
+![](slike/sine.gif)
 
 ## Tangent
 
@@ -52,7 +52,7 @@ There is a mathematical function called the tangent, which can be used to calcul
 tan(angle) = y / x
 ```
 
-![](slike/tan.gif?row=true)
+![](slike/tan.gif)
 
 This can in fact be written as:
 
@@ -69,7 +69,7 @@ angle = atan (y / x)
 
 But there is a minor problem: this will sometimes give you an incorrect result. Two oposite vectors both have the same y-to-x ratio.
 
-![](slike/suprotni-vektori.gif?row=true)
+![](slike/suprotni-vektori.gif)
 
 A partial work-around is possible like this (partial because we don't check for the case where x is 0):
 ```

@@ -1,6 +1,6 @@
 ## Heroina
 
-![heroina](slike/heroina.png?row=true)
+![heroina](slike/heroina.png)
 
 Implementacija u kodu:
 

@@ -8,7 +8,7 @@ Here is where the strategy pattern kicks in. Its goal is to separate the class d
 
 The implementation of the strategy pattern involves two classes. First, there is the strategy class, which provides the strategic algorithm. This is a pure abstract class, from which specific strategies are derived as subclasses. Second, there is the context class, which defines where the strategy should be applied and has a member that executes the selected strategy and swaps strategies when needed.
 
-![](slike/strategy-pattern.jpeg?row=true)
+![](slike/strategy-pattern.jpeg)
 
 In a game, you should always decouple the interaction between the input controller and the game's logic. The game's logic should receive the same kind of input regardless of the input controller (button, gesture, joystick).
 

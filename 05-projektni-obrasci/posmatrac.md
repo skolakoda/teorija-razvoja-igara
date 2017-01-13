@@ -6,7 +6,7 @@ In a game, all of your classes should be loosely coupled. This means that your c
 
 This pattern is normally implemented when an object wants to send messages to its subscriber (other objects). The object does not need to know anything about how the subscribers work, just that they can communicate.
 
-![](slike/observer.jpeg?row=true)
+![](slike/observer.jpeg)
 
 Observer is so pervasive that Java put it in its core library (java.util.Observer) and C# baked it right into the language (the event keyword).
 

@@ -8,7 +8,7 @@ The three Euler angles (roll, pitch, and yaw) represent the orientation of a rig
 
 When the object rotates freely, it always rotates about the center of mass. Different objects rotate very differently, depending on their shape and how their weight is distributed.
 
-![rotacija-centar-mase](slike/rotacija-centar-mase.png?row=true)
+![rotacija-centar-mase](slike/rotacija-centar-mase.png)
 
 ### Obrtni moment (torque)
 

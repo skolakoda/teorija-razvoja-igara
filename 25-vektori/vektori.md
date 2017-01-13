@@ -4,11 +4,11 @@ Vektor je veličina koja ima intenzitet i smer. Vektore i matrice proučava line
 
 Vektor možemo vizuelizovati kao duž koja ima glavu i rep.
 
-![vektori](slike/vectori.png?row=true)
+![vektori](slike/vectori.png)
 
 Intenzitet je dužina vektora. We can use the Pythagorean theorem to calculate a vector’s magnitude.
 
-![vector-magnitude](slike/vector-magnitude.jpg?row=true)
+![vector-magnitude](slike/vector-magnitude.jpg)
 
 Vectors entered math in the 19 century, as mathematicians and physicists wrestled to describe motion, rather than static position.
 
@@ -16,7 +16,7 @@ Vectors entered math in the 19 century, as mathematicians and physicists wrestle
 
 In games, vectors are used to store positions, directions, and velocities. Here are some 2-Dimensional examples:
 
-![vektori](slike/vektori-u-igrama.jpg?row=true)
+![vektori](slike/vektori-u-igrama.jpg)
 
 The position vector indicates that the man is standing two meters east of the origin, and one meter north. The velocity vector shows that in one minute, the plane moves three kilometers up, and two to the left. The direction vector tells us that the pistol is pointing to the right. As you can see, a vector by itself is just a set of numbers -- it is only given meaning by its context. For this reason, it's important to keep track of your units. Let's say we have a vector V (3,5,2). This doesn't mean much by itself. Three what? Five what? In some games, positions are always given in meters, and velocities in meters per second.
 
@@ -33,9 +33,9 @@ It is possible to create an extremely powerful structure or class which can enco
 
 ## Skalari
 
-Scalars are any quantity that can be measured using a number (temperature, length, mass...). It have magnitude but no direction.
+When we talk about vectors, we refer to individual numbers as scalars. Scalars are any quantity that can be measured using a number (temperature, length, mass...). It have magnitude but no direction.
 
-Zove se skalar jer samo skalira vektor.
+Zove se skalar jer skalira vektor.
 
 ## Vector vs. Scalar
 
@@ -49,11 +49,15 @@ In one dimension there are only two possible directions, positive or negative. I
 
 There are two ways for describing a vector in 2D: polar coordinates and Cartesian coordinates. Polar coordinates describe its length and direction, Cartesian coordinates describe its horizontal and vertical displacement.
 
-## Jedinični vektor (normalizacija vektora)
+## Normalizacija vektora (jedinični vektor)
 
-A unit vector is a vector with a magnitude of one. We can convert any vector to a unit vector that points in the same direction, but has unit length.
+A unit vector is a vector with a length of 1. We can convert any vector to a unit vector that points in the same direction, but has unit length.
+
+To normalize a vector, divide each component by the vector's length. If we want to normalize vector (3,4), we divide each component by its length, 5, to get (3/5, 4/5).
 
 X-axis of unit vector is typically called `i`, y-axis is `j`, and z-axis is `k`.
+
+In games, when we are dealing with directions (as opposed to positions or velocities), it is important that they have unit length. For example, let's say there is a gun pointing in the direction of (1,0) that shoots a bullet at 20 m/s. What is the velocity of the bullet? Since the direction has length 1, we can just multiply the direction and the bullet speed to get the bullet velocity: (20,0).
 
 ## Normal Vectors
 
@@ -68,7 +72,7 @@ Dot proizvod dva normalizovana 2D vektora od kojih je jedan jedinični vektor (1
 
 Na kraju dobijamo neku vrstu jediničnog kruga, gde je dot proizvod zapravo kosinus.
 
-![vector-unit-circle](slike/vector-unit-circle.png?row=true)
+![vector-unit-circle](slike/vector-unit-circle.png)
 
 ## Direction Inversion
 

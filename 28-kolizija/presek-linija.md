@@ -6,7 +6,7 @@ y = 2x
 ```
 So, every straight line is an equation of the form `Ax + By = C`, where A and B are not both 0.
 
-![linearna-jednacina](slike/linearna-jednacina.png?row=true)
+![linearna-jednacina](slike/linearna-jednacina.png)
 
 One of the most important elements of a line is its slope (nagib).
 
@@ -16,7 +16,7 @@ Kako saznati da li se dve linije (koje mogu biti zidovi) seku? Postaviš linearn
 
 When solving a system of two linear equations, you're really searching for the intersection of two lines. The solution set is the set of all the points that satisfy both equations.
 
-![presek-linija](slike/presek-linija.png?row=true)
+![presek-linija](slike/presek-linija.png)
 
 Dve linije se mogu seći ili ići jedna preko druge ili biti paralelne.
 

@@ -44,4 +44,4 @@ An example of a goal might be to kill the player. An action that satisfies this 
 
 Pathfinding is really just an optimized search algorithm across a data structure, typically a graph. The problem of finding a valid path through terrain is one of simplification. The world itself is simplified into a graph of nodes (or a mesh with edges) that is then traversed with a search algorithm to find a good path between two nodes in that graph.
 
-![pathfinding-in-ratrace](slike/pathfinding-in-ratrace.png?row=true)
+![pathfinding-in-ratrace](slike/pathfinding-in-ratrace.png)

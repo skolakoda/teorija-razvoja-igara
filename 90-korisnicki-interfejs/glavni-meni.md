@@ -9,7 +9,7 @@ Other games use multiple screens to set up the characters or missions.
 
 If your screens are fairly small “memory-wise,” consider preloading them. Or you might consider loading a small transition screen to give your players something to look at while you load your bigger screens.
 
-![upravljanje-ekranima](slike/upravljanje-ekranima.png?row=true)
+![upravljanje-ekranima](slike/upravljanje-ekranima.png)
 
 ```c++
 class IScreenElement

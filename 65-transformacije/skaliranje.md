@@ -4,4 +4,4 @@ The process is the same as translation: Plug in each vertex one at a time, and m
 
 The scaling process works the exact same way in 3D.
 
-![skaliranje](slike/skaliranje.png?row=true)
+![skaliranje](slike/skaliranje.png)

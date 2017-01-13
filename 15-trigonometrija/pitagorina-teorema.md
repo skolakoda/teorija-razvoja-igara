@@ -6,7 +6,7 @@ a^2 + b^2 = c^2
 ```
 gde su `a` i `b` kraće stranice trougla a `c` je hipotenuza.
 
-![pitagorina-teorema-primena](slike/pitagorina-teorema-primena.jpg?row=true)
+![pitagorina-teorema-primena](slike/pitagorina-teorema-primena.jpg)
 
 Pitagorina teorema važi samo za pravougle trouglove.
 
@@ -16,11 +16,11 @@ Pitagorina teorema važi samo za pravougle trouglove.
 
 Often in programming, you want to know the distance between two points on the screen.
 
-![rastojanje](slike/rastojanje.png?row=true)
+![rastojanje](slike/rastojanje.png)
 
 The easiest way to do that is to use the Pythagorean theorem.
 
-![rastojanje-izmedju-tacaka](slike/distance.png?row=true)
+![rastojanje-izmedju-tacaka](slike/distance.png)
 
 ```js
 a = x1 - x2

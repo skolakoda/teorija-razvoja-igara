@@ -6,6 +6,6 @@ Model-View-Controller is the most widely used and loved design pattern among pro
 * Observer Pattern (Model)
 * Composite Pattern (View)
 
-![](slike/mvc.jpeg?row=true)
+![](slike/mvc.jpeg)
 
 The strategy pattern decouples user inputs from the game's logic (Model) and interfaces (View).

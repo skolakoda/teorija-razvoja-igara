@@ -13,7 +13,7 @@ Every game subsystem could be classified into one of three primary categories:
 
 Ovo je nalik Model-View-Controller arhitekturi kod aplikacija.
 
-![arhitektura-igre](slike/arhitektura-igre.png?row=true)
+![arhitektura-igre](slike/arhitektura-igre.png)
 
 The application layer concerns itself with the machine your game runs on. If you were going to port your game from Windows to iOS or Android, you would rewrite most of the code in the application layer, but hopefully not much else. In this area is code that deals with hardware devices like the mouse or a gamepad, operating system services such as network communications or threading, and operations such as initialization and shutdown of your game.
 

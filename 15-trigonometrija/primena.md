@@ -2,11 +2,11 @@
 
 ## Visina drveta
 
-![trigonometrija-uzivo](slike/trigonometrija-uzivo.jpg?row=true)
+![trigonometrija-uzivo](slike/trigonometrija-uzivo.jpg)
 
 ## Širina reke
 
-![sirina-reke](slike/sirina-reke.gif?row=true)
+![sirina-reke](slike/sirina-reke.gif)
 
 ## Crtanje kruga
 

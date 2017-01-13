@@ -8,7 +8,7 @@ We go through all pixels of the destination bitmap and try to figure out which p
 
 Let's make it a bit simpler. Let's start with a cylinder instead of a sphere. We are going to make a cylinder in the way we did it in kindergarten. We take a nice flat piece of paper (the source bitmap) and roll it up. The bitmap wraps around so that the topright pixel of the source bitmap is right next to the topleft pixel.
 
-![](slike/mapiranje-cilindra.gif?row=true)
+![](slike/mapiranje-cilindra.gif)
 
 Suppose we wanted to go from source to destination. We want to know for each position (p, q) on the cylinder where on the screen it should go. Coordinate y is simple. It simply equals q. x is more difficult. If the angle p is 0, the x coordinate should be the center of the cylinder plus the radius. If p is 90 degrees, the x coordinate should be in the center. If p is 180, it should be the center minus the radius. The function which does exactly that is: the cosine!
 
@@ -22,7 +22,7 @@ We are still missing the z coordinate here. A cylinder is a three-dimensional ob
 z = center + radius * sin (p)
 ```
 
-![](slike/mapiranje-cilindra2.gif?row=true)
+![](slike/mapiranje-cilindra2.gif)
 
 If we want to work from the destination out, we have to turn these formula's around, like this:
 ```
@@ -94,7 +94,7 @@ void mapped_cylinder (BITMAP *target, int cx, int top, int r, int h, BITMAP *map
 
 ## Mapiranje sfere
 
-![](slike/mapiranje-sfere.gif?row=true)
+![](slike/mapiranje-sfere.gif)
 
 How do we go from p,q to x, y. And let's not forget z this time. This time, the y coordinate should also have some sine in it, because it reaches its maximum when q is 90, and when q is over 90 it should go back again.
 

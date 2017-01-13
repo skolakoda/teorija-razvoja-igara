@@ -4,11 +4,11 @@ We could define the following behavioural states: Waiting, Attacking, Escaping, 
 
 At the start of the game the robot is to be in the WAIT state. If the player comes near he will change into the ATTACK state. If the player hits him with his gun, the following transition depends on the robot's remaining health, i.e. the number of hits he had already been forced to take: the next state will either be ATTACK, ESCAPE, or DIE.
 
-![robot](slike/robot-stanja.png?row=true)
+![robot](slike/robot-stanja.png)
 
 For better transparency we sum up the states in a table of states.
 
-![robot](slike/robot.tabela.png?row=true)
+![robot](slike/robot.tabela.png)
 
 ### Implementacija
 

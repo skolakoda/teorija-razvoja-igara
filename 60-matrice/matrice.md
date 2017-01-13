@@ -10,7 +10,7 @@ You can create a class that would allow the programmer to create matrices of any
 
 ### Sabiranje i oduzimanje matrica
 
-![matrix_operations](slike/matrix_operations.jpg?row=true)
+![matrix_operations](slike/matrix_operations.jpg)
 
 Always make sure that both matrices are the same size before you attempt to add them. If A and B are both 3x3, so you can add them together.
 
@@ -37,7 +37,7 @@ You can multiply matrices by taking a series of dot products. Keep in mind two i
 * The two vectors must have the same number of entries to take the dot product.
 * The dot product returns a scalar quantity (a single number).
 
-![mnozenje-matrica](slike/mnozenje-matrica.png?row=true)
+![mnozenje-matrica](slike/mnozenje-matrica.png)
 
 Here is a function that allows us to multiply two 3x3 matrices:
 ```cpp
@@ -74,7 +74,7 @@ Matrix3X1 multiplyMatrixNxM(Matrix3X3 a, Matrix3X1 b) {
 
 The transpose operation simply swaps each entry's row and column.
 
-![matrix-transpose](slike/matrix-transpose.gif?row=true)
+![matrix-transpose](slike/matrix-transpose.gif)
 
 How to transpose a 4x4 matrix in code:
 ```cpp

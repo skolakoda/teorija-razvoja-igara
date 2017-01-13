@@ -90,7 +90,7 @@ Displacement is the vector version of distance.
 
 When calculating displacement, all you care about is where the object starts and where it ends. Whatever happens in between doesn't matter. Football is a good example of displacement versus distance. Suppose player catches the ball on the 20-yard line and starts running. There's a blocker in the way, so the receiver circles around the blocker, avoids the other defender running toward him, and eventually gets tackled on the 50-yard line. The positive 30 yards is his displacement even though the actual distance traveled is much more.
 
-![distance-vs-displacement](slike/distance-vs-displacement.png?row=true)
+![distance-vs-displacement](slike/distance-vs-displacement.png)
 
 ## Brzina (speed) i usmerena brzina (velocity)
 

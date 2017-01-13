@@ -5,7 +5,7 @@
 
 The Cartesian coordinate system consists of a horizontal (x) and a vertical (y) axis. Each individual point can be defined by (x,y). The origin is the point where the two axes intersect; its coordinates are (0,0).
 
-![dimenzije](slike/dimenzije.png?row=true)
+![dimenzije](slike/dimenzije.png)
 
 ### 3D
 
@@ -13,19 +13,19 @@ The Cartesian coordinate system consists of a horizontal (x) and a vertical (y) 
 
 To get to point P, you must travel two units to the right, four units up, and five units forward; so the point can be described by the ordered triple (2,4,5).
 
-![3d-koordinate-prstima](slike/3d-koordinate-prstima.jpg?row=true)
+![3d-koordinate-prstima](slike/3d-koordinate-prstima.jpg)
 
-![left_right_hand](slike/left_right_hand.gif?row=true)
+![left_right_hand](slike/left_right_hand.gif)
 
 ### Polarni koordinatni sistem
 
 Polarni koordinatni sistem je sistem gde je pozicija tačke određena njenom udaljenošću od fiksne tačke (ishodišta) i uglom. Ishodište se naziva pol. Polarni koordinatni sistem je specijalni oblik Cilindričnog koordinatnog sistema.
 
-![polarne-koordinate](slike/polarne-koordinate.png?row=true)
+![polarne-koordinate](slike/polarne-koordinate.png)
 
 ### Koordinate sveta i koordinate kamere
 
-![svet-i-kamera-koordinati](slike/svet-i-kamera-koordinati.png?row=true)
+![svet-i-kamera-koordinati](slike/svet-i-kamera-koordinati.png)
 
 Our world origin is located at the lower-left corner of the example program’s window with positive
 x pointing to the right and positive y pointing up.

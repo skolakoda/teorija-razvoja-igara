@@ -1,23 +1,23 @@
 ## Neprijatelj
 
-![neprijatelj](slike/neprijatelj.png?row=true)
+![neprijatelj](slike/neprijatelj.png)
 
 ## Neprijatelj kukavica
 
-![neprijatelj-prost](slike/neprijatelj-panicar.jpg?row=true)
+![neprijatelj-prost](slike/neprijatelj-panicar.jpg)
 
 ## Čudovište
 
-![cudoviste-stanja](slike/cudoviste.png?row=true)
+![cudoviste-stanja](slike/cudoviste.png)
 
 ## Duh iz Pakmana
 
-![ghost-stanja](slike/ghost.png?row=true)
+![ghost-stanja](slike/ghost.png)
 
 ## Pucanj
 
-![pucanj](slike/pucanj-dijagram.jpg?row=true)
+![pucanj](slike/pucanj-dijagram.jpg)
 
 ## Igra
 
-![igra](slike/dijagram-igre.jpg?row=true)
+![igra](slike/dijagram-igre.jpg)

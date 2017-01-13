@@ -26,6 +26,6 @@ When you turn the hand wheel in a car, the tires produce a centripetal force tow
 
 One of the most important aspects of racing is taking turns as fast as possible but without losing control.
 
-![skretanje-kola](slike/skretanje-kola.png?row=true)
+![skretanje-kola](slike/skretanje-kola.png)
 
 If the front wheels slide, the car understeers and the arc is larger than the driver intended. This is commonly caused by traveling too fast through a corner and trying to take the corner too tightly. However, if the driver breaks hard or even just lets off the gas, there will be a weight shift forward. This causes the car to turn more than the driver intended, and can even result in a spin.

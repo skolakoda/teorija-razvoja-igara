@@ -4,7 +4,7 @@ Collision detection is a computational geometry problem involving the determinat
 
 Physics engines usually works collision detection by creating a physical body, usually attached to a visual representation of it. This body has properties such as velocity, position, rotation, torque, etc., and also a physical shape.
 
-![kolizija-cilindar](slike/kolizija-cilindar.png?row=true)
+![kolizija-cilindar](slike/kolizija-cilindar.png)
 
 Because the collision geometry and visible geometry are usually different, make collision a little smaller than the visible. The objects won’t get stuck so much, or appear to hit something that isn’t there.
 
@@ -12,11 +12,11 @@ Because the collision geometry and visible geometry are usually different, make 
 
 Krug se koristi u detekciji kolizije tako što se centar kruga postavi u centar predmeta, pa se meri rastojanje poluprečnikom. Ova metoda je neprecizna i ne odgovara za sve predmete.
 
-![kolizija-kruznica](slike/kolizija-kruznica.png?row=true)
+![kolizija-kruznica](slike/kolizija-kruznica.png)
 
-![circle_collide](slike/circle_collide.png?row=true)
+![circle_collide](slike/circle_collide.png)
 
-![kolizija-krug](slike/kolizija-krug.png?row=true)
+![kolizija-krug](slike/kolizija-krug.png)
 
 You can extend this process to 3D.
 

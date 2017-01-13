@@ -4,4 +4,4 @@ A singleton is a global object for which only one instance exists in the whole a
 
 It starts by declaring a class that has only one public method, which will be used to request an instance of the singleton. All instances actually point at the same structure, so this request call must create the singleton for the first call and just return pointers to it in subsequent calls.
 
-![](slike/sington.png?row=true)
+![](slike/sington.png)

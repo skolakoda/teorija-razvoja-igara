@@ -14,7 +14,7 @@ The core hypothesis of the boids system is that the behavior of a group is large
 * Alignment: All members of a group will try to aim in the same direction, much like a herd of sheep would do.
 * Cohesion: All members of the group should try to stay close to the group's center of gravity or barycenter. By doing so, the flock stays together, except for those circumstances when the separation rule needs to be enforced.
 
-![boids](slike/boids.png?row=true)
+![boids](slike/boids.png)
 
 Some changes need to be made in order to increase the boids potential. We need someone to generate the influence field so the others will conform to this behavior. For example, one of the members of the formation must be AI (or the player).
 

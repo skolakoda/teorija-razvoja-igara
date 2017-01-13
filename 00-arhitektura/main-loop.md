@@ -65,8 +65,8 @@ All of these operations occur in one giant loop that can’t take longer than 33
 
 Za razliku od klasičnih programa, even if the player does absolutely nothing, the game still needs to be constantly thinking and processing.
 
-![game-loop](slike/game-loop.png?row=true)
+![game-loop](slike/game-loop.png)
 
 One problem with rendering is that your CPU spends most of its time waiting for the video card to process what it just sent. By putting the rendering system on another thread, you free up the CPU while the GPU is working its magic.
 
-![multithread-game-loop](slike/multithread-game-loop.png?row=true)
+![multithread-game-loop](slike/multithread-game-loop.png)

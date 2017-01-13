@@ -2,8 +2,8 @@
 
 Domaćica osnovno:
 
-![domacica-stanja](slike/domacica-osnovno.jpg?row=true)
+![domacica-stanja](slike/domacica-osnovno.jpg)
 
 Domaćica napredno:
 
-![domacica-stanja](slike/domacica-napredno.jpg?row=true)
+![domacica-stanja](slike/domacica-napredno.jpg)

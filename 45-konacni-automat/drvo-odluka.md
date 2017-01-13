@@ -4,7 +4,7 @@ A decision tree is a simple way of representing decision making. Each nonleaf no
 
 A decision is made by starting at the root node and recursively walking down the tree until an action node is reached.
 
-![drvo-odluka](slike/drvo-odluka.png?row=true)
+![drvo-odluka](slike/drvo-odluka.png)
 
 (primer za stražara)
 

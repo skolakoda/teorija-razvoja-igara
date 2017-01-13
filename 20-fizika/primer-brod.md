@@ -8,7 +8,7 @@ A planing vessel is one that is not supported by buoyancy, but by hydrodynamic l
 
 Semi-displacement vessels are those that straddle the two categories, with some support coming from buoyancy and some coming from planing forces.
 
-![brod-sile](slike/brod-sile.png?row=true)
+![brod-sile](slike/brod-sile.png)
 
 As you can see, compared to when the boat is at rest, very little of the hull is in the water now. This reduces the wetted surface area and skin friction, and allows the craft to go faster, generating more lift and reducing the skin friction yet again.
 
@@ -16,7 +16,7 @@ There are a variety of methods to propel a boat through the water. The oldest is
 
 The major propulsion relationship for your simulation would be the thrust-to-propeller RPM or thrust-to-throttle curve. As the boat moves faster through the water, the inflow velocity of the water into the propeller is higher. This means that the difference between the velocity of the intake and the velocity of the output is smaller, reducing the amount of thrust.
 
-![brod-potisak-brzina](slike/brod-potisak-brzina.png?row=true)
+![brod-potisak-brzina](slike/brod-potisak-brzina.png)
 
 #### Potapanje broda
 

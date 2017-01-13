@@ -7,7 +7,7 @@ Airplane has 3 firing modes:
 
 So, we have 3 states, with Fire 1 being the initial state. The events between states are when the plane touches a power up. If the plane hits an enemy, they’ll go back a state, from Fire 3 to Fire 2 and from Fire 2 to Fire 1.
 
-![avionce-1942](slike/avionce-1942.jpg?row=true)
+![avionce-1942](slike/avionce-1942.jpg)
 
 Implementacija u kodu:
 

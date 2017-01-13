@@ -4,7 +4,7 @@
 
 The Composite pattern composes objects into tree like structures representing hierarchies. An example may be a game level where we have a number of different pieces e.g. sub levels, trees, enemies etc. and we want to gather them together in a collection.
 
-![composite-pattern](slike/composite-pattern.gif?row=true)
+![composite-pattern](slike/composite-pattern.gif)
 
 Many types of applications, games in particular, need to hold heterogeneous collections of data together. A game level can have sublevels, potions, enemies, objects, and so on. The overall data structure can be best described as a part-whole hierarchy with each element being either a primitive or a composite. Having all data in a single structure makes traversal more intuitive. This is what the composite pattern is all about: creating part-whole heterogeneous hierarchies where we can access primitives and composite objects using a standard interface.
 

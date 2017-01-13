@@ -12,7 +12,7 @@ Konačni automat se sastoji od states, inputs and transitions:
 
 Most games are deterministic; meaning you know how the enemies will react. If they don’t see you, they’ll patrol. If they see you, they’ll attack you. You can simulate fuzzy logic by change state to something random. For example, sometimes the enemy could use a grenade vs. a gun, or attack you immediately vs. sounding the alarm… This randomness makes a State Machine non-deterministic, meaning you know all the States, but you don’t know the paths between.
 
-![siege-tank](slike/siege-tank.jpg?row=true)
+![siege-tank](slike/siege-tank.jpg)
 
 Starcraft Siege tank can’t go from Siege Mode to Move Mode. Siege Tank must first transform to assault mode.
 

@@ -24,7 +24,7 @@ wall
 end while
 ```
 
-![crash-and-turn](slike/crash-and-turn.gif?row=true)
+![crash-and-turn](slike/crash-and-turn.gif)
 
 All we need is to decide which side it will use to go around the obstacle. Two possibilities are:
 * Choosing the side that deviates less from the initial trajectory
@@ -32,7 +32,7 @@ All we need is to decide which side it will use to go around the obstacle. Two p
 
 The algorithm is quite lightweight and thus can be implemented with very low CPU impact. But, the algorithm has some problems dealing with concave obstacles. We will get stuck in C-shaped areas in an infinite loop, because we won't be able get around the obstacle once we get inside.
 
-![zaglavljena-putanja](slike/zaglavljena-putanja.gif?row=true)
+![zaglavljena-putanja](slike/zaglavljena-putanja.gif)
 
 ## Dajkstrin algoritam
 
@@ -93,7 +93,7 @@ int dijkstra(const vector< vector<edge> > &graph, int source, int target) {
 
 A* (pronounced A-star) is a global space-search algorithm that can be used to find solutions to many problems, path finding being just one of them. It has been used in many real-time strategy games and is probably the most popular path finding algorithm.
 
-![astar-algoritam](slike/astar-algoritam.gif?row=true)
+![astar-algoritam](slike/astar-algoritam.gif)
 
 Here is the pseudocode:
 
