@@ -25,3 +25,5 @@ Mašina stanja može biti predstavljena grafikonom, gde su čvorovi (*nodes*) st
 One of the big advantages of state machines is that states can often be reused among many different creatures. The chances are good that you’ll get a lot of use out of a patrol or attack state, and with a bit of parameterization you can reuse these states across many different types of creatures.
 
 https://gamedevelopment.tutsplus.com/tutorials/finite-state-machines-theory-and-implementation--gamedev-11867
+http://www.drdobbs.com/cpp/state-machine-design-in-c/184401236
+http://codereview.stackexchange.com/questions/104989/state-machine-implementation
