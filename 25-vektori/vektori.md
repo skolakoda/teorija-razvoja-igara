@@ -31,6 +31,8 @@ struct 3Dvector
 
 It is possible to create an extremely powerful structure or class which can encompass almost every operation which could be needed.
 
+In short: get comfortable with vectors. The first thing you should do is write a simple vector class that does vector addition, subtraction, multiplication, dot product, cross product, and rotation. That’s all you need. The rest of your physics engine will be built atop vectors.
+
 ## Skalari
 
 When we talk about vectors, we refer to individual numbers as scalars. Scalars are any quantity that can be measured using a number (temperature, length, mass...). It have magnitude but no direction.

@@ -26,7 +26,8 @@ Isaac Newton discovered three laws that govern all motion on Earth (except for o
 
 * Svako telo ostaje u stanju relativnog mirovanja ili ravnomernog pravolinijskog kretanja sve dok ga dejstvo drugog tela ne prisili da to stanje promeni. (Neometano, ako se telo kreće, kretaće se, ako miruje, mirovaće). This specifies what happens when the net force is 0.
 
-*	Ubrzanje je srazmerno dejstvujućoj sili, a obrnuto srazmerno masi tela. (Ubrzanje izaziva sila, a protivi mu se masa.)
+*	Ubrzanje je srazmerno primenjenoj sili, a obrnuto srazmerno masi tela. (Ubrzanje izaziva sila, a protivi mu se masa.) Newton’s 2nd law is invaluable to us, and will drive nearly all of our objects’ interactions.
+
 ```
 a = F / m
 ```
@@ -35,14 +36,15 @@ odnosno:
 F = m * a
 ```
 
-The biggest difference between one-dimensional and two or three-dimensional motion involves the direction. To describe motion in two or three dimensions, we must incorporate vectors. The equations for 2D motion are:
+U višedimenzionalnim svetovima (2D i 3D) `F` i `a` su vektori. To znači da možeš računati svaku dimenziju posebno:
 ```
-ΣFx = m * ax
-ΣFy = m * ay
+Fx = m * ax
+Fy = m * ay
 ```
-U 3D kretanju se dodaje i z osa:
+
+U 3D kretanju postoji i z osa:
 ```
-ΣFz = m * az
+Fz = m * az
 ```
 
 *	Sila kojom jedno telo deluje na drugo telo jednaka je po intenzitetu sili kojom drugo telo deluje na prvo, ali je suprotnog smera. (Na primer, kada top ispaljuje projektil, projektil ga pomera nazad.)
@@ -143,3 +145,14 @@ Trik: Add a small force vector every frame in the direction the vehicle is curre
 ## Inercija
 
 When we wish to change the speed, the body shows a certain resistance against such changes. This resistance, called inertia, is a result of the body's mass. The larger the mass of the body, the smaller the change of speed will be.
+
+## Primena
+
+The process for simulating an object’s motion goes something like this:
+
+1. Figure out what the forces are on an object
+2. Add those forces up to get a single “resultant” or “net” force
+3. Use F = ma to calculate the object’s acceleration due to those forces
+4. Use the object’s acceleration to calculate the object’s velocity
+5. Use the object’s velocity to calculate the object’s position
+6. Since the forces on the object may change from moment to moment, repeat this process from #1, forever.
