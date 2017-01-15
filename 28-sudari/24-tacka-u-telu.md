@@ -1,8 +1,8 @@
-## Point Inclusion Tests
+# Pripadnost tačke mnogouglu (*point inclusion tests*)
 
-Point inclusion tests is essential for collision detection. From grenades to wall-following, almost every interesting algorithm needs to deal with this kind of issue.
+Pripadnost tačke mnogouglu je problem koji se često sreće u računarskoj grafici, a suština je određivanje da li se neka tačka nalazi na površini obuhvaćenoj mnogouglom. Point inclusion tests is essential for collision detection. From grenades to wall-following, almost every interesting algorithm needs to deal with this kind of issue.
 
-### Point-in-Sphere
+## Tačka u sferi (3D)
 
 The simplest point inclusion test involves testing whether a point is actually inside a sphere. Given the sphere:
 ```
@@ -22,11 +22,23 @@ Remember that square roots are expensive. Thus, an optimization could be:
 ```
 as well as storing the radius squared to speed up computations.
 
-### Point-in-Polygon
+## Tačka u kutiji (3D)
+
+Checking if a point is inside an AABB is pretty simple — we just need to check whether the point's coordinates fall inside the box, considering each axis separately. If we assume that Px, Py and Pz are the point's coordinates, and BminX – BmaxX, BminY – BmaxY, and BminZ – BmaxZ are the ranges of each exis of the 3D box, we can calculate whether a collision has occured:
+
+```js
+function isPointInsideBox(point, box) {
+  return (point.x >= box.minX && point.x <= box.maxX) &&
+         (point.y >= box.minY && point.y <= box.maxY) &&
+         (point.z >= box.minY && point.z <= box.maxZ);
+}
+```
+
+## Tačka u poligonu
 
 The point-in-polygon problem asks whether a given point lies inside, outside, or on the boundary of a polygon. An early description of the problem in computer graphics shows two common approaches (ray casting and angle summation).
 
-#### Metoda zraka (ray casting)
+### Metoda zraka (ray casting)
 
 Metod zraka polazi od činjenice da zrak pri svakom presecanju granice mnogougla ili ulazi ili izlazi iz njega:
 * Neparan broj preseka: tačka je u mnogouglu

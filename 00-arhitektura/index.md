@@ -1,6 +1,13 @@
-# Arhitektura igre
+# Pogon igre (game engine)
 
->Many programmers make the mistake of trying to build a system, not a game. Typically that system keeps ballooning out of control until it's so complex that theoretically it can handle anything, but in practicality all you have is a big bundle of code.
+Game engine se sastoji od:
+* physics engine
+* graphics engine
+* audio engine
+* AI engine
+and whatever other engines you may require.
+
+# Arhitektura igre
 
 ## Slojevi igre (Game Layers)
 (Book Game Coding Complete)

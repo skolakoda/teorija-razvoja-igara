@@ -2,6 +2,16 @@
 
 Collision response coming after a collision is detected. Collision response is a kinetics problem involving the motion of two or more objects after they have collided.
 
+Much of collision response will depend on your game mechanics. A missile fired at a character should do damage and explode. But pure physical response is: two boxes knocking into each other and bouncing away.
+
+Collision response for two simple shapes without rotation is pretty easy. Rotating objects are a bit more complex. Not only they will bounce, but their rotation will change based on which points on the objects are involved with the collision.
+
+Additionally, since objects in real life very rarely “overlap” the way they can in a computer simulation, we’ll typically backtrack and correct their positions so that they’re just touching and not overlapping at all.
+
+## Restitution
+
+Real objects aren’t perfectly hard, so we introduce the coefficient of restitution, which basically models the elasticity of the collision.
+
 ![odbijanje-o-zid](slike/odbijanje-o-zid.png)
 
 Restitution is the amount of bounce that an object has when it hits something. A good way to think of this is how high a ball will bounce when you drop it. If the restitution is 0.0f, when it hits it will simply stick to the ground. If you’ve got something like 0.99f, you’ve got a nice superball that will bounce around for a long time.
