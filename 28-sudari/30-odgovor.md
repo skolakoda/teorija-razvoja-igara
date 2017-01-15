@@ -1,4 +1,4 @@
-## Sudarna reakcija (*collision response*)
+## Sudarni odgovor (*collision response*)
 
 Collision response coming after a collision is detected. Collision response is a kinetics problem involving the motion of two or more objects after they have collided.
 

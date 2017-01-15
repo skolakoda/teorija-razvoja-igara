@@ -1,4 +1,4 @@
-### Brod (Plovilo)
+### Brod (plovilo)
 
 There are many ways to classify ships and boats, but in regards to the physics governing them, there are three basic types. Displacement vessels, semi-displacement vessels, and planing vessels are named after the forces that keep the boat afloat while it is at cruising speed.
 

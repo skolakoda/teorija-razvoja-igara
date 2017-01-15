@@ -1,78 +1,29 @@
 # Kretanje
 
-In a game, you can set an object’s position to whatever you want. However, in the real world, you can never actually set the position of anything. Instead, the object has a position, which is modified by a motion vector (the combination of speed and direction). You have to apply force vectors to indirectly change the motion, which will change the position.
+Kintetika (nauka o kretanju) je grana klasične mehanike koja se bavi kretanjem i njegovim uzrocima.
 
-When you need to work with moving objects, you’ll be interested in their position, velocity, and acceleration. Velocity is the change in position over time, and likewise acceleration is the change in velocity over time. You calculate them like this:
+In a game, you can set an object’s position to whatever you want. However, in the real world, you can never actually set the position of anything. Instead, the object has a position, which is modified by a motion. You have to apply force to indirectly change the motion, which will finally change the position.
 
-```cpp
-Vec3 CalcVelocity(Vec3 pos0, Vec3 pos1, float time)
-{
-  return (pos1 - pos0) / time;
-}
-```
-
-```cpp
-Vec3 CalcAcceleration(Vec3 vel0, Vec3 vel1, float time)
-{
-  return (vel1 - vel0) / time;
-}
-```
+When you need to work with moving objects, you’ll be interested in their position, velocity, and acceleration.
 
 When an object moves through space, its location always references the center of mass.
 
-## Njutnovi zakoni kretanja
+## Podela kretanja
 
-Isaac Newton discovered three laws that govern all motion on Earth (except for on the molecular level) in the late 17th century.
+Svako čvrsto telo se sastoji od gomile tačaka. Prema načinu kretanja pojedinih tačaka u telu, kretanje delimo na:
 
-* Svako telo ostaje u stanju relativnog mirovanja ili ravnomernog pravolinijskog kretanja sve dok ga dejstvo drugog tela ne prisili da to stanje promeni. (Neometano, ako se telo kreće, kretaće se, ako miruje, mirovaće). This specifies what happens when the net force is 0.
+* translatorno kretanje (sve tačke tela se kreću na isti način i opisuju iste putanje)
+* rotaciono kretanje (različite tačke tela prelaze različite kružne putanje)
 
-*	Ubrzanje je srazmerno primenjenoj sili, a obrnuto srazmerno masi tela. (Ubrzanje izaziva sila, a protivi mu se masa.) Newton’s 2nd law is invaluable to us, and will drive nearly all of our objects’ interactions.
+Mi ćemo pod kretanjem podrazumevati translatorno kretanje, ako nije drukčije napomenuto.
 
-```
-a = F / m
-```
-odnosno:
-```
-F = m * a
-```
+![](slike/translatorno-kretanje.png)
 
-U višedimenzionalnim svetovima (2D i 3D) `F` i `a` su vektori. To znači da možeš računati svaku dimenziju posebno:
-```
-Fx = m * ax
-Fy = m * ay
-```
-
-U 3D kretanju postoji i z osa:
-```
-Fz = m * az
-```
-
-*	Sila kojom jedno telo deluje na drugo telo jednaka je po intenzitetu sili kojom drugo telo deluje na prvo, ali je suprotnog smera. (Na primer, kada top ispaljuje projektil, projektil ga pomera nazad.)
-
-Force is typically measured in Newtons. One Newton is the force required to accelerate one kilogram at a rate of one meter per second squared:
-`N = (kg)m / s^2`
-
-## Kintetika (nauka o kretanju)
-
-Kintetika je grana klasične mehanike koja se bavi kretanjem i njegovim uzrocima. In kinetics, the most important equation that you must consider is Newton’s second law.
-
-When rigid bodies are involved, you must consider that the forces acting on the body will tend to cause rotation of the body.
-
-Here is the general procedure for solving kinetics problems of interest to us:
-1. Calculate the body’s mass properties (mass, center of mass, and moment of inertia).
-2. Identify and quantify all forces and moments acting on the body.
-3. Take the vector sum of all forces and moments.
-4. Solve the equations of motion for linear and angular accelerations.
-5. Integrate with respect to time to find linear and angular velocity.
-6. Integrate again with respect to time to find linear and angular displacement.
+## Kinetička energija
 
 Kinetic energy is a form of energy associated with moving bodies. It is equal to the energy required to accelerate the body from rest, which is also equal to the energy required to bring the moving body to a stop.
 
-## Kinematika
-
-Kinematika je grana klasične mehanike koja proučava kretanje, ne uzimajući u obzir njihovu masu ni sile koje uzrokuju kretanje.
-
-## Equations of Motion (jednačine kretanja)
+## Jednačine kretanja (*equations of motion*)
 
 Equations of motion hold only when the acceleration is constant. If you have a scenario in which the acceleration changes, just break it into smaller time intervals of constant acceleration. This works perfectly in programming, because you address motion on a frame-by-frame basis.
 
@@ -86,21 +37,29 @@ These five equations can help you solve any problem related to one-dimensional m
 
 In a 3D world, we’re going to use the same formulas, but the inputs are going to be 3D vectors to represent position, speed, and acceleration. Luckily, these vectors work exactly the same as scalars in these equations.
 
-## Razdaljina (distance) i pomeraj (displacement)
+## Pređeni put (*distance*) i pomeraj (*displacement*)
 
-Displacement is the vector version of distance.
+U jednoj dimenziji (npr. kretanje po liniji), pređeni put je uvek jednak pomeraju. Čim imamo kretanje u dve ili više dimenzija, pređeni put je po pravilu duži od putanje vazdušnom linijom, koja se zove pomeraj.
 
 When calculating displacement, all you care about is where the object starts and where it ends. Whatever happens in between doesn't matter. Football is a good example of displacement versus distance. Suppose player catches the ball on the 20-yard line and starts running. There's a blocker in the way, so the receiver circles around the blocker, avoids the other defender running toward him, and eventually gets tackled on the 50-yard line. The positive 30 yards is his displacement even though the actual distance traveled is much more.
 
 ![distance-vs-displacement](slike/distance-vs-displacement.png)
 
-## Brzina (speed) i usmerena brzina (velocity)
+## Brzina (*speed*) i vektorska brzina (*velocity*)
 
 Velocity is the vector version of speed. For example, 50km/h is just a scalar (speed). However, 50km/h due east is a vector (velocity).
 
 Usmerena brzina (velocity) je vektorska verzija brzine. Usmerena brzina se izvodi iz pomeraja (displacement) u odnosu na vreme:
 `v = Δs/Δt`
 where Δs is distance traveled over the time interval Δt.
+
+Velocity is the change in position over time:
+```cpp
+Vec3 CalcVelocity(Vec3 pos0, Vec3 pos1, float time)
+{
+  return (pos1 - pos0) / time;
+}
+```
 
 Prosečna brzina u kodu:
 ```java
@@ -112,16 +71,24 @@ float calcAvgVel(float start, float end, float time)
 
 If you care only how fast an object is moving, use the speed. If you're trying to guide the motion of an object on the screen, always use velocity.
 
-## Acceleration (ubrzanje)
+## Ubrzanje (*acceleration*)
 
 Any time an object's velocity changes, it experiences an acceleration; it speeds up or slows down. The faster an object speeds up, the higher the acceleration. If the velocity doesn't change at all, the acceleration must be 0.
 
 Average acceleration is change in velocity over change in time:
 `a = Δv/Δt`
 
+Acceleration is the change in velocity over time:
+```cpp
+Vec3 CalcAcceleration(Vec3 vel0, Vec3 vel1, float time)
+{
+  return (vel1 - vel0) / time;
+}
+```
+
 This function will calculate the acceleration in seconds:
 ```java
-float calcAccelerationSeconds( float startVel, float finalVel, float time)
+float calcAccelerationSeconds(float startVel, float finalVel, float time)
 {
   return (finalVel - startVel) / time;
 }
@@ -130,6 +97,31 @@ float calcAccelerationSeconds( float startVel, float finalVel, float time)
 Any time you step on the gas pedal, the car speeds up or accelerates. As soon as you release the gas pedal, the car starts to slow down or decelerate. The only way to avoid accelerating is to turn on the cruise control.
 
 Ako čovek padne sa bicikla... If the same biker crashes while riding downhill, the slightly faster speed does quite a bit more damage because acceleration has a time squared component and is therefore much more serious than a change in mass.
+
+## Računanje brzine, položaja i ubrzanja
+
+Acceleration, velocity, and position are closely related. Velocity is the “rate of change over time” of position. Think of the way we measure velocity: in km per hour, or meters per second. Velocity is a measure of distance travelled in time. Similarly, acceleration is a measure of velocity changed in time.
+
+The relationship between position, velocity, and acceleration is very helpful, because if we know the history of an object’s position, we can figure out its velocity by asking “how much did this object move in the last second?” We can calculate acceleration similarly. More importantly, we can work backwards. If we know an object’s acceleration, we can figure out how much the velocity is supposed to change every second. And if we know the velocity, we can figure out how much the position is supposed to change every second. This technique is called “integration”.
+
+The simplest way to perform numerical integration is called Euler’s method. Here’s some pseudocode handles force, acceleration, velocity, and position (assume all start at 0):
+```
+acceleration = force / mass
+velocity += acceleration * time_step
+position += velocity * time_step
+```
+
+Euler’s method is great to build a conceptual understanding from, but it’s not quite accurate. We’ll go a step further and use Velocity Verlet integration. Instead of the above, we can do the following:
+
+```
+last_acceleration = acceleration
+position += velocity * time_step + (0.5 * last_acceleration * time_step^2)
+new_acceleration = force / mass
+avg_acceleration = (last_acceleration + new_acceleration) / 2
+velocity += avg_acceleration * time_step
+```
+
+The most significant difference between the two methods is the use of the average acceleration between the last frame and the current one. This change gives us a significant accuracy advantage.
 
 ## Momentum
 
@@ -145,14 +137,3 @@ Trik: Add a small force vector every frame in the direction the vehicle is curre
 ## Inercija
 
 When we wish to change the speed, the body shows a certain resistance against such changes. This resistance, called inertia, is a result of the body's mass. The larger the mass of the body, the smaller the change of speed will be.
-
-## Primena
-
-The process for simulating an object’s motion goes something like this:
-
-1. Figure out what the forces are on an object
-2. Add those forces up to get a single “resultant” or “net” force
-3. Use F = ma to calculate the object’s acceleration due to those forces
-4. Use the object’s acceleration to calculate the object’s velocity
-5. Use the object’s velocity to calculate the object’s position
-6. Since the forces on the object may change from moment to moment, repeat this process from #1, forever.

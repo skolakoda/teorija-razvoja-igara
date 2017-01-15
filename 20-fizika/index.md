@@ -1,5 +1,7 @@
 ## Fizika
 
+The great thing about modeling physics is this: if you model the forces correctly, you’ll get objects that behave realistically.
+
 The major components of a physics engine include:
 • Physics models
 • Simulated objects manager

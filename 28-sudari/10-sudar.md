@@ -1,10 +1,10 @@
-# Kolizija
+# Sudar (*kolizija*)
 
 Prilikom sudara, dva tela deluju jedno na drugo. Nakon sudara, njihovo kretanje se menja.
 
 we need to make a distinction between collision detection and collision response.
 
-## Kolizioni sistem
+## Sistem kolizije
 
 Any collision system should be able to do a few basic things: report collision events, perform raycasts and shapecasts, and handle phantom objects.
 

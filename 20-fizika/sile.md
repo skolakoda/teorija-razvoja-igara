@@ -1,8 +1,8 @@
-## Sile
+# Sile
 
 Gravitacija i otpor okruženja: trenje (po tlu) i vučenje (kroz vodu i vazduh).
 
-### Trenje (friction)
+## Trenje (friction)
 
 Friction resist motion due to the interaction between contacting surfaces. Thus, it is a contact force. The magnitude of the friction is a function of the normal force between the contacting surfaces and the surface roughness.
 
@@ -24,13 +24,13 @@ FK = –μK * N
 ```
 Note that the frictional force is always the opposite direction of the normal force (N) of the surface.
 
-### Vučenje (drag)
+## Vuča (drag) ili aerodinamički otpor
 
-Drag (air and fluid resistance) oppose motion like friction. In fact, a major component of fluid resistance is friction that results from the contact of the fluid with the body’s surface.
+Vuča (otpor vazduha i fluida) se opire kretanju kao trenje. In fact, a major component of fluid resistance is friction that results from the contact of the fluid with the body’s surface.
 
 Wind resistance, a type of drag, is the relative opposing force imparted on an object as it moves against still air.
 
-### Teža (gravitacija)
+## Teža (gravitacija)
 
 ![gravitacija](slike/gravitacija.png)
 
@@ -51,7 +51,7 @@ At sea level, Earth’s gravity causes an acceleration of exactly `9.80665 meter
 
 Galileo discovered an interesting property about the acceleration due to gravity, by dropping things from the Leaning Tower of Pisa: It doesn’t matter how much something weighs because they all fall at the same rate, excepting any large differences in air resistance. More massive objects exert a greater gravitational force, but this force is used to accelerate the larger mass, therefore the acceleration remains the same.
 
-### Normalna sila (Normal force)
+## Normalna sila (Normal force)
 
 Have you ever wondered why, if gravity is always pulling you down, you don't perpetually fall? Something is stopping you from falling all the way to the Earth's core. The ground actually exerts a force on you as well. The normal force is the force of the surface your object is sitting on, that counteracts gravity. It's called the normal force because this force is always perpendicular (normal) to the surface the object is on.
 
