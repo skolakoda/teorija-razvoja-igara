@@ -11,6 +11,8 @@ The major components of a physics engine include:
 • Numerical integrator
 • Game engine interface
 
+A rigid body is just a shape defined by the developer that is implicitly defined to be non-deformable. 
+
 ### Jedinice i mere
 
 Units of measure don’t matter in any physics calculation. All the formulas will work, as long as you are consistent. A measure of distance can therefore be anything you like: meters, feet, inches, and so on.

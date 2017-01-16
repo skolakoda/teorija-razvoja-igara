@@ -46,3 +46,31 @@ Enum EventType
   // and on and on....
 };
 ```
+
+## Razdvajanje briga
+
+The World should not draw itself; the Renderer should draw the World. The Player should not draw itself; the Renderer should draw the Player relative to the World.
+
+Here is how a typical rendering engine handles these things:
+
+1. Drawing an object
+
+You typically have a Renderer class that does this. It simply takes an object (Model) and draws in on the screen. It can have methods like drawSprite(Sprite), drawLine(..), drawModel(Model), whatever you feel like needing.
+
+It also uses any API you have underneath so you can have for instance a renderer that uses WebGL and one that uses Canvas. If you want to port your game to another platform, you simply write a new renderer and use that one.
+
+2. Moving an object
+
+Each object is attached to something we like to refer to as a SceneNode. You achieve this through composition. A SceneNode contains an object. That's it. What's a SceneNode? It's a simple class containg all the transformations ( position, rotation, scale ) of an object ( usually relative to another SceneNode ) together with the actual object.
+
+3. Managing the objects
+
+How are SceneNodes managed? Through a SceneManager. This class creates and keeps track of every SceneNode in your scene. You can ask it for a specific SceneNode ( usually identified by a string name like "Player" or "Table" ) or a list of all the nodes.
+
+4. Drawing the world
+
+This should be pretty obvious by now. Simply walk through every SceneNode in the scene and have the Renderer draw it in the right place. You can draw it in the right place by having the renderer store the transformations of an object before rendering it.
+
+5. Collision Detection
+
+This isn't always trivial. Usually you can query the scene about what object is at a certain point in space, or what objects will a ray intersect. This way you can create a ray from your player in the direction of the movement and ask the scene manager what's the first object that ray intersects. You can then choose to move the player to the new position, move him by a smaller amount ( to get him next to the colliding object ) or not move him at all. Make sure to have these queries handled by separate classes. They should ask the SceneManager for a list of SceneNodes, but it's another task to determine whether that SceneNode covers a point in space or intersects with a ray. Remember that the SceneManager only creates and stores nodes.

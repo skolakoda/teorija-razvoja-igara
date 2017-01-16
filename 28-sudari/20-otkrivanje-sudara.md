@@ -29,8 +29,20 @@ A collision detection routine may look something like this:
 
 Because the collision geometry and visible geometry are usually different, make collision a little smaller than the visible. The objects won’t get stuck so much, or appear to hit something that isn’t there.
 
+-----
+A broad phase should collect a bunch of possible collisions and store them all in Pair structures. These pairs can then be passed on to another portion of the engine (the narrow phase), and then resolved.
+
 ## Pristup gole sile (*brute force*)
 
 In any collision detection scheme, every object must be tested at least once. The most simple form is called a brute force test, where every object is uniquely tested (no duplication of tests) for collision with every other object. For games with very few objects, this is more than likely the fastest and simplest method. However, the computational complexity of this method increases quadratically for every object you add. This quickly becomes the biggest bottleneck of the game.
+
+## Layering
+
+Layering refers to the act of having different objects never collide with one another. This is key for having bullets fired from certain objects not affect certain other objects. For example, players on one team might want their rockets to harm the enemies but not each other.
+
+Ako predmeti nisu na istom sloju, ne proverava sudar:
+```js
+if (a.layer != b.layer) continue;
+```
 
 https://github.com/jeffThompson/CollisionDetectionFunctionsForProcessing

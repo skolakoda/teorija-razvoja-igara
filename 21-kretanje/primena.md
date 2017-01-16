@@ -1,4 +1,4 @@
-## Primena u igrama
+# Primena u igrama
 
 The process for simulating an object’s motion goes something like this:
 
@@ -16,3 +16,16 @@ Ili:
 4. Solve the equations of motion for linear and angular accelerations.
 5. Integrate with respect to time to find linear and angular velocity.
 6. Integrate again with respect to time to find linear and angular displacement.
+
+# Integracija
+
+Možemo prvo ažurirati položaj pa brzinu, ili obratno:
+```js
+// Explicit Euler
+x += v * dt
+v += (1/m * F) * dt
+// Symplectic Euler
+v += (1/m * F) * dt
+x += v * dt
+```
+These simple equations are all that we need to move all objects around with linear velocity and acceleration.
