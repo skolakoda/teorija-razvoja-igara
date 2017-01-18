@@ -1,4 +1,4 @@
-# Game loop
+# Glavna petlja (*Main loop*)
 
 A typical main loop may receive and process player input, run creature AI, update animations, update the physics system, run any world simulation that needs to happen, render the scene, and play music and sound effects. Every main loop is different and tailored for each individual game.
 
@@ -70,3 +70,11 @@ Za razliku od klasičnih programa, even if the player does absolutely nothing, t
 One problem with rendering is that your CPU spends most of its time waiting for the video card to process what it just sent. By putting the rendering system on another thread, you free up the CPU while the GPU is working its magic.
 
 ![multithread-game-loop](slike/multithread-game-loop.png)
+
+# Merenje brzine
+
+You typically aim for a target of 30-60 frames per second, which means game loop must fit within 33-16 milliseconds.
+
+![](slike/petlja.gif)
+
+![](slike/potrosnja.gif)

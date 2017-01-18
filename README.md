@@ -2,6 +2,6 @@
 
 Učimo game development
 
-## Linkovi
-
-* [Game Programming Patterns](http://gameprogrammingpatterns.com/contents.html)
+# Literatura
+* Jason L. McKesson, [Learning Modern 3D Graphics Programming](http://alfonse.bitbucket.org/oldtut/)
+* http://ogldev.atspace.co.uk/
