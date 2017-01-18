@@ -1,6 +1,6 @@
 # Matrice
 
-Matrica je pravougaoni niz brojeva, poređanih u redove i kolone.
+Matrica je niz brojeva, poređanih u redove i kolone. Tj. matrice su tabele brojeva.
 
 Za kvadratnu šemu brojeva kažemo da je matrica tipa m x n, to znači da ima m redova i n kolona. Ako matrica ima isti broj vrsta i kolona, za nju kažemo da je kvadratna matrica.
 
@@ -138,6 +138,7 @@ Matrix4X4 transpose4X4Matrix(Matrix4X4 a) {
 ```
 
 ## Linearna transformacija
+> primeri su mahom 2D. The blue original is mapped to the green grid and shapes. The origin (0,0) is marked with a black point.
 
 ![](slike/linear-transformations.png)
 
@@ -145,9 +146,35 @@ Linearna transformacija vrši se tako što se transformaciona matrica pomnoži s
 
 What makes a transformation linear is the following geometric rule: The origin must remain fixed, and all lines must remain lines.
 
-### Stretching
+### Identitet
 
-> primeri su za 2D. The blue original is mapped to the green grid and shapes. The origin (0,0) is marked with a black point.
+Jedinična (ili identična) matrica je kvadratna matrica kojoj su elementi na glavnoj dijagonali jedinice, a ostali nule. Ona u množenju ne menja druge matrice (slično kao broj 1).
+
+Za 2D:
+```
+[ 1 0
+  0 1 ]
+```
+
+Za 3D:
+```
+[ 1 0 0
+  0 1 0
+  0 0 1 ]
+```
+
+I tako dalje do N dimenzija...
+
+### Preslikavanja (refleksija)
+
+Reflection through the vertical axis:
+```
+[ -1 0
+   0 1  ]
+```
+![](slike/refleksija.png)
+
+### Stretching
 
 Transformation matrix associated with a stretch by a factor `k` along the x-axis:
 
@@ -161,6 +188,25 @@ Similarly, transformation matrix associated with a stretch by a factor `k` along
 [ 1 0
   0 k ]
 ```
+
+### Skaliranje
+
+Scaling by a factor of 3/2:
+```
+[ 3/2  0
+   0  3/2 ]
+```
+
+![](slike/skaliranje.png)
+
+### Stiskanje (*squeeze*)
+
+Squeeze mapping with r=3/2:
+```
+[ 3/2  0
+   0  2/3 ]
+```
+![](slike/squeeze.png)
 
 ### Rotation
 Transformation matrix for a rotation counter-clockwise about the origin:
@@ -194,33 +240,19 @@ Horizontal (ili vertikal) shear sa k = 1.5:
 ```
 ![](slike/VerticalShear.png)
 
-### Refleksija
+### Obrtanje (inverzija)
 
-Reflection through the vertical axis:
+Ako je matrica A:
 ```
-[ -1 0
-   0 1  ]
-```
-![](slike/refleksija.png)
-
-### Skaliranje
-
-Scaling by a factor of 3/2:
-```
-[ 3/2  0
-   0  3/2 ]
+[ a b
+  c d  ]
 ```
 
-![](slike/skaliranje.png)
+Njena inverzija je:
 
-### Stiskanje (*squeeze*)
+![](slike/inverzija.gif)
 
-Squeeze mapping with r=3/2:
-```
-[ 3/2  0
-   0  2/3 ]
-```
-![](slike/squeeze.png)
+(`a * d - b * c` se naziva determinanta matrice)
 
 ## 3D Matrices
 

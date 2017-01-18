@@ -41,3 +41,5 @@ with vertex (h, k) and axis of symmetry x = h.
 ![projektil](slike/projektil.gif)
 
 ![projektil2](slike/projektil2.gif)
+
+https://www.khanacademy.org/science/physics/two-dimensional-motion/two-dimensional-projectile-mot/v/visualizing-vectors-in-2-dimensions

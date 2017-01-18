@@ -1,5 +1,5 @@
-## Koordinatni sistemi
-> If you use the x- and y-coordinates, you are using Cartesian coordinates. If you use the angle and length of the vector, you are using polar coordinates. 
+  ## Koordinatni sistemi
+> If you use the x- and y-coordinates, you are using Cartesian coordinates. If you use the angle and length of the vector, you are using polar coordinates.
 
 ### Cartesian coordinate system
 
@@ -16,6 +16,10 @@ To get to point P, you must travel two units to the right, four units up, and fi
 ![3d-koordinate-prstima](slike/3d-koordinate-prstima.jpg)
 
 ![left_right_hand](slike/left_right_hand.gif)
+
+WebGL uses the right-hand coordinate system — the x axis points to the right, the y axis points up, and the z axis points out of the screen, as seen in the diagram:
+
+![](slike/webgl-coordinate-system.png)
 
 ### Polarni koordinatni sistem
 
