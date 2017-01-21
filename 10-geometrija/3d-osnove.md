@@ -1,6 +1,6 @@
-## Vrh (*vertex*)
+## Tačka (odnosno vrh)
 
-Different types of objects are built using vertices. A Vertex is a point in 3D coordinate system. Every vertex is described by these attributes:
+Tačka je osnova geometrije. Tačka se u 3D koordinatnom sistemu zove vrh (*vertex*). Different types of objects are built using vertices. Every vertex is described by these attributes:
 
 * Position: Identifies it in a 3D space (x, y, z).
 * Color: Holds an RGBA value (all values range from 0.0 to 1.0).
@@ -9,6 +9,6 @@ Different types of objects are built using vertices. A Vertex is a point in 3D c
 
 ## Lice (*face*)
 
-A face is a plane between vertices. For example, a cube has 8 different vertices (points in space) and 6 different faces, each constructed out of 4 vertices. A normal defines which way the face is directed in. Also, by connecting the points we're creating the edges of the cube. The geometry is built from a vertex and the face, while material is a texture, which uses a color or an image. If we connect the geometry with the material we will get a mesh.
+Lice je ravan između vrhova. For example, a cube has 8 different vertices (points in space) and 6 different faces, each constructed out of 4 vertices. A normal defines which way the face is directed in. Also, by connecting the points we're creating the edges of the cube. The geometry is built from a vertex and the face, while material is a texture, which uses a color or an image. If we connect the geometry with the material we will get a mesh.
 
 ![](slike/3d-cube.png)
