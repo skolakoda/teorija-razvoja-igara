@@ -1,4 +1,4 @@
-## Tačka (odnosno vrh)
+## Vrh (*vertex*)
 
 Tačka je osnova geometrije. Tačka se u 3D koordinatnom sistemu zove vrh (*vertex*). Different types of objects are built using vertices. Every vertex is described by these attributes:
 
