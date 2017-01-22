@@ -1,6 +1,6 @@
 ## Vrh (*vertex*)
 
-Tačka je osnova geometrije. Tačka se u 3D koordinatnom sistemu zove vrh (*vertex*). Different types of objects are built using vertices. Every vertex is described by these attributes:
+Tačka se u 3D koordinatnom sistemu zove vrh (*vertex*). Different types of objects are built using vertices. Every vertex is described by these attributes:
 
 * Position: Identifies it in a 3D space (x, y, z).
 * Color: Holds an RGBA value (all values range from 0.0 to 1.0).
