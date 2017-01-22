@@ -18,8 +18,6 @@ Dekartov 2D koordinatni sistem se lako može proširiti na 3D, dodavanjem treće
 
 3D koordinatni sistem može biti "levoruki" i "desnoruki".
 
-![3d-koordinate-prstima](slike/3d-koordinate-prstima.jpg)
-
 ![left_right_hand](slike/left_right_hand.gif)
 
 WebGL koristi desnoruki koordinatni sistem — x osa se proteže nadesno, y osa nagore, a z osa van ekrana:
