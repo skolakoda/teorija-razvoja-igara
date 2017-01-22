@@ -13,14 +13,12 @@ const glavnaPetlja = () => {
 }
 ```
 
-It is important that `render()` is called after `update()` because we want the screen to reflect a state of the application. U `update` fazi se dešavaju sva računanja vezana za logiku igre, na primer:
+U `render` fazi idu i `audio`, tj. muzika i zvučni efekti. Bitno je da `render()` ide nakon `update()`, da bi ekran oslikavao stanje igre. U `update` fazi se dešavaju sva računanja vezana za logiku igre, na primer:
 ```
   run AI
   move enemies
   resolve collisions
 ```
-
-Obično u `render` fazi ide i `audio`, tj. muzika i zvučni efekti.
 
 Za igre sa fizikom, glavna petlja će izgledati ovako:
 
