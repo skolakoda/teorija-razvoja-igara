@@ -2,9 +2,10 @@
 
 Za razliku od običnih programa, nakon pokretanja, čak i ako igrač ništa ne radi, igra neprestano ide. Zato u svim igrama postoji glavna petlja ili *game loop*. A typical main loop will receive and process player input, update game logic (world, enemies...) and render the scene. Every main loop is different and tailored for each individual game.
 
+Ovako izgleda najprostiji primer glavne petlje:
+
 ![game-loop](slike/game-loop-fixed.png)
 
-Ovako izgleda najprostiji primer glavne petlje:
 ```js
 const glavnaPetlja = () => {
   handleInput()
