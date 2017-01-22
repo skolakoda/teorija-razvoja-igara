@@ -22,9 +22,9 @@ It is important that `render()` is called after `update()` because we want the s
 
 Obično u `render` fazi ide i `audio`, tj. muzika i zvučni efekti.
 
-![](slike/glavna-petlja.png)
-
 Za igre sa fizikom, glavna petlja će izgledati ovako:
+
+![](slike/glavna-petlja.png)
 
 ```js
 const glavnaPetlja = () => {
