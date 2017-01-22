@@ -1,4 +1,4 @@
-## Rotaciono kretanje
+# Rotaciono kretanje
 
 A fundamental difference between particles and rigid bodies is that we cannot ignore rotation of rigid bodies.
 
@@ -14,7 +14,7 @@ First of all, our variables change:
 * masa -> ugaona masa ili momenat inercije (different shapes have different moments of inertia, even if they’re the same mass)
 * sila -> moment sile ili obrtni momenat
 
-### Obrtni moment (*torque*)
+## Obrtni moment (*torque*)
 
 Moment sile ili obrtni moment je tendencija sile da rotira predmet. Think of a wrench. As you push on it to get a bolt loose, you apply a certain force to the end of a wrench of some length.
 
@@ -22,14 +22,20 @@ Torque can be calculated by figuring out how far a force is applied from the cen
 
 Torque is measured by force, specified in Newton-meters. 5 Newton-meters is a 5 Newton force applied about a 1 meter length.
 
+## Drugi Njutnov zakon (prilagođen)
+
 So we can rewrite Newton’s 2nd Law for rotation:
 ```
 T = J * a
 moment sile = ugaona masa * ugaono ubrzanje
 ```
 
+It is important to understand that linear velocity is the velocity of the center of mass of a rigid body. If object has no rotational components, the velocity of the center of mass is the same for all points on a body. When orientation is introduced, points farther away from the center rotate faster than those near the center.
+
 ## Center of mass
 
 When the object rotates freely, it always rotates about the center of mass. Different objects rotate very differently, depending on their shape and how their weight is distributed.
 
 ![rotacija-centar-mase](slike/rotacija-centar-mase.png)
+
+https://gamedevelopment.tutsplus.com/tutorials/how-to-create-a-custom-2d-physics-engine-oriented-rigid-bodies--gamedev-8032

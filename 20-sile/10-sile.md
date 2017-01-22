@@ -1,4 +1,4 @@
-# Fizika
+# Sile
 
 The great thing about modeling physics is this: if you model the forces correctly, you’ll get objects that behave realistically. Glavne sile prirode su gravitacija i otpor okruženja: trenje (po tlu) i vučenje (kroz vodu i vazduh).
 

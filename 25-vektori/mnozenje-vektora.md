@@ -71,3 +71,29 @@ vec3 cross(vec3 a, vec3 b) {
     result[2] = a[0] * b[1] - a[1] * b[0];
     return result;
 }
+```
+
+## 2D vektorski proizvod (*cross product*)
+
+The 2D cross product, unlike the 3D version, does not return a vector but a scalar. This scalar value actually represents the magnitude of the orthogonal vector along the z-axis, if the cross product were to actually be performed in 3D. In a way, the 2D cross product is just a simplified version of the 3D cross product. But, the order of operations is important: a×b is not the same as b×a.
+
+Two vectors can be crossed, a scalar can be crossed with a vector, and a vector can be crossed with a scalar. Here are the operations:
+
+```cpp
+// Two crossed vectors return a scalar
+float CrossProduct(const Vec2& a, const Vec2& b)
+{
+  return a.x * b.y - a.y * b.x;
+}
+
+// cross product with a vector a and scalar s, both returning a vector
+Vec2 CrossProduct(const Vec2& a, float s)
+{
+  return Vec2( s * a.y, -s * a.x );
+}
+
+Vec2 CrossProduct(float s, const Vec2& a)
+{
+  return Vec2( -s * a.y, s * a.x );
+}
+```

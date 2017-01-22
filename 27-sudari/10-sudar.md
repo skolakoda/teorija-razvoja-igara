@@ -12,6 +12,21 @@ A collision event should give you at a very minimum the following data: the two 
 
 Sort objects into collision groups: It optimizes the entire collision system. For example, objects like a bunch of crates on the first floor can’t collide with another group of crates on the second floor if they are physically separated by something like an elevator.
 
+## Primena
+
+Prilikom sudara različitih tela, na osnovu tipa tela se poziva odgovarajuća funkcija. U pseudokodu:
+```java
+collisionCallbackArray = {
+  AABBvsAABB
+  AABBvsCircle
+  CirclevsAABB
+  CirclevsCircle
+}
+
+// type can be of either AABB or Circle
+collisionCallbackArray[A->type][B->type](A, B)
+```
+
 https://gamedevelopment.tutsplus.com/tutorials/basic-2d-platformer-physics-part-1--cms-25799
 
 https://gamedevelopment.tutsplus.com/tutorials/basic-platformer-physics-part-5-object-vs-object-collision-detection--cms-27594
