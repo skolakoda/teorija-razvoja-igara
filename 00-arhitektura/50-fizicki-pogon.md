@@ -1,8 +1,6 @@
 # Fizički pogon
 
-Physics simulation is called within the loop of your game scene.
-
-Developing a robust physics engine is difficult, but in some cases, building a simple physics engine is a good choice.
+Physics simulation is called within the loop of your game scene. Developing a robust physics engine is difficult, but in some cases, building a simple physics engine is a good choice.
 
 A physics engine helps us do two very important things for our game:
 * detect collisions between game objects
