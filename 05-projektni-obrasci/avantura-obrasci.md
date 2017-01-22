@@ -1,6 +1,6 @@
 # Standardni obrasci za avanturu
 
-## Vremenska pećina (Time Cave)
+## Vremenska pećina (*Time Cave*)
 
 A heavily-branching sequence. All choices are of roughly equal significance; there is little or no re-merging, and therefore no need for state-tracking. There are many, many endings.
 
@@ -10,7 +10,7 @@ A heavily-branching sequence. All choices are of roughly equal significance; the
 
 The time cave’s structure is both organised by chronological progression and detached from it. It’s ungrounded by regularity: possibility is so open that it often becomes fantastic or surreal, with different branches occupying wholly different realities. The player has velocity but little grasp, vast freedom but little ability to comprehend it.
 
-## Špalir (Gauntlet)
+## Špalir (*Gauntlet*)
 
 Long rather than broad, gauntlets have a relatively linear central thread, pruned by branches which end in death, backtracking, or quick rejoining. The Gauntlet generally tells one anointed story, which can be adorned with optional content or prematurely ended with failure; if there are multiple endings, they’re likely to derive from a Final Choice. Gauntlets rarely rely on state to any great extent (if they do, they are likely to evolve into a branch-and-bottleneck structure.)
 
@@ -20,7 +20,7 @@ Long rather than broad, gauntlets have a relatively linear central thread, prune
 
 There are two major varieties of gauntlet: deadly and friendly. Deadly gauntlets mostly prune the tree with failure; friendly ones mostly do so with short-range rejoining, and look a bit more like simple branch-and-bottleneck structures. Friendly gauntlets have been vastly more common in recent years, making up a high proportion of Twine works.
 
-## Grane i uska grla (Branch and Bottleneck)
+## Grane i uska grla (*Branch and Bottleneck*)
 
 The game branches, but the branches regularly rejoin, usually around events that are common to all versions of the story. To avoid obliterating the effect of past choices, branch-and-bottleneck structures almost always rely on heavy use of state-tracking (if a game doesn’t do this, chances are you are dealing with a gauntlet).
 
@@ -30,7 +30,7 @@ Somewhat rarely, the bottlenecks may be invisible – the plot branches and neve
 
 **Efekti**: Branch-and-bottleneck games tend to be heavily governed by the passage of time, while still allowing the player fairly strong grasp. The branch-and-bottleneck structure is most often used to reflect the growth of the player-character: it allows the player to construct a somewhat-distinctive story and/or personality, while still allowing for a manageable plot. There’s a tendency – not a necessary one, by any means – for playthroughs to be very similar in the early game, then diverge as the effects of earlier choices accumulate. In order for the approach to work, it has to be used in a fairly large piece; you need time to accumulate change before producing results that reflect it.
 
-## Potraga (Quest)
+## Potraga (*Quest*)
 
 The quest structure forms distinct branches, though they tend to rejoin to reach a relatively small number of winning endings (often only one). The elements of these branches have a modular structure: small, tightly-grouped clusters of nodes allowing many ways to approach a single situation, with lots of interconnection within each cluster and relatively little outside it. Re-merging is fairly common; backtracking rather less so. Quests generally involve some level of state-tracking, and do poorly when they don’t. The minimal size for a quest is relatively large, and this category includes some of the largest CYOAs.
 
@@ -38,7 +38,7 @@ The quest structure forms distinct branches, though they tend to rejoin to reach
 
 **Efekti**: This mode is well-suited for journeys of exploration, focused on setting; the quest’s structure tends to be organised by geography rather than time. Indeed, most works of this kind involve a journey with a specific purpose in mind. Quests work well for grounded, consistent worlds, but within that context the player-character’s situation is constantly changing. The narrative tends to be fragmentary or episodic, like old-school D&D encounters: little chunks of story which might not have any great significance for the big picture.
 
-## Otvorena mapa (Open Map)
+## Otvorena mapa (*Open Map*)
 
 Even though quests are structured by geography, time still plays an important part: there’s a built-in direction of travel. But take a CYOA structure, make travel between the major nodes reversible, and you have a static geography, a world in which the player can toodle about indefinitely. Often this is a literal geography and relies on extensive state-tracking both explicit and secret for narrative progress. But it’s not an uncommon mode for things with assumptions grounded in the hypertext-novel idiom – static but non-linear works like Le Reprobateur.
 
@@ -46,7 +46,7 @@ Even though quests are structured by geography, time still plays an important pa
 
 **Efekti**: This is often used as an imitation of the default style of parser IF, although some may be parallel derivation from the former’s D&D roots. As with classic map-based parser games, the narrative tends to become slower-paced and less directed; the player has more leisure to explore and grasp the world, but spends less of their time advancing the story.
 
-## Plutajući moduli (Floating Modules)
+## Plutajući moduli (*Floating Modules*)
 
 A mode only really possible in computer-based works. There is no tree – or, while there may be scattered twigs and branches, there’s no trunk. No central plot, no through-line: modular encounters become available to the player based largely on state, or perhaps randomly.
 
@@ -54,7 +54,7 @@ A mode only really possible in computer-based works. There is no tree – or, wh
 
 There are different approaches to floating-module: Emily Short has a tentative categorisation here.
 
-## Petlja i rast (Loop and Grow)
+## Petlja i rast (*Loop and Grow*)
 
 ![cyclegrow](slike/cyclegrow.png)
 
