@@ -1,7 +1,5 @@
 # Glavna petlja (*main loop*)
 
-![](slike/glavna-petlja.png)
-
 Za razliku od običnih programa, čak i ako igrač ništa ne radi, igra neprestano ide. Zato u svim igrama postoji glavna petlja ili *game loop*. A typical main loop will receive and process player input, update game logic (world, enemies...) and render the scene. Every main loop is different and tailored for each individual game.
 
 Ovako izgleda najprostiji primer glavne petlje:
@@ -21,6 +19,9 @@ It is important that `render()` is called after `update()` because we want the s
 ```
 
 Za igre sa fizikom, glavna petlja će izgledati ovako:
+
+![](slike/glavna-petlja.png)
+
 ```js
 const glavnaPetlja = () => {
   input()
