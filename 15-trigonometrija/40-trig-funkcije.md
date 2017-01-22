@@ -1,8 +1,8 @@
 # Trigonometrijske funkcije
 
-The trigonometric functions are relationships between two sides of a right triangle. Any time we have a scenario with a right triangle, the trig functions come in handy. We'll also use them in the vectors and in physics.
+Trigonometrijske funkcije su odnosi dve strane pravog trougla. Kad god imamo scenario sa pravouglim trouglovima, trigonometrijske funkcije dobro dođu. Takođe se koriste u vektorima i fizici.
 
-The most familiar trigonometric functions are the sine, cosine, and tangent:
+Najpoznatije trigonometrijske funkcije su sinus, kosinus i tangent:
 * sin = opposite / hypotenuse
 * cos = adjacent / hypotenuse
 * tan = opposite / adjacent
@@ -12,7 +12,7 @@ You can memorize them with SOH, CAH, TOA.
 
 ## Sinus i kosinus
 
-The sin() and cos() functions take only one parameter, the angle, and return a number between -1 and 1.
+The `sin()` and `cos()` functions take one parameter, the angle, and return a number between -1 and 1.
 
 Sinusoidal graph pattern repeats every 360°; this is called the fundamental period. To change the period, just place a number in front of the x.
 
@@ -47,7 +47,7 @@ void draw_sine ()
 
 ## Tangent
 
-There is a mathematical function called the tangent, which can be used to calculate the ratio of y to x:
+There is a mathematical function called the tangent, which can be used to calculate the ratio of `y` to `x`:
 ```
 tan(angle) = y / x
 ```

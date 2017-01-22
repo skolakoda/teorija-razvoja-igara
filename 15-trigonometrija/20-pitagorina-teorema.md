@@ -14,14 +14,15 @@ Pitagorina teorema važi samo za pravougle trouglove.
 
 ## Rastojanje između dve tačke
 
-Often in programming, you want to know the distance between two points on the screen.
+Često u programiranju želite da znate rastojanje između dve tačke na ekranu.
 
 ![rastojanje](slike/rastojanje.png)
 
-The easiest way to do that is to use the Pythagorean theorem.
+Najlakši način da to izračunate je Pitagorina teorema.
 
 ![rastojanje-izmedju-tacaka](slike/distance.png)
 
+Primer u kodu:
 ```js
 a = x1 - x2
 b = y1 - y2
