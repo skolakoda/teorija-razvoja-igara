@@ -1,4 +1,4 @@
-# Rotacija
+# Rotacija (vrtnja)
 
 In two dimensions, it’s quite easy to express the orientation of a rigid body. Since there is only one possible axis of rotation, the only information we need is the angle.
 
