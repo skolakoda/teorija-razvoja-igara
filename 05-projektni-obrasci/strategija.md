@@ -1,4 +1,4 @@
-## Strateški obrazac (Strategy pattern)
+## Strategija (*strategy pattern*)
 
 > switch between different heuristics for your A* search, depending on what sort of terrain you're in
 

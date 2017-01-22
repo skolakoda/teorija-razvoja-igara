@@ -1,4 +1,4 @@
-# Fasadni obrazac (Facade Pattern)
+# Fasadni obrazac (*Facade Pattern*)
 
 > simplify complex 3rd party libraries by providing a simpler interface to make your life easier
 

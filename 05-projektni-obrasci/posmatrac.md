@@ -1,4 +1,4 @@
-# Observer Design Pattern
+# Posmatrač (*Observer Pattern*)
 
 > have the renderable representation of a character, listen to events from the logical representation, in order to change the visual presentation when necessary, without needing to know anything about rendering code
 

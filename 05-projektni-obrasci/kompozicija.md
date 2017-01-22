@@ -1,4 +1,4 @@
-## Kompozitni obrazac (Composite pattern)
+## Kompozitni obrazac (*Composite pattern*)
 
 > make a scene graph of renderable objects
 

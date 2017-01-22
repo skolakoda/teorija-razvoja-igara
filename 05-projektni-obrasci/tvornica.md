@@ -1,4 +1,4 @@
-# Tvornica (Factory)
+# Tvornica (*Factory pattern*)
 
 > create NPCs or GUI widgets based on a string read from a file
 
