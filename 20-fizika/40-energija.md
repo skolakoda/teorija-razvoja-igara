@@ -1,8 +1,8 @@
-## Energija
+# Energija
 
 Energy is an alternative approach to modeling motion (pored sile).
 
-### Rad
+## Rad (*work*)
 
 In physics, work has a very precise definition. Rad je prenos energije iz jednog sistema u drugi, koji se vrši delovanjem sile duž nekog puta. Rad je jednak proizvodu sile i pređenog puta (displacement), ako sila deluje u pravcu pomeranja tela.
 
@@ -39,7 +39,7 @@ float calculateAngledWork(vector2D vect, float friction,float displacement)
 }
 ```
 
-### Kinetic Energy
+## Kinetic Energy
 
 Kinetic energy is the amount of energy an object has because it is moving. Therefore, the faster it's moving, the more kinetic energy it has. It's similar to momentum, which is mass times velocity.
 
@@ -66,7 +66,7 @@ Work-Energy Theorem states that the total work done on an object is equal to the
 W = DKE = KE f – KE i
 ```
 
-### Potential Energy
+## Potential Energy
 
 Gravitational potential energy (GPE) is the energy stored in an object due to its height off the ground. If you picked up this book and held it in the air, it would have gravitational potential energy. The potential energy was stored in the book until it was released.
 ```
@@ -76,7 +76,7 @@ GPE = m * g * y
 
 There are other types of potential energy, such as elastic potential energy.
 
-### Zakon očuvanja energije (Conservation Law)
+## Zakon očuvanja energije (Conservation Law)
 
 After being towed up the first hill, you do not need any additional motors until you reached the very end. The entire ride was governed by the law of conservation of energy. This law says that energy cannot be created or destroyed. It can only switch forms.
 
