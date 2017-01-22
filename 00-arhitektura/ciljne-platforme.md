@@ -1,8 +1,10 @@
-## Personal Computers (PC)
+# Ciljne platforme
 
-## Game Consoles
-
-## Mobile and Tablets
+Glavne ciljne platforme za razvoj igra su:
+* Desktop računari (PC)
+* Game konzole
+* Mobilni i tableti
+* Browseri
 
 ## Browser and Downloadable Games
 
