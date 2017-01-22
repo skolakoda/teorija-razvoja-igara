@@ -11,12 +11,16 @@ const glavnaPetlja = () => {
 }
 ```
 
+![game-loop](slike/game-loop.png)
+
 It is important that `render()` is called after `update()` because we want the screen to reflect a state of the application. U `update` fazi se dešavaju sva računanja vezana za logiku igre, na primer:
 ```
   run AI
   move enemies
   resolve collisions
 ```
+
+Obično u `render` fazi ide i `audio`, tj. muzika i zvučni efekti. 
 
 Za igre sa fizikom, glavna petlja će izgledati ovako:
 
@@ -31,7 +35,7 @@ const glavnaPetlja = () => {
 
 ![](slike/glavna-petlja.png)
 
-Često nakon `render` faze ide `audio`, za muziku i zvučne efekte. All of these operations occur in one giant loop that can’t take longer than 33ms per iteration (30 puta per second), ili 16.6ms po iteraciji (60 puta u sekundi).
+All of these operations occur in one giant loop that can’t take longer than 33ms per iteration (30 puta per second), ili 16.6ms po iteraciji (60 puta u sekundi).
 
 # Podela glavne petlje
 
@@ -80,8 +84,6 @@ Player presentation
    Pack
    Render
 ```
-
-![game-loop](slike/game-loop.png)
 
 One problem with rendering is that your CPU spends most of its time waiting for the video card to process what it just sent. By putting the rendering system on another thread, you free up the CPU while the GPU is working its magic.
 
