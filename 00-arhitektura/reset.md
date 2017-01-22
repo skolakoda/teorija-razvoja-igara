@@ -1,6 +1,6 @@
 # Reset
 
-Reset funkcija služi da vrati scenu na početno stanje, bez korištena grube sile, kao što je osvežavanje browsera.
+Reset funkcija služi da vrati scenu na početno stanje (bez osvežavanje browsera).
 
 # Primeri
 

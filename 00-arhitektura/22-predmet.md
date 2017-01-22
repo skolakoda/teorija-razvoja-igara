@@ -1,6 +1,6 @@
-# Predmet (GameObject, Actor, Entity...)
+# Predmet (*GameObject, Actor, Entity*)
 
-Predmetu treba proslediti da li je statičan ili dinamičan, tj. da li je pozadina ili reaguje na fiziku.
+A game actor is an object that represents a single entity in your game world. Predmetu treba proslediti da li je statičan ili dinamičan, tj. da li je drvo ili reaguje na fiziku.
 
 Između ostalog, Predmet contains all information about some given physics object. It will store the shape(s) that the object is represented by, mass data, transformation (position, rotation), velocity, torque, and so on. Here is what our body ought to look like:
 

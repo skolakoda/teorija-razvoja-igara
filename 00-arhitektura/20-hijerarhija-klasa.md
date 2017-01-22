@@ -8,17 +8,7 @@ If at all possible, try to never use multiple inheritance unless every base clas
 
 Eventually, you’d probably end up with a big inheritance tree like this one:
 
-![nasledjivanje-klasa](slike/nasledjivanje-klasa.png)
-
 ![hijerarhija](slike/hijerarhija.png)
-
-## User interface class
-
-You might have a base control class to handle things like mouse and keyboard events, positioning, and anything else that all controls need to know how to do. When you create a control such as a button or check box, you will inherit from this control.
-
-## Actor class
-
-A game actor is an object that represents a single entity in your game world. It could be an ammo pickup, a tank, a couch, an NPC, or anything you can think of.
 
 ## Inheritance vs. Composition
 
