@@ -1,4 +1,6 @@
-# Glavna petlja (*Main loop*)
+# Glavna petlja (*main loop*)
+
+![](slike/glavna-petlja.png)
 
 Za razliku od običnih programa, čak i ako igrač ništa ne radi, igra neprestano ide. Zato u svim igrama postoji glavna petlja ili *game loop*. A typical main loop will receive and process player input, update game logic (world, enemies...) and render the scene. Every main loop is different and tailored for each individual game.
 
@@ -32,7 +34,7 @@ const glavnaPetlja = () => {
 
 # Podela glavne petlje
 
-U pravim igrama glavne petlje teže da postanu prilično velike. Velika glavna petlja može biti podeljena na dve petlje: `update` i `render`. Update petlja može izgledati ovako:
+U pravim igrama glavne petlje teže da postanu prilično velike. Velika glavna petlja može biti podeljena na dve petlje: `update` i `render`. Update petlja može izgledati ovako u pseudokodu:
 
 ```
 Player update
