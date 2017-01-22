@@ -39,7 +39,11 @@ All of these operations occur in one giant loop that can’t take longer than 33
 
 # Podela glavne petlje
 
-U pravim igrama glavne petlje teže da postanu prilično velike. Velika glavna petlja može biti podeljena na dve petlje: `update` i `render`. Update petlja može izgledati ovako u pseudokodu:
+U pravim igrama glavne petlje teže da postanu prilično velike. Velika glavna petlja može biti podeljena na dve petlje: `update` i `render`.
+
+![multithread-game-loop](slike/multithread-game-loop.png)
+
+Update petlja može izgledati ovako u pseudokodu:
 
 ```
 Player update
@@ -86,8 +90,6 @@ Player presentation
 ```
 
 One problem with rendering is that your CPU spends most of its time waiting for the video card to process what it just sent. By putting the rendering system on another thread, you free up the CPU while the GPU is working its magic.
-
-![multithread-game-loop](slike/multithread-game-loop.png)
 
 # Glavna petlja sa delta vremenom
 
