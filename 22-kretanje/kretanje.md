@@ -1,21 +1,15 @@
 # Kretanje
 
-Kintetika (nauka o kretanju) je grana klasične mehanike koja se bavi kretanjem i njegovim uzrocima.
+Na računaru, možeš podesiti položaj predmeta kako god želiš. U stvarnom svetu je drugačije. Predmet ima svoj položaj, pomera se kretanjem, a kretanje se postiže dodavanjem sile. Kada radimo sa kretanjem, interesuju nas položaj, brzina i ubrzanje predmeta. Položaj predmeta se uvek odnosi na centar mase.
 
-In a game, you can set an object’s position to whatever you want. However, in the real world, you can never actually set the position of anything. Instead, the object has a position, which is modified by a motion. You have to apply force to indirectly change the motion, which will finally change the position.
-
-When you need to work with moving objects, you’ll be interested in their position, velocity, and acceleration.
-
-When an object moves through space, its location always references the center of mass.
+Nauka o kretanju se zove kintetika.
 
 ## Podela kretanja
 
-Svako čvrsto telo se sastoji od gomile tačaka. Prema načinu kretanja pojedinih tačaka u telu, kretanje delimo na:
+Svako telo se sastoji od mnoštva tačaka. Prema načinu kretanja pojedinih tačaka u telu, kretanje delimo na:
 
-* translatorno kretanje (sve tačke tela se kreću na isti način i opisuju iste putanje)
+* obično tj. translatorno kretanje (sve tačke tela se kreću na isti način i opisuju iste putanje)
 * rotaciono kretanje (različite tačke tela prelaze različite kružne putanje)
-
-Mi ćemo pod kretanjem podrazumevati translatorno kretanje, ako nije drukčije napomenuto.
 
 ![](slike/translatorno-kretanje.png)
 

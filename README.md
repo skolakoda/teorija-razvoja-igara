@@ -1,6 +1,6 @@
 # Teorija razvoja igara
 
-Pitagora, Dekart i Njutn su trojica likova nezaobilaznih u programiranju igara. Tačnije Pitagorina teorema, Dekartov koordinatni sistem i Njutnovi zakoni.
+Pitagora, Dekart i Njutn su trojica likova nezaobilaznih u razvoju igara. Tačnije: Pitagorina teorema, Dekartov koordinatni sistem i Njutnovi zakoni.
 
 # Literatura
 * Game Coding Complete
