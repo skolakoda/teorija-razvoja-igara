@@ -1,32 +1,39 @@
 # Glavna petlja (*Main loop*)
 
-Here's an example of a game loop:
+Za razliku od običnih programa, čak i ako igrač ništa ne radi, igra neprestano ide. Zato u svim igrama postoji glavna petlja ili *game loop*. A typical main loop will receive and process player input, update game logic (world, enemies...) and render the scene. Every main loop is different and tailored for each individual game.
+
+Ovako izgleda najprostiji primer glavne petlje:
 ```js
-function mainLoop() {
+const glavnaPetlja = () => {
   handleInput()
   update()
   render()
 }
 ```
 
-It is important that draw() is called after update() because we want the screen to reflect a state of the application.
-
-A typical main loop may receive and process player input, run creature AI, update animations, update the physics system, run any world simulation that needs to happen, render the scene, and play music and sound effects. Every main loop is different and tailored for each individual game.
-
-In pseudocode, might look something like this:
-
+It is important that `render()` is called after `update()` because we want the screen to reflect a state of the application. U `update` fazi se dešavaju sva računanja vezana za logiku igre, na primer:
 ```
-while( user doesn't exit )
-  check for user input
   run AI
   move enemies
   resolve collisions
-  draw graphics
-  play sounds
-end while
 ```
 
-Malo detaljniji loop može biti podeljen na update i render. Update loop može izgledati ovako:
+Za igre sa fizikom, glavna petlja će izgledati ovako:
+```js
+const glavnaPetlja = () => {
+  input()
+  update()
+  simulatePhysics()
+  render()
+}
+```
+
+Često nakon `render` faze ide `audio`, za muziku i zvučne efekte. All of these operations occur in one giant loop that can’t take longer than 33ms per iteration (30 puta per second), ili 16.6ms po iteraciji (60 puta u sekundi).
+
+# Podela glavne petlje
+
+U pravim igrama glavne petlje teže da postanu prilično velike. Velika glavna petlja može biti podeljena na dve petlje: `update` i `render`. Update petlja može izgledati ovako:
+
 ```
 Player update
    Sense Player input
@@ -45,7 +52,6 @@ World update
       Sense restrictions
       Decision engine
       Update world
-End
 ```
 
 Render loop može izgledati ovako:
@@ -72,10 +78,6 @@ Player presentation
    Render
 ```
 
-All of these operations occur in one giant loop that can’t take longer than 33ms per iteration (30 iterations per second).
-
-Za razliku od klasičnih programa, even if the player does absolutely nothing, the game still needs to be constantly thinking and processing.
-
 ![game-loop](slike/game-loop.png)
 
 One problem with rendering is that your CPU spends most of its time waiting for the video card to process what it just sent. By putting the rendering system on another thread, you free up the CPU while the GPU is working its magic.
@@ -85,22 +87,22 @@ One problem with rendering is that your CPU spends most of its time waiting for 
 # Glavna petlja sa delta vremenom
 
 ```js
-var then = Date.now();
+let then = Date.now();
 
-var main = function () {
-	var now = Date.now();
-	var delta = now - then;
+const mainLoop = () => {
+	requestAnimationFrame(mainLoop);
+	const now = Date.now();
+	const delta = now - then;
 	update(delta / 1000);
 	render();
 	then = now;
-	requestAnimationFrame(main);
 }
 ```
 
 We get the modifier to send to update by dividing by 1000 (the number of milliseconds in one second).
 
 ```js
-var update = function (modifier) {
+const update = function (modifier) {
 	hero.x -= hero.speed * modifier;
 }
 ```
