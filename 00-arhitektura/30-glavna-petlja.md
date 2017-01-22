@@ -22,6 +22,8 @@ It is important that `render()` is called after `update()` because we want the s
 
 Obično u `render` fazi ide i `audio`, tj. muzika i zvučni efekti.
 
+![](slike/glavna-petlja.png)
+
 Za igre sa fizikom, glavna petlja će izgledati ovako:
 
 ```js
@@ -32,8 +34,6 @@ const glavnaPetlja = () => {
   render()
 }
 ```
-
-![](slike/glavna-petlja.png)
 
 All of these operations occur in one giant loop that can’t take longer than 33ms per iteration (30 puta per second), ili 16.6ms po iteraciji (60 puta u sekundi).
 
