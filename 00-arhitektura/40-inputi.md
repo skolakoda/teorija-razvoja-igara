@@ -1,4 +1,4 @@
-# Upravljanje inputima
+# Upravljanje unosima (*Input Manager class*)
 
 The first important difference from web development is that the input events doesn't actually do anything right away. If a user presses a key in a typical web app, it makes sense to immediately perform the desired action. But in a game, things have to happen in chronological order to flow correctly.
 
