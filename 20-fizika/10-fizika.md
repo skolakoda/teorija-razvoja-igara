@@ -4,10 +4,6 @@ The great thing about modeling physics is this: if you model the forces correctl
 
 ![](slike/basic-forces.png)
 
+In a simulated physics world, bodies are moved by the application of forces and impulses. Forces typically affect bodies more gradually than impulses. They are constantly applied over time (like gravity or an engine). Impulses are immediately-applied adjustments to a body's momentum, usually on user input.
+
 Units of measure don’t matter in any physics calculation. All the formulas will work, as long as you are consistent.
-
-A rigid body is a shape defined by the developer that is implicitly defined to be non-deformable.
-
-https://gamedevelopment.tutsplus.com/articles/whats-in-a-projectile-physics-engine--cms-21584
-
-https://gamedevelopment.tutsplus.com/series/how-to-create-a-custom-physics-engine--gamedev-12715
