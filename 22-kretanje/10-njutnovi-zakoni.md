@@ -1,6 +1,6 @@
 # Njutnovi zakoni kretanja
 
-Isak Njutn je u 17. veku otkrio tri zakona koja regulišu sva kretanja na Zemlji (osim na molekularnom nivou). Najvažniji je Njutnov drugi zakon, koji upravlja gotovo svim interakcijama predmeta u igrama.
+Isak Njutn je u 17. veku otkrio tri zakona koja regulišu svo kretanje na Zemlji (osim na molekularnom nivou). Najvažniji je Njutnov drugi zakon, koji upravlja gotovo svim interakcijama predmeta u igrama.
 
 The first two laws are implemented in the integration stage, and the third during resolution of collisions.
 
@@ -10,7 +10,11 @@ The first two laws are implemented in the integration stage, and the third durin
 
 ![](slike/zakon-inercije.gif)
 
-It is the natural tendency of objects to keep on doing what they're doing. Ako se kreće, kretaće se, ako miruje, mirovaće. This specifies scenario when the net force is 0. Međutim, priroda se na razne načine opire kretanju tela.
+Prirodna je tendencija tela da zadrži svoje stanje. Ako se kreće, kretaće se, ako miruje, mirovaće.
+
+Ovaj scenario važi samo kada je razultat svih sila 0, tj. kada je telo neometano. U praksi, ravnomerno kretanje nikada ne potraje, jer se priroda raznim silama opire kretanju: gravitacijom, trenjem (po tlu) i vučenjem (kroz vodu i vazduh).
+
+Zakon inercije vidimo na delu prilikom sudara, kada telo vozača teži da ostane u stanju kretanja.
 
 ## Drugi Njutnov zakon (Zakon sile)
 
