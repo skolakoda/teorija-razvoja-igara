@@ -4,17 +4,15 @@ Energy is an alternative approach to modeling motion (pored sile).
 
 ## Rad (*work*)
 
-In physics, work has a very precise definition. Rad je prenos energije iz jednog sistema u drugi, koji se vrši delovanjem sile duž nekog puta. Rad je jednak proizvodu sile i pređenog puta (displacement), ako sila deluje u pravcu pomeranja tela.
+In physics, work has a very precise definition. Rad je prenos energije iz jednog sistema u drugi, koji se vrši delovanjem sile. Rad se vrši kada sila primenjena na predmet pomera taj predmet. Rad je jednak proizvodu sile i pomeraja (*displacement*), ako sila deluje u pravcu pomeranja tela. Object must move for work to be done.
 
 ```
-W = F * Dx
+W = F * s
 ```
-
-Object must move for work to be done.
 
 The force is measured in Newtons, and the displacement is measured in meters, which means that the work is measured in Newton-meters (N*m). This unit has been renamed the joule (J), so `1 J = 1 N * m`.
 
-Programming the calculation for work is fairly straightforward. Here is a function that returns the amount of work done (in Joules), given a force, a friction force, and a displacement:
+Programming the calculation for work is fairly straightforward. Here is a function that returns the amount of work done, given a force, a friction force, and a displacement:
 
 ```java
 float calculateWork(float force, float friction, float displacement)
@@ -39,16 +37,14 @@ float calculateAngledWork(vector2D vect, float friction,float displacement)
 }
 ```
 
-## Kinetic Energy
+## Kinetička energija
 
-Kinetic energy is the amount of energy an object has because it is moving. Therefore, the faster it's moving, the more kinetic energy it has. It's similar to momentum, which is mass times velocity.
+Kinetička energija je količina energije koju predmet ima usled kretanja. The faster it's moving, the more kinetic energy it has. It's similar to momentum, which is mass times velocity. It is equal to the energy required to accelerate the body from rest, which is also equal to the energy required to bring the moving body to a stop.
 
-The kinetic energy is one-half of the mass times the speed squared:
+The kinetic energy is one-half of the mass times the speed squared (scalar quantity):
 ```
 KE = 1/2m * v^2
 ```
-
-Notice that the definition is based on speed rather than velocity. Because kinetic energy is also a scalar quantity, the direction doesn't matter.
 
 This function will calculate kinetic energy given a mass in kilograms and a speed in meters per second:
 
@@ -66,17 +62,18 @@ Work-Energy Theorem states that the total work done on an object is equal to the
 W = DKE = KE f – KE i
 ```
 
-## Potential Energy
+## Potencijalna energija
 
-Gravitational potential energy (GPE) is the energy stored in an object due to its height off the ground. If you picked up this book and held it in the air, it would have gravitational potential energy. The potential energy was stored in the book until it was released.
+Potencijalna energija je energija koju telo ima u vezi sa položajem ili oblikom, spremna da se pretvori u kinetičku energiju. Na primer, elastična potencijalna energija je povezana sa elastičnim silama koja deluju na elastičnost deformisanog tela.
+
+Gravitaciona potencijalna energija (GPE) je povezana sa gravitacionom silom koja dejstvuje na masu tela. To je energija smeštena u predmetu usled njegove visine od tla. If you picked up a stone and held it in the air, it would have gravitational potential energy. The potential energy was stored in the stone until it was released.
+
 ```
 GPE = m * g * y
+GPE = masa * gravitacija * visina
 ```
-(m = mass, g = acceleration due to gravity, y = height)
 
-There are other types of potential energy, such as elastic potential energy.
-
-## Zakon očuvanja energije (Conservation Law)
+## Zakon očuvanja energije
 
 After being towed up the first hill, you do not need any additional motors until you reached the very end. The entire ride was governed by the law of conservation of energy. This law says that energy cannot be created or destroyed. It can only switch forms.
 
@@ -88,4 +85,4 @@ The faster an object moves, the more kinetic energy it has, and the higher it is
 
 As time goes on, energy is lost. In real life, some energy is lost to heat and sound because of friction and air resistance, but calculating the precise amount can be quite expensive in terms of processing power.
 
-Cheat: adding an extra value that represents heat and sound energy to the left side of the conservation law forces a reduction in kinetic and potential energy, which produces a more realistic result.
+Savet: add an extra value that represents heat and sound energy, which produces a more realistic result.

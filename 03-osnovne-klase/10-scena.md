@@ -1,4 +1,4 @@
-# Graf Scena
+# Scena kao graf
 
 A scene graph is a dynamic data structure, similar to a multiway tree. Each node represents an object in a game world or perhaps an instruction to the renderer. Every node can have zero or more children nodes.
 
