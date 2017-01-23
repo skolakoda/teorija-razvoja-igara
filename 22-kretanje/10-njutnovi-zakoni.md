@@ -12,7 +12,7 @@ The first two laws are implemented in the integration stage, and the third durin
 
 It is the natural tendency of objects to keep on doing what they're doing. Ako se kreće, kretaće se, ako miruje, mirovaće. This specifies scenario when the net force is 0. Međutim, priroda se na razne načine opire kretanju tela.
 
-## Drugi Njutnov zakon
+## Drugi Njutnov zakon (Zakon sile)
 
 >	Ubrzanje je srazmerno primenjenoj sili, a obrnuto srazmerno masi tela.
 
