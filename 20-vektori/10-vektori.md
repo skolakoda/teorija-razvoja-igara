@@ -1,14 +1,37 @@
 # Vektori
 
-Vektor je niz brojeva kojima označavamo dužinu i smer. Vektore možemo zapisati u polarnim ili Dekartovim koordinatama. U prvom slučaju upisujemo dužinu i smer, a u drugom pomeraj po x i y osi.
+Vektori su ušli u nauku u 19. veku, kada su matematičari i fizičari pokušavali da opišu kretanje, umesto statičnih tela. Vektore i matrice proučava linearna algebra.
 
-Vektor možemo vizuelizovati kao duž koja ima glavu i rep. Dužina vektora se naziva intenzitet.
+U programiranju, vektor je niz brojeva kojima beležimo dužinu i smer. Vektor možemo vizuelizovati kao duž koja ima glavu i rep. Dužina vektora se naziva intenzitet.
 
 ![vektori](slike/vectori.png)
 
-Vectors entered math in the 19 century, as mathematicians and physicists wrestled to describe motion, rather than static position. Vektore i matrice proučava linearna algebra.
+Obrtanje smera vektora je veoma jednostavno. Just switch the tail and the head, tj. swap the two coordinates.
 
-Možemo koristiti Pitagorinu teoremu za računanje dužine vektora.
+## Zapisivanje vektora
+
+Vektore možemo zapisati u polarnim ili Dekartovim koordinatama. U prvom slučaju direktno upisujemo dužinu i smer (odnosno ugao), a u drugom pomeraj po osama (x, y, i evenualno z).
+
+Polarni zapis:
+```
+duzina = 5
+smer = PI/4 (45 stepeni)
+```
+
+Kartezijanski zapis:
+```
+x = 3.53
+y = 3.53
+```
+
+Iz polarnog zapisa lako možemo dobiti `x` i `y` komponentu vektora. Za računanje `x` komponente koristimo `kosinus()` funkciju, a za `y` komponentu `sinus()`. Obe funkcije primaju ugao, a vraćaju broj između -1 i 1. Kada pomnožimo taj broj sa dužinom vektora, dobijemo odgovarajuću komponentu:
+
+```
+duzina_x = duzina * cos(ugao);
+duzina_y = duzina * sin(ugao);
+```
+
+S druge strane, ako imamo x i y komponentu vektora, dužinu možemo računati Pitagorinom teoremom:
 
 ![vector-magnitude](slike/vector-magnitude.jpg)
 
@@ -36,41 +59,10 @@ Prvo što treba napraviti je prosta vektor klasa koja radi vektorsko sabiranje, 
 
 Ukratko, postanite komotni sa vektorima.
 
-## Skalari
+# Skalari
 
-U kontekstu vektora, običan broj nazivamo skalar. Skalar je svaka veličina koja može biti merena pomoću jednog broja (temperatura, dužina, masa...). Zove se skalar jer skalira vektor.
+U kontekstu vektora, običan broj zovemo skalar. Skalar je svaka veličina koja može biti izražena pomoću jednog broja (temperatura, dužina, masa...). Zove se skalar jer skalira vektor.
 
-Razlika između vektora i skalara je u smeru.
-
-For example, your friend calls and asks you to come pick him up because he's only 2 miles away. You say no problem and hop in your car. But how will you find him? If he had said 2 miles due east, you could find him. To je razlika između vektora i skalara.
-
-## Normal Vectors
-
-A vector is said to be normal to a surface if it is perpendicular to it. Be careful not to confuse the term “normalization” with the term “normal vector.”
-
-## Vector unit circle
-
-Dot proizvod dva normalizovana 2D vektora od kojih je jedan jedinični vektor (1, 0) je uvek x komponenta drugog. Na primer:
-```
-(0.8, 0.6) * (1, 0) = 0.8 * 1 + 0.6 * 0 = 0.8 + 0 = 0.8
-```
-
-Na kraju dobijamo neku vrstu jediničnog kruga, gde je dot proizvod zapravo kosinus.
-
-![vector-unit-circle](slike/vector-unit-circle.png)
-
-## Direction Inversion
-
-Geometrically, direction Inversion of the vector is very simple. Just switch the tail and the head.
-
-If you think of vectors in terms of Cartesian coordinates, inverting is a simple matter of swapping the two coordinates.
-
-## Trigonometrijske funkcije
-
-The sine can be used to calculate the y-coordinate of a vector, and the cosine can be used to calculate the x-coordinate. The sin() and cos() functions take the angle, and return a number between -1 and 1. If you multiply this number by the length of the vector, you will get the exact Cartesian coordinates of the vector:
-```
-speed_x = speed * cos(angle);
-speed_y = speed * sin(angle);
-```
+Razlika između vektora i skalara je u smeru. For example, your friend calls and asks you to come pick him up because he's only 2 miles away. You say no problem and hop in your car. But how will you find him? If he had said 2 miles due east, you could find him. To je razlika između vektora i skalara.
 
 http://alfonse.bitbucket.org/oldtut/Basics/Introduction.html
