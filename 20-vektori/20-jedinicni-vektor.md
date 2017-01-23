@@ -15,17 +15,3 @@ U igrama, kada radimo sa smerovima (nasuprot položaja i brzina), bitno je da bu
 # Normalni vektori
 
 Vektori su normalni u odnosu na površinu kada su pod pravim uglom. Normalni vektori nemaju nikakve veze sa normalizacijom vektora.
-
-# Vektorski jedinični krug
-
-Skalarni proizvod dva normalizovana 2D vektora, od kojih je jedan (1, 0), je uvek x komponenta drugog. Na primer:
-```
-(0.8, 0.6) * (1, 0)
-= 0.8 * 1 + 0.6 * 0
-= 0.8 + 0
-= 0.8
-```
-
-Na kraju dobijamo neku vrstu jediničnog kruga, gde je skalarni proizvod vektora zapravo kosinus.
-
-![vector-unit-circle](slike/vector-unit-circle.png)
