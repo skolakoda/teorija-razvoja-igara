@@ -4,6 +4,8 @@ Isaac Newton discovered three laws that govern all motion on Earth (except for o
 
 In kinetics, the most important equation that you must consider is Newton’s second law. Newton’s 2nd law will drive nearly all of our objects’ interactions.
 
+The third law is taken care of during resolution of collisions. The first two laws are handled in the integration stage.
+
 ## Prvi Njutnov zakon (Zakon inercije)
 
 * Svako telo ostaje u stanju relativnog mirovanja ili ravnomernog pravolinijskog kretanja sve dok ga dejstvo drugog tela ne prisili da to stanje promeni. (Neometano, ako se kreće, kretaće se, ako miruje, mirovaće).

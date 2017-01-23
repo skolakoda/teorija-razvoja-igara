@@ -44,7 +44,7 @@ Vec3 CalcVelocity(Vec3 pos0, Vec3 pos1, float time)
 }
 ```
 
-If you care only how fast an object is moving, use the speed. If you're trying to guide the motion of an object, always use velocity.
+If you care only how fast an object is moving, use the speed. If you're trying to guide the motion of an object, always use velocity. Mi ćemo pod brzinom nadalje podrazumevati vektorsku brzinu.
 
 ## Ubrzanje (*acceleration*)
 
@@ -67,45 +67,16 @@ Any time you step on the gas pedal, the car speeds up or accelerates. As soon as
 
 Ako čovek padne sa bicikla na nizbrdici, neznatno veća brzina čini znatno veću štetu, because acceleration has a time squared component and is therefore much more serious than a change in mass.
 
-## Računanje brzine, položaja i ubrzanja
-
-Acceleration, velocity, and position are closely related. Velocity is the “rate of change over time” of position. Think of the way we measure velocity: in km per hour, or meters per second. Similarly, acceleration is a measure of velocity changed in time.
-
-The relationship between position, velocity and acceleration is very helpful, because if we know the history of an object’s position, we can figure out its velocity by asking “how much did this object move in the last second?” We can calculate acceleration similarly. More importantly, if we know an object’s acceleration, we can figure out how much the velocity is supposed to change every second. And if we know the velocity, we can figure out how much the position is supposed to change every second. This technique is called “integration”.
-
-The simplest way to perform numerical integration is called Euler’s method. Here’s some pseudocode handles force, acceleration, velocity, and position (assume all start at 0):
-```
-acceleration = force / mass
-velocity += acceleration * time_step
-position += velocity * time_step
-```
-
-Euler’s method is great to build a conceptual understanding from, but it’s not quite accurate. We’ll go a step further and use Velocity Verlet integration. Instead of the above, we can do the following:
-
-```
-last_acceleration = acceleration
-position += velocity * time_step + (0.5 * last_acceleration * time_step^2)
-new_acceleration = force / mass
-avg_acceleration = (last_acceleration + new_acceleration) / 2
-velocity += avg_acceleration * time_step
-```
-
-The most significant difference between the two methods is the use of the average acceleration between the last frame and the current one. This change gives us a significant accuracy advantage.
-
 ## Jednačine kretanja (*equations of motion*)
-
-Equations of motion hold only when the acceleration is constant. If you have a scenario in which the acceleration changes, just break it into smaller time intervals of constant acceleration. This works perfectly in programming, because you address motion on a frame-by-frame basis.
 
 These five equations can help you solve any problem related to one-dimensional motion with constant acceleration:
 
-* final velocity = initial velocity + acceleration * time
-* average velocity = (initial velocity + final velocity) / 2
-* displacement = 1/2 (initial velocity + final velocity) * time
-* displacement = initial velocity * time + 1/2 acceleration * time^2
-* final velocity^2 = initial velocity^2 + 2 * acceleration * displacement.
+* krajnja brzina = pocetna brzina + ubrzanje * vreme
+* prosecna brzina = (pocetna brzina + krajnja brzina) / 2
+* pomeraj = 1/2 (pocetna brzina + krajnja brzina) * vreme
+* pomeraj = pocetna brzina * vreme + 1/2 ubrzanje * vreme^2
+* krajnja brzina^2 = pocetna brzina^2 + 2 * ubrzanje * pomeraj
 
-In a 3D world, we’re going to use the same formulas, but the inputs are going to be 3D vectors to represent position, speed, and acceleration. Luckily, these vectors work exactly the same as scalars in these equations.
+In a 3D world, we’re going to use the same formulas, but the inputs are going to be 3D vectors. Luckily, these vectors work exactly the same as scalars in these equations.
 
-
-http://gafferongames.com/game-physics/integration-basics/
-http://physicsforgames.blogspot.rs/2010/02/kinematic-integration.html
+Jednačine kretanja važe samo kad je ubrzanje konstantno. Ako se ubrzanje u igri menja, podeli ga u manje vremenske intervale konstantnog ubrzanja. Ovo radi savršeno, jer se računanje vrši svakog kadra.
