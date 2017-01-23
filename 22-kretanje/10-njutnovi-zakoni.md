@@ -14,6 +14,8 @@ It is the natural tendency of objects to keep on doing what they're doing. Ako s
 
 >	Ubrzanje je srazmerno primenjenoj sili, a obrnuto srazmerno masi tela.
 
+![](slike/newtons-first-law.png)
+
 Dakle, ubrzanje izaziva sila, a protivi mu se masa:
 
 ```
