@@ -31,6 +31,8 @@ duzina_y = duzina * sin(ugao);
 
 S druge strane, ako imamo x i y komponentu vektora, dužinu možemo računati Pitagorinom teoremom.
 
+![vector-magnitude](slike/vektori-pitagora.jpg)
+
 ![vector-magnitude](slike/vector-magnitude.jpg)
 
 ## Vektori u igrama
