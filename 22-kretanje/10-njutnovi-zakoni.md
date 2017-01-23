@@ -2,8 +2,6 @@
 
 Isak Njutn je u 17. veku otkrio tri zakona koja regulišu svo kretanje na Zemlji (osim na molekularnom nivou). Najvažniji je Njutnov drugi zakon, koji upravlja gotovo svim interakcijama predmeta u igrama.
 
-Prvi i drugi zakon se implementiraju u fazi integracije, a treći tokom razrešenja sudara.
-
 ## Prvi Njutnov zakon (Zakon inercije)
 
 > Svako telo ostaje u stanju relativnog mirovanja ili ravnomernog pravolinijskog kretanja sve dok ga dejstvo drugog tela ne prisili da to stanje promeni.
@@ -47,3 +45,7 @@ Fz = m * az
 Na primer, kada top ispaljuje projektil, projektil ga pomera nazad.
 
 ![](slike/top.gif)
+
+## Primena
+
+Prvi i drugi zakon se implementiraju u fazi integracije, a treći tokom razrešenja sudara.
