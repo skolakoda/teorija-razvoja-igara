@@ -1,6 +1,6 @@
 # Njutnovi zakoni kretanja
 
-Isaac Newton in the late 17th century discovered three laws that govern all motion on Earth (osim na molekularnom nivou). The most important is Newton’s second law, that will drive nearly all of our objects’ interactions.
+Isak Njutn je u 17. veku otkrio tri zakona koja regulišu sva kretanja na Zemlji (osim na molekularnom nivou). Najvažniji je Njutnov drugi zakon, koji upravlja gotovo svim interakcijama predmeta u igrama.
 
 The first two laws are implemented in the integration stage, and the third during resolution of collisions.
 
