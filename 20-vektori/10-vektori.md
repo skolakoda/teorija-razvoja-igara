@@ -1,27 +1,25 @@
 # Vektori
 
-Vektori su ušli u nauku u 19. veku, kada su matematičari i fizičari pokušavali da opišu kretanje, umesto statičnih tela. Vektore i matrice proučava linearna algebra.
+Vektori su ušli u nauku u 19. veku, kada su matematičari i fizičari nastojali da opišu kretanje, umesto statičnog sveta. Vektore i matrice proučava linearna algebra.
 
-U programiranju, vektor je niz brojeva kojima beležimo dužinu i smer. Vektor možemo vizuelizovati kao duž koja ima glavu i rep. Dužina vektora se naziva intenzitet.
+U programiranju, vektor je niz brojeva kojima zapisujemo dužinu i smer. Vektor možemo vizuelizovati kao duž koja ima glavu i rep. Dužina vektora se naziva intenzitet.
 
 ![vektori](slike/vectori.png)
 
-Obrtanje smera vektora je veoma jednostavno. Just switch the tail and the head, tj. swap the two coordinates.
+Obrtanje smera vektora je veoma jednostavno. Samo zamenimo glavu i rep, tj. obrnemo dve koordinate.
 
 ## Zapisivanje vektora
 
-Vektore možemo zapisati u polarnim ili Dekartovim koordinatama. U prvom slučaju direktno upisujemo dužinu i smer (odnosno ugao), a u drugom pomeraj po osama (x, y, i evenualno z).
-
-Polarni zapis:
+Vektore možemo zapisati u polarnim ili Dekartovim koordinatama. Polarnim zapisom čuvamo dužinu i smer vektora:
 ```
 duzina = 5
 smer = PI/4 (45 stepeni)
 ```
 
-Kartezijanski zapis:
+Kartezijanskim zapisom čuvamo pomeraj vektora po osama (x, y, i evenualno z):
 ```
-x = 3.53
-y = 3.53
+duzina_x = 3.53
+duzina_y = 3.53
 ```
 
 Iz polarnog zapisa lako možemo dobiti `x` i `y` komponentu vektora. Za računanje `x` komponente koristimo `kosinus()` funkciju, a za `y` komponentu `sinus()`. Obe funkcije primaju ugao, a vraćaju broj između -1 i 1. Kada pomnožimo taj broj sa dužinom vektora, dobijemo odgovarajuću komponentu:
@@ -31,7 +29,7 @@ duzina_x = duzina * cos(ugao);
 duzina_y = duzina * sin(ugao);
 ```
 
-S druge strane, ako imamo x i y komponentu vektora, dužinu možemo računati Pitagorinom teoremom:
+S druge strane, ako imamo x i y komponentu vektora, dužinu možemo računati Pitagorinom teoremom.
 
 ![vector-magnitude](slike/vector-magnitude.jpg)
 
