@@ -1,47 +1,44 @@
 # Vektori
 
-Vektor je veličina koja ima intenzitet i smer. Vektore i matrice proučava linearna algebra.
-
-Vektor možemo vizuelizovati kao duž koja ima glavu i rep.
+Vektor je niz dva ili tri broja kojima označavamo dužinu i smer. Vektor možemo vizuelizovati kao duž koja ima glavu i rep. Dužina vektora se naziva intenzitet.
 
 ![vektori](slike/vectori.png)
 
-Intenzitet je dužina vektora. We can use the Pythagorean theorem to calculate a vector’s magnitude.
+Možemo koristiti Pitagorinu teoremu za računanje dužine vektora.
 
 ![vector-magnitude](slike/vector-magnitude.jpg)
 
-Vectors entered math in the 19 century, as mathematicians and physicists wrestled to describe motion, rather than static position.
+Vectors entered math in the 19 century, as mathematicians and physicists wrestled to describe motion, rather than static position. Vektore i matrice proučava linearna algebra.
 
 ## Vektori u igrama
 
-In games, vectors are used to store positions, directions, and velocities. Here are some 2-Dimensional examples:
+U programiranju igara, vektori su nezaobilazni. Koriste se za čuvanje položaja, smera, brzine. Ovo su neki 2D primeri:
 
 ![vektori](slike/vektori-u-igrama.jpg)
 
-The position vector indicates that the man is standing two meters east of the origin, and one meter north. The velocity vector shows that in one minute, the plane moves three kilometers up, and two to the left. The direction vector tells us that the pistol is pointing to the right. As you can see, a vector by itself is just a set of numbers -- it is only given meaning by its context. For this reason, it's important to keep track of your units. Let's say we have a vector V (3,5,2). This doesn't mean much by itself. Three what? Five what? In some games, positions are always given in meters, and velocities in meters per second.
+Vektor položaja znači da čikica stoji 2 metra istočno i jedan metar severno od ishodišta. Vektor brzine pokazuje da u jednom minutu avion ide 3 kilometra gore i 2 levo. Vektor smera pokazuje da je pištolj uperen udesno. Kao što vidimo, vektor je samo skup brojeva, čije značenje zavisi od konteksta. Zbog toga je bitno da vodimo računa o jedinicama. In some games, positions are always given in meters, and velocities in meters per second.
 
-There are no built-in data types for storing vectors. Vectors can be coded as an array of numbers or as a user-defined structure.
+Ne postoji ugrađeni tip za čuvanje vektora. Vektori se obično čuvaju u strukturama poput niza ili specijalizovane klase. Ovo je prost primer Vektor klase, koja opciono prima treću (`z`) dimenziju:
 
-```c
-struct 3Dvector
-{
-  float x, y, z;
-};
+```js
+class Vektor {
+  constructor(x, y, z = 0) {
+    this.x = x
+    this.y = y
+    this.z = z
+  }
+}
 ```
 
-It is possible to create an extremely powerful structure or class which can encompass almost every operation which could be needed.
+Prvo što treba napraviti je prosta vektor klasa koja radi vektorsko sabiranje, oduzimanje, razne vrste množenja (dot product, cross product) i rotaciju. Ostatak naše fizike će bit izgrađen na vektorima.
 
-In short: get comfortable with vectors. The first thing you should do is write a simple vector class that does vector addition, subtraction, multiplication, dot product, cross product, and rotation. That’s all you need. The rest of your physics engine will be built atop vectors.
+Ukratko, postanite komotni sa vektorima.
 
 ## Skalari
 
-When we talk about vectors, we refer to individual numbers as scalars. Scalars are any quantity that can be measured using a number (temperature, length, mass...). It have magnitude but no direction.
+U kontekstu vektora, običan broj nazivamo skalar. Skalar je svaka veličina koja može biti merena pomoću jednog broja (temperatura, dužina, masa...). Zove se skalar jer skalira vektor.
 
-Zove se skalar jer skalira vektor.
-
-## Vector vs. Scalar
-
-The difference between vectors and scalars lies in the direction.
+Razlika između vektora i skalara je u smeru.
 
 For example, suppose your friend is having car trouble, and he calls and asks you to come pick him up because he's only 2 miles away. You say no problem and hop in your car. But how will you find him? If he had said 2 miles due east on your street, you might have had a better chance of locating him. That's the difference between vectors and scalars.
 
