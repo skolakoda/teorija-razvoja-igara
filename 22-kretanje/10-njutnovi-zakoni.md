@@ -1,6 +1,6 @@
 # Njutnovi zakoni kretanja
 
-Isaac Newton in the late 17th century discovered three laws that govern all motion on Earth. The most important is Newton’s second law, that will drive nearly all of our objects’ interactions.
+Isaac Newton in the late 17th century discovered three laws that govern all motion on Earth (osim na molekularnom nivou). The most important is Newton’s second law, that will drive nearly all of our objects’ interactions.
 
 The first two laws are implemented in the integration stage, and the third during resolution of collisions.
 
@@ -39,3 +39,5 @@ Fz = m * az
 >	Sila kojom jedno telo deluje na drugo telo jednaka je po intenzitetu sili kojom drugo telo deluje na prvo, ali je suprotnog smera.
 
 Na primer, kada top ispaljuje projektil, projektil ga pomera nazad.
+
+![](slike/top.gif)
