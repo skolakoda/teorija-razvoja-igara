@@ -16,7 +16,7 @@ duzina = 5
 smer = PI/4 (45 stepeni)
 ```
 
-Kartezijanskim načinom zapisujemo pomeraj vektora po osama (x, y, i evenualno z):
+Kartezijanskim načinom zapisujemo pomeraj vektora po osama (x, y, i po potrebi z):
 ```
 duzina_x = 3.53
 duzina_y = 3.53
@@ -60,5 +60,3 @@ Da bismo počeli da radimo sa vektorima, prvo što treba napraviti je prosta vek
 U kontekstu vektora, obične brojeve zovemo skalarima. Skalar je svaka veličina koja može biti izražena pomoću jednog broja (temperatura, dužina, masa...). Zove se skalar jer skalira vektor.
 
 Razlika između vektora i skalara je u smeru. Ako kažeš prijatelju da te pokupi kolima, jer se nalaziš 2 km od njega, po svoj prilici te neće naći. Ali, ako mu kažeš da si 2 km južno, onda ima šanse da te pokupi. To je jedina razlika.
-
-http://alfonse.bitbucket.org/oldtut/Basics/Introduction.html
