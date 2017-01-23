@@ -11,10 +11,6 @@ w = m * g
 
 Even though we tend to use mass and weight interchangeably, in physics they are two very different quantities. Mass is a scalar, weight is a vector. Mass is measured in kilograms, weight is measured in newtons. Weight can change if the gravity changes. The mass always stays the same no matter where the object is.
 
-If mass is measured in kilograms, when you multiply it by the acceleration due to gravity (`g = –9.8m/s^2`), you end up with the unit of `kg*m/s^2`. This unit has been named the Newton (`N`).
-```
-1N = 1kg * m/s^2
-```
 At sea level, Earth’s gravity causes an acceleration of exactly `9.80665 meters/s^2` on every object. Thus, a one kilogram object exerts a force of 9.80665N.
 
 Galileo discovered an interesting property about the acceleration due to gravity, by dropping things from the Leaning Tower of Pisa: It doesn’t matter how much something weighs because they all fall at the same rate, excepting any large differences in air resistance. More massive objects exert a greater gravitational force, but this force is used to accelerate the larger mass, therefore the acceleration remains the same.
