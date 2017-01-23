@@ -10,13 +10,13 @@ Obrtanje smera vektora je veoma jednostavno. Samo zamenimo glavu i rep, tj. obrn
 
 ## Zapisivanje vektora
 
-Vektore možemo zapisati u polarnim ili Dekartovim koordinatama. Polarnim zapisom čuvamo dužinu i smer vektora:
+Vektore možemo zapisati u polarnim ili Dekartovim koordinatama. Polarnim načinom zapisujemo dužinu i smer vektora:
 ```
 duzina = 5
 smer = PI/4 (45 stepeni)
 ```
 
-Kartezijanskim zapisom čuvamo pomeraj vektora po osama (x, y, i evenualno z):
+Kartezijanskim načinom zapisujemo pomeraj vektora po osama (x, y, i evenualno z):
 ```
 duzina_x = 3.53
 duzina_y = 3.53
