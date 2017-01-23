@@ -33,8 +33,6 @@ S druge strane, ako imamo x i y komponentu vektora, dužinu možemo računati Pi
 
 ![vector-magnitude](slike/vektori-pitagora.jpg)
 
-![vector-magnitude](slike/vector-magnitude.jpg)
-
 ## Vektori u igrama
 
 U programiranju igara, vektori su nezaobilazni. Koriste se za čuvanje položaja, smera, brzine. Ovo su neki 2D primeri:
