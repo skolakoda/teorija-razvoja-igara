@@ -1,14 +1,16 @@
 # Vektori
 
-Vektor je niz dva ili tri broja kojima označavamo dužinu i smer. Vektor možemo vizuelizovati kao duž koja ima glavu i rep. Dužina vektora se naziva intenzitet.
+Vektor je niz brojeva kojima označavamo dužinu i smer. Vektore možemo zapisati u polarnim ili Dekartovim koordinatama. U prvom slučaju upisujemo dužinu i smer, a u drugom pomeraj po x i y osi.
+
+Vektor možemo vizuelizovati kao duž koja ima glavu i rep. Dužina vektora se naziva intenzitet.
 
 ![vektori](slike/vectori.png)
+
+Vectors entered math in the 19 century, as mathematicians and physicists wrestled to describe motion, rather than static position. Vektore i matrice proučava linearna algebra.
 
 Možemo koristiti Pitagorinu teoremu za računanje dužine vektora.
 
 ![vector-magnitude](slike/vector-magnitude.jpg)
-
-Vectors entered math in the 19 century, as mathematicians and physicists wrestled to describe motion, rather than static position. Vektore i matrice proučava linearna algebra.
 
 ## Vektori u igrama
 
@@ -40,13 +42,7 @@ U kontekstu vektora, običan broj nazivamo skalar. Skalar je svaka veličina koj
 
 Razlika između vektora i skalara je u smeru.
 
-For example, suppose your friend is having car trouble, and he calls and asks you to come pick him up because he's only 2 miles away. You say no problem and hop in your car. But how will you find him? If he had said 2 miles due east on your street, you might have had a better chance of locating him. That's the difference between vectors and scalars.
-
-## Coordinate system
-
-In one dimension there are only two possible directions, positive or negative. In 2D, positive or negative isn't enough.
-
-There are two ways for describing a vector in 2D: polar coordinates and Cartesian coordinates. Polar coordinates describe its length and direction, Cartesian coordinates describe its horizontal and vertical displacement.
+For example, your friend calls and asks you to come pick him up because he's only 2 miles away. You say no problem and hop in your car. But how will you find him? If he had said 2 miles due east, you could find him. To je razlika između vektora i skalara.
 
 ## Normal Vectors
 
