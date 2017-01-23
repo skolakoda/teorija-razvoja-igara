@@ -33,6 +33,14 @@ S druge strane, ako imamo x i y komponentu vektora, dužinu možemo računati Pi
 
 ![vector-magnitude](slike/vektori-pitagora.jpg)
 
+Pošto se objekat sa slike pomera 4 nadesno i 3 nagore, ovako ćemo saznati njegovu brzinu:
+```
+brzina^2 = 3^2 + 4^2
+brzina^2 = 9 + 16
+brzina^2 = 25
+brzina = 5
+```
+
 ## Vektori u igrama
 
 U programiranju igara, vektori su nezaobilazni. Koriste se za čuvanje položaja, smera, brzine. Ovo su neki 2D primeri:
