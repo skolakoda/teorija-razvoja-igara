@@ -10,16 +10,16 @@ Obrtanje smera vektora je veoma jednostavno. Samo zamenimo glavu i rep, tj. obrn
 
 ## Zapisivanje vektora
 
-Vektore možemo zapisati u polarnim ili Dekartovim koordinatama. Polarnim načinom zapisujemo dužinu i smer vektora, na primer `[5, PI/4]`:
+Vektore možemo zapisati u polarnim ili Dekartovim koordinatama. Polarnim načinom zapisujemo dužinu i smer vektora, na primer `[5, 0.93]`:
 ```
 duzina = 5
-smer = PI/4 (45 stepeni)
+smer = 0.93 (~53.3 stepeni)
 ```
 
-Kartezijanskim načinom zapisujemo pomeraj vektora po osama (x, y, i po potrebi z), na primer `[3.53, 3.53]`:
+Kartezijanskim načinom zapisujemo pomeraj vektora po osama (x, y, i po potrebi z), na primer `[4, 3]`:
 ```
-duzina_x = 3.53
-duzina_y = 3.53
+duzina_x = 4
+duzina_y = 3
 ```
 
 Iz polarnog zapisa lako možemo dobiti `x` i `y` komponentu vektora. Za računanje `x` komponente koristimo `kosinus()` funkciju, a za `y` komponentu `sinus()`. Obe funkcije primaju ugao, a vraćaju broj između -1 i 1. Kada pomnožimo taj broj sa dužinom vektora, dobijemo odgovarajuću komponentu:
