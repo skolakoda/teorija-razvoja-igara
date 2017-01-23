@@ -12,7 +12,7 @@ Nauka o kretanju se zove kintetika.
 
 ## Pređeni put (*distance*) i pomeraj (*displacement*)
 
-U jednoj dimenziji (npr. kretanje po liniji), pređeni put je uvek jednak pomeraju. Čim imamo kretanje u dve ili više dimenzija, pređeni put je po pravilu duži od putanje vazdušnom linijom, koja se zove pomeraj.
+U jednoj dimenziji (npr. kretanje po liniji), pređeni put je uvek jednak pomeraju. Čim imamo kretanje u dve ili više dimenzija, pređeni put je po pravilu duži od putanje vazdušnom linijom, koja se zove pomeraj (en. *displacement*).
 
 When calculating displacement, all you care about is where the object starts and where it ends.
 
@@ -22,7 +22,7 @@ Football is a good example of displacement versus distance. Suppose player catch
 
 ## Brzina (*speed*) i vektorska brzina (*velocity*)
 
-Usmerena brzina (*velocity*) je vektorska verzija brzine. Na primer, 50km/h je obična brzina (skalar). Međutim, 50km/h istočno je usmerena brzina (vektor).
+Usmerena brzina (en. *velocity*, skraćeno `v`) je vektorska verzija brzine. Na primer, 50km/h je obična brzina (skalar). Međutim, 50km/h istočno je usmerena brzina (vektor).
 
 Obična brzina se računa iz pređenog puta u odnosu na vreme:
 ```
@@ -48,12 +48,14 @@ If you care only how fast an object is moving, use the speed. If you're trying t
 
 ## Ubrzanje (*acceleration*)
 
-Any time an object's velocity changes, it experiences an acceleration; it speeds up or slows down. The faster an object speeds up, the higher the acceleration. If the velocity doesn't change at all, the acceleration must be 0.
+Ubrzanje (en. *acceleration*, skraćeno `a`) je promena brzine u jedinici vremena. Negativno ubrzanje se naziva usporenje ili kočenje. Ako se brzina ne menja, ubrzanje je 0.
 
-Average acceleration is change in velocity over change in time:
-`a = Δv/Δt`
+Prosečno ubrzanje je promena brzine u vremenu:
+```
+a = Δv / Δt
+```
 
-Acceleration is the change in velocity over time:
+U kodu:
 ```cpp
 Vec3 CalcAcceleration(Vec3 vel0, Vec3 vel1, float time)
 {
@@ -61,23 +63,15 @@ Vec3 CalcAcceleration(Vec3 vel0, Vec3 vel1, float time)
 }
 ```
 
-This function will calculate the acceleration in seconds:
-```java
-float calcAccelerationSeconds(float startVel, float finalVel, float time)
-{
-  return (finalVel - startVel) / time;
-}
-```
-
 Any time you step on the gas pedal, the car speeds up or accelerates. As soon as you release the gas pedal, the car starts to slow down or decelerate. The only way to avoid accelerating is to turn on the cruise control.
 
-Ako čovek padne sa bicikla... If the same biker crashes while riding downhill, the slightly faster speed does quite a bit more damage because acceleration has a time squared component and is therefore much more serious than a change in mass.
+Ako čovek padne sa bicikla na nizbrdici, neznatno veća brzina čini znatno veću štetu, because acceleration has a time squared component and is therefore much more serious than a change in mass.
 
 ## Računanje brzine, položaja i ubrzanja
 
-Acceleration, velocity, and position are closely related. Velocity is the “rate of change over time” of position. Think of the way we measure velocity: in km per hour, or meters per second. Velocity is a measure of distance travelled in time. Similarly, acceleration is a measure of velocity changed in time.
+Acceleration, velocity, and position are closely related. Velocity is the “rate of change over time” of position. Think of the way we measure velocity: in km per hour, or meters per second. Similarly, acceleration is a measure of velocity changed in time.
 
-The relationship between position, velocity, and acceleration is very helpful, because if we know the history of an object’s position, we can figure out its velocity by asking “how much did this object move in the last second?” We can calculate acceleration similarly. More importantly, we can work backwards. If we know an object’s acceleration, we can figure out how much the velocity is supposed to change every second. And if we know the velocity, we can figure out how much the position is supposed to change every second. This technique is called “integration”.
+The relationship between position, velocity and acceleration is very helpful, because if we know the history of an object’s position, we can figure out its velocity by asking “how much did this object move in the last second?” We can calculate acceleration similarly. More importantly, if we know an object’s acceleration, we can figure out how much the velocity is supposed to change every second. And if we know the velocity, we can figure out how much the position is supposed to change every second. This technique is called “integration”.
 
 The simplest way to perform numerical integration is called Euler’s method. Here’s some pseudocode handles force, acceleration, velocity, and position (assume all start at 0):
 ```
@@ -111,3 +105,7 @@ These five equations can help you solve any problem related to one-dimensional m
 * final velocity^2 = initial velocity^2 + 2 * acceleration * displacement.
 
 In a 3D world, we’re going to use the same formulas, but the inputs are going to be 3D vectors to represent position, speed, and acceleration. Luckily, these vectors work exactly the same as scalars in these equations.
+
+
+http://gafferongames.com/game-physics/integration-basics/
+http://physicsforgames.blogspot.rs/2010/02/kinematic-integration.html

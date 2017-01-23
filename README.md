@@ -1,6 +1,8 @@
 # Teorija razvoja igara
 
-Pitagora, Dekart i Njutn su trojica likova nezaobilaznih u razvoju igara. Tačnije: Pitagorina teorema, Dekartov koordinatni sistem i Njutnovi zakoni.
+Teorija razvoja igara je široka oblast programiranja koja uključuje geometriju (posebno trigonometriju), matematiku, fiziku i veštačku inteligenciju. Ne postoji neka posebna fizika za igre, to je ista fizika koju učimo u školama. Za 3D grafiku je posebno bitna linearna algebra.
+
+Pitagora, Dekart i Njutn su trojica likova nezaobilaznih u razvoju igara. Posebno Pitagorina teorema, Dekartov koordinatni sistem i Njutnovi zakoni. U 3D programiranju je nezaobilazan Ojler, poznat po Ojlerovom metodu i Ojlerovim uglovima.
 
 # Literatura
 * Game Coding Complete

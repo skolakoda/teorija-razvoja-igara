@@ -97,3 +97,5 @@ Vec2 CrossProduct(float s, const Vec2& a)
   return Vec2( -s * a.y, s * a.x );
 }
 ```
+
+http://gafferongames.com/game-physics/physics-in-3d/
