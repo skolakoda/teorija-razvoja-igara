@@ -48,4 +48,4 @@ Na primer, kada top ispaljuje projektil, projektil ga pomera nazad.
 
 ## Primena
 
-Prvi i drugi zakon se implementiraju u fazi integracije, a treći tokom razrešenja sudara.
+Prvi i drugi zakon se implementiraju u fazi integracije, a treći prilikom razrešenja sudara.
