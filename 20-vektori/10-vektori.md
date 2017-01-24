@@ -6,7 +6,7 @@ U programiranju, vektor je niz brojeva kojima zapisujemo dužinu i smer. Vektor 
 
 ![vektori](slike/vectori.png)
 
-Obrtanje smera vektora je veoma jednostavno. Samo zamenimo glavu i rep, tj. obrnemo dve koordinate.
+Obrtanje smera vektora je veoma jednostavno. Samo zamenimo glavu i rep, tj. pomnožimo sa -1.
 
 ## Zapisivanje vektora
 
