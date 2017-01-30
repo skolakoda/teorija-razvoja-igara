@@ -83,3 +83,5 @@ But to simplify things the function atan2() is available for programmers:
 ```
 angle = atan2 (y / x)
 ```
+
+https://jsfiddle.net/mudroljub/c10hjzqe/

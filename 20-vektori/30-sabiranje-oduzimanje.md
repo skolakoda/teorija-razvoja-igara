@@ -4,11 +4,38 @@ Vektori su mogu sabirati prema pravilima linearne algebre.
 
 ## Sabiranje vektora
 
-To add vectors together, you just add each component together separately. For example:
+Vektore sabiramo tako što im saberemo svaku dimenziju ponaosob. Sabiranje 2D vektora:
+```
+a + b = [ (a.x + b.x ), (a.y + b.y ) ]
+```
 
-[0, 1] + [3, -2] = [(0 + 3), (1 - 2)] = [3, -1]
+Sabiranje 3D vektora je identično, samo dodamo još jednu dimenziju:
+```
+a + b = [ (a.x + b.x ), (a.y + b.y ), (a.z + b.z ) ]
+```
 
-In games, common applications for vector addition is physics integration. Any physically-based object will likely have vectors for position, velocity, and acceleration. For every frame, we have to integrate these vectors - that is, add the velocity to the position, and the acceleration to the velocity.
+Ovako izgleda sabiranje 2d vektora sa pravim brojevima:
+```
+[0, 1] + [3, -2]
+= [(0 + 3), (1 - 2)]
+= [3, -1]
+```
+
+U kodu:
+```js
+const saberi = (v1, v2) => {
+  return {
+    x: v1.x + v2.x,
+    y: v1.y + v2.y,
+    z: v1.z + v2.z,
+  }
+}
+
+```
+
+## Sabiranje vektora u igrama
+
+U igrama, česta primena sabiranja vektora je integracija fizike. Svaki fizički predmet obično ima vektore za položaj, brzinu i ubrzanje. Za svaki kadar, treba da integrišemo te vektore, tj. da dodamo brzinu položaju, i ubrzanje brzini.
 
 Let's consider the example of Mario jumping. As he starts the jump, his velocity is (1,3) - he is moving upwards quickly, but also to the right. His acceleration throughout is (0,-1), because gravity is pulling him down. Here is what his jump looks like over the course of 8 frames:
 
@@ -25,11 +52,6 @@ Sabiranjem vektora izračunavamo ukupnu silu (rezultantu) koja deluje na neki pr
 ![sabiranje-vektora](slike/sabiranje-vektora.png)
 
 ![vector-airplane](slike/vector-airplane.gif)
-
-Sabiranje 3D vektora:
-```
-a + b = [ (a x + b x ), (a y + b y ), (a z + b z ) ]
-```
 
 ## Oduzimanje vektora
 

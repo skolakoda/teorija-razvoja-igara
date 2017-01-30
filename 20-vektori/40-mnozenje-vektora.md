@@ -1,10 +1,21 @@
-## Množenje vektora i skalara
+## Množenje vektora i skalara (skaliranje vektora)
 
 When you multiply a scalar by the vector, you're actually scaling its magnitude, while leaving its direction unchanged.
 
 Multiplication of a vector `a` by a scalar `s` is accomplished by multiplying the individual components of `a` by `s`:
 ```
 s * a = ( s * ax, s * ay, s * az)
+```
+
+U kodu:
+```js
+function skaliraj(vektor, skalar) {
+  return {
+    x: vektor.x * skalar,
+    y: vektor.y * skalar,
+    z: vektor.z * skalar
+  }
+}
 ```
 
 In games, it is often useful to multiply a vector by a scalar. For example, we can simulate air resistance by multiplying the player's velocity by 0.9 every frame.

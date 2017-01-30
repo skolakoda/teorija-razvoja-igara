@@ -10,7 +10,7 @@ Ojlerov metod je najjednostavniji način izvođenja numeričke integracije (proc
 
 ```
 ubrzanje = sila / masa
-brzina += ubrzanje * vremenski_korak
+brzina += ubrzanje * vremenski_korak (tj. delta_vreme)
 položaj += brzina * vremenski_korak
 ```
 
@@ -21,7 +21,7 @@ x += v * dt
 v += (1/m * F) * dt
 ```
 
-Drugi je polu-implicitni Ojlerov metod (*symplectic Euler*):
+Drugi je poluimplicitni Ojlerov metod (*symplectic Euler*):
 
 ```
 v += (1/m * F) * dt
@@ -47,10 +47,13 @@ Glavna prednost Verle metode je upotreba prosečnog ubrzanja između dva kadra, 
 # Primena u igrama
 
 Proces simulacije kretanja tela izgleda otprilike ovako:
-* izračunaj svojstva mase za predmet (masa, centar mase, momenat inercije)
+<!-- * izračunaj svojstva mase za predmet (masa, centar mase, momenat inercije) -->
 * ustanovi koje sile deluju na predmet
 * saberi sile da dobiješ rezultantu ili ukupnu silu
 * koristi `F = m * a` da izračunaš ubrzanje tela na osnovu sile (linearno i ugaono ubrzanje)
 * korist ubrzanje tela da izračunaš brzinu (linearnu i ugaonu brzinu)
 * koristi brzinu tela da izračunaš položaj (linearni i ugaoni pomeraj)
 * pošto se dejstvujuće sile menjaju, neprestano ponavljaj ovaj proces
+
+http://www.richardlord.net/presentations/physics-for-flash-games
+http://genericgamedev.com/general/basic-game-physics-from-newton-to-code/

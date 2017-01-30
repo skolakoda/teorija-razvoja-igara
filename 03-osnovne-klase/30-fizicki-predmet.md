@@ -1,6 +1,6 @@
 # Fizički predmet
 
-Fizički predmet contains all information about physics. It will store the oblik that the object is represented by, mass data, transformation (position, rotation), brzina, torque, and so on. Here is what our body ought to look like:
+Fizički predmet contains all information about physics. It will store the oblik that the object is represented by, masa data, transformation (position, rotation), brzina, torque, and so on. Here is what our body ought to look like:
 
 ```java
 struct body
@@ -16,15 +16,15 @@ struct body
 
 ## Oblik
 
-There are some intelligent decisions made here that tend towards  code organization. A oblik is contained within the body by means of a pointer. This represents a loose relationship between the body and its oblik. A body can contain any oblik, and the oblik can be swapped around at will (npr. možemo zameniti geometriju za sudare). In fact, a body can be represented by multiple obliks, and such a body would be known as a "composite".
+A oblik is contained within the body by means of a pointer. This represents a loose relationship between the body and its oblik. A body can contain any oblik, and the oblik can be swapped around at will (npr. možemo zameniti geometriju za sudare). In fact, a body can be represented by multiple obliks, and such a body would be known as a "composite".
 
 ## Masa
 
-`masa` is a small data structure to contain mass-related information:
+`masa` is a small data structure to contain masa-related information:
 ```java
 struct MassData
 {
-  float mass;
+  float masa;
   float inv_mass;
 
   // for rotations
@@ -33,21 +33,21 @@ struct MassData
 };
 ```
 
-It is nice to store all mass- and intertia-related values in a single structure. The mass should never be set by hand - mass should always be calculated by the oblik itself:
+It is nice to store all masa- and intertia-related values in a single structure. The masa should never be set by hand - masa should always be calculated by the oblik itself:
 
 ```java
-Mass = density ∗ volume
+masa = gustina ∗ zapremina
 ```
 
-Whenever you want a oblik to be more "massive" or "heavy", you should modify the density of a oblik. This is the proper way to go about the situation, as density is not affected by volume and will never change during the runtime of the game.
+Whenever you want a oblik to be more "massive" or "heavy", you should modify the gustina of a oblik. This is the proper way to go about the situation, as gustina is not affected by zapremina and will never change during the runtime of the game.
 
 ## Materijal
 
-But where does the density value lay? It resides within the Material structure:
+But where does the gustina value lay? It resides within the Material structure:
 ```java
 struct Material
 {
-  float density;
+  float gustina;
   float restitution;
 };
 ```

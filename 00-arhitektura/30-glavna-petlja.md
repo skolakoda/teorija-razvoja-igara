@@ -108,8 +108,8 @@ const mainLoop = () => {
 We get the modifier to send to update by dividing by 1000 (the number of milliseconds in one second).
 
 ```js
-const update = (modifier) => {
-	hero.x -= hero.speed * modifier;
+const update = (dt) => {
+	hero.x -= hero.speed * dt;
 }
 ```
 
@@ -122,3 +122,5 @@ You typically aim for a target of 30-60 frames per second, which means game loop
 ![](slike/petlja.gif)
 
 ![](slike/potrosnja.gif)
+
+http://stackoverflow.com/questions/19764018/controlling-fps-with-requestanimationframe
