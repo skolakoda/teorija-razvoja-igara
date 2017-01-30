@@ -30,3 +30,5 @@ screen_y = space_y / spaze_z
 
 Poseban repo:
 https://github.com/skolakoda/ucimo-3d-projekciju
+
+https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/WebGL_model_view_projection

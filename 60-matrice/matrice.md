@@ -264,3 +264,5 @@ Matrices in 3D work just like they do in 2D. You just define three columns for t
 
 
 http://alfonse.bitbucket.org/oldtut/Positioning/Tut04%20The%20Matrix%20Has%20You.html
+https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Matrix_math_for_the_web
+https://www.tutorialspoint.com/computer_graphics/3d_transformation.htm
