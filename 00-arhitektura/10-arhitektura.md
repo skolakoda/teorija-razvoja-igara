@@ -2,11 +2,11 @@
 
 ## Slojevi igre (*game layers*)
 
-Prema knjizi *Game Coding Complete*, every game subsystem could be classified into one of three primary categories:
+Prema knjizi *Game Coding Complete*, svaki podsistem u igri može biti svrstan u jednu od tri osnovne kategorije:
 
-* The application layer (deals with the hardware)
-* The game logic layer (manages your game state and how it changes)
-* The game view layer (presents the game state with graphics and sound)
+* Sloj aplikacije (*application layer*, bavi se hardverom)
+* Sloj logike igre (*game logic layer*, bavi se stanjem igre i kako se ono menja)
+* Sloj prikaza igre (*game view layer*, prezentuje stanje igre sa grafikom i zvukom)
 
 ![arhitektura-igre](slike/arhitektura-igre.png)
 
