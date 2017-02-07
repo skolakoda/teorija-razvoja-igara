@@ -55,5 +55,18 @@ Proces simulacije kretanja tela izgleda otprilike ovako:
 * koristi brzinu tela da izračunaš položaj (linearni i ugaoni pomeraj)
 * pošto se dejstvujuće sile menjaju, neprestano ponavljaj ovaj proces
 
+Instead of drowning in maths, you could simulate physics. For every object every step:
+```
+apply gravity  (add constant to velocity)
+apply velocity (add velocity to position)
+if position > some limit then
+    reverse velocity
+    multiply velocity by "bounciness" between 0 and 1
+    if velocity < 0.5 then
+        set velocity and gravity to 0
+    endif
+endif
+```
+
 http://www.richardlord.net/presentations/physics-for-flash-games
 http://genericgamedev.com/general/basic-game-physics-from-newton-to-code/

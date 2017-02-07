@@ -1,6 +1,10 @@
 # Trigonometrijske funkcije
 
-Trigonometrijske funkcije su odnosi dve strane pravog trougla. Kad god imamo scenario sa pravouglim trouglovima, trigonometrijske funkcije dobro dođu. Takođe se koriste u vektorima i fizici.
+Trigonometrijske funkcije, takođe poznate kao kružne funkcije, računaju nepoznati ugao pravouglog trougla pomoću dužine stranica. Ti uglovi mogu ići od 0 do 90 stepeni.
+
+Koriste se i za krugove, jer oni imaju uglove, a u neku ruku i hipotenuzu (poluprečnik). Ugao unutar kruga može iznositi bilo koju pozitivnu ili negativnu vrednost (za razliku od pravouglog trougla).
+
+Trigonometrijske funkcije su posebno bitne za razvoj igara. Koriste se za računanje rastojanja i ugla ka nekom predmetu, računanje vektora, simulaciju fizike, modelovanje kružnog kretanja, talasa i drugih periodičnih pojava.
 
 Najpoznatije trigonometrijske funkcije su sinus, kosinus i tangent:
 * sin = opposite / hypotenuse
@@ -12,9 +16,7 @@ You can memorize them with SOH, CAH, TOA.
 
 ## Sinus i kosinus
 
-The `sin()` and `cos()` functions take one parameter, the angle, and return a number between -1 and 1.
-
-Sinusoidal graph pattern repeats every 360°; this is called the fundamental period. To change the period, just place a number in front of the x.
+`sin()` i `cos()` funkcije primaju jedan parametar, ugao, i vraćaju broj između -1 i 1. Ugao može biti beskonačne veličine, ali se sinusoidni obrazac ponavlja svakih 360°, što se zove osnovni period. Da promeniš period, samo staviš broj (modifikator) ispred x.
 
 ![sinus-kosinus-graf.png](slike/sinus-kosinus-graf.png)
 
