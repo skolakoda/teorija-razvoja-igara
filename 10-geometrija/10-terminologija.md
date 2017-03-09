@@ -1,3 +1,11 @@
+# Linija
+
+Za početak, potrebno nam je da savladamo osnovnu terminologiju na srpskom i engleskom:
+
+* Linija (*line*) ili prava je neograničena prava linija
+* Poluprava ili zrak (*ray*) je prava linija ograničena tačkom sa jedne strane
+* Duž (*line segment*) je prava linija ograničena tačkama sa obe strane
+
 ## Vrh (*vertex*)
 
 Tačka se u 3D koordinatnom sistemu zove vrh (*vertex*). Different types of objects are built using vertices. Every vertex is described by these attributes:

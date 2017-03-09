@@ -40,7 +40,3 @@ function update() {
   }
 }
 ```
-
-# Mapiranje tipki
-
-Ostaviti mogućnost igračima.
