@@ -20,6 +20,8 @@ function skaliraj(vektor, skalar) {
 
 In games, it is often useful to multiply a vector by a scalar. For example, we can simulate air resistance by multiplying the player's velocity by 0.9 every frame.
 
+Obrtanje smera vektora je veoma jednostavno. Samo zamenimo glavu i rep, tj. pomnožimo sa -1.
+
 ## Skalarni proizvod vektora (*dot product*)
 
 Skalarni proizvod vektora (engleski *dot product*, jer se piše pomoću tačke) is an operation that, given two vectors, returns a floating-point value. It is usually depicted as:
