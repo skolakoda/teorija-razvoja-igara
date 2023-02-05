@@ -2,16 +2,23 @@
 
 Simulacija fizike u igrama radi tako što pravi predviđanja na osnovu zakona fizike. Ova predviđanja izvodimo pomoću matematičke tehnike koja se zove integracija.
 
-Brzina, položaj i ubrzanje tela su blisko povezani. Brzina je promena položaja kroz vreme. Slično, ubrzanje je promena brzine kroz vreme. Povezanost ovih svojstava nam prilično koristi, jer ako znamo prethodne položaje predmeta, možemo saznati njegovu brzinu i ubrzanje. Štaviše, ako znamo ubrzanje, možemo saznati koliko će se brzina menjati svake sekunde. Ako znamo brzinu, možemo saznati koliko će se položaj menjati svake sekunde.
+Brzina (v), položaj (x) i ubrzanje (a) tela su blisko povezani: 
+- **brzina** (*velocity*) je promena položaja tokom vremena (v = dx / dt). 
+- **ubrzanje** (*acceleration*) je promena brzine kroz vreme (a = dv / dt). 
+
+Povezanost ovih svojstava nam prilično koristi, jer ako znamo prethodne položaje predmeta, možemo saznati njegovu brzinu i ubrzanje. Štaviše, ako znamo ubrzanje, možemo saznati koliko će se brzina menjati svake sekunde. Ako znamo brzinu, možemo saznati koliko će se položaj menjati svake sekunde.
 
 ## Ojlerov metod (*Euler*)
 
-Ojlerov metod je najjednostavniji način izvođenja numeričke integracije (procedure rešavanja diferencijalnih jednačina sa datom početnom vrednošću). Računamo ubrzanje, brzinu i položaj (pretpostavka da sve kreće od 0):
+Ojlerov metod je najjednostavniji način izvođenja numeričke integracije (rešavanja diferencijalnih jednačina sa datom početnom vrednošću). Računamo ubrzanje, brzinu i položaj (pretpostavka da sve kreće od 0):
 
 ```
 ubrzanje = sila / masa
-brzina += ubrzanje * vremenski_korak (tj. delta_vreme)
-položaj += brzina * vremenski_korak
+promena_polozaja = brzina * delta_vreme
+promena_brzine = ubrzanje * delta_vreme
+
+brzina += promena_brzine
+položaj += promena_polozaja
 ```
 
 Možemo prvo ažurirati položaj pa brzinu, ili obratno. Prvi je eksplicitni Ojlerov metod:
@@ -29,6 +36,42 @@ x += v * dt
 ```
 
 Ove jednostavne jednačine su sve što nam treba da pomeramo predmete sa linearnom brzinom i ubrzanjem.
+
+### Primer
+
+Na telo u mirovanju, težine jedan kilogram, primenjujemo konstantnu silu od 10 njutna u vremenskim koracima od jedne sekunde:
+
+```js
+const mass = 1
+const force = 10
+const dt = 1
+
+let t = 0
+let velocity = 0
+let position = 0
+
+while (t < 10) {
+  position = position + velocity * dt
+  velocity = velocity + (force / mass) * dt
+  t += dt
+
+  console.log(`t=${t}:    position = ${position}      velocity = ${velocity}`)
+}
+```
+
+Rezultat:
+```
+t=1:    position = 0       velocity = 10
+t=2:    position = 10      velocity = 20
+t=3:    position = 30      velocity = 30
+t=4:    position = 60      velocity = 40
+t=5:    position = 100     velocity = 50
+t=6:    position = 150     velocity = 60
+t=7:    position = 210     velocity = 70
+t=8:    position = 280     velocity = 80
+t=9:    position = 360     velocity = 90
+t=10:   position = 450     velocity = 100
+```
 
 ## Verle integracija (*Verlet*)
 
