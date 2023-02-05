@@ -14,11 +14,8 @@ Ojlerov metod je najjednostavniji način izvođenja numeričke integracije (reš
 
 ```
 ubrzanje = sila / masa
-promena_polozaja = brzina * delta_vreme
-promena_brzine = ubrzanje * delta_vreme
-
-brzina += promena_brzine
-položaj += promena_polozaja
+brzina += ubrzanje * delta_vreme (promena brzine)
+položaj += brzina * delta_vreme (promena polozaja)
 ```
 
 Možemo prvo ažurirati položaj pa brzinu, ili obratno. Prvi je eksplicitni Ojlerov metod:
