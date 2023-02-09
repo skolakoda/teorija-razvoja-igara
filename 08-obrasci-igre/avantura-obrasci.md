@@ -2,66 +2,60 @@
 
 ## Vremenska pećina (*Time Cave*)
 
-A heavily-branching sequence. All choices are of roughly equal significance; there is little or no re-merging, and therefore no need for state-tracking. There are many, many endings.
+Složena sekvenca s mnogim izborima. Svi izbori su otprilike jednako važni, a nema previše ponovnog spajanja, te stoga nema potrebe za praćenjem stanja. Postoji mnogo, mnogo svršetaka.
 
 ![timecaveb](slike/timecaveb.png)
 
-**Efekti**: The time cave is the oldest and most obvious CYOA structure. It is often good for narratives about freedom and open possibility, adventures that could go anywhere, flights of fancy. Time caves tend to have relatively short playthroughs, but strongly encourage replay: they are broad rather than long. Even with multiple playthroughs, most players will probably miss a good deal of the content.
-
-The time cave’s structure is both organised by chronological progression and detached from it. It’s ungrounded by regularity: possibility is so open that it often becomes fantastic or surreal, with different branches occupying wholly different realities. The player has velocity but little grasp, vast freedom but little ability to comprehend it.
+**Efekti**: Vremenska pećina je najstarija i najočiglednija CYOA (*Choose Your Own Adventure*) struktura. Često je dobra za narative o slobodi i otvorenoj mogućnosti, avanturama koje mogu ići bilo gde. Vremenske pećine tendiraju da imaju relativno kratke partije, ali jako potiču na ponovno igranje: one su široke, a ne dugačke. Čak i nakon više igranja, većina igrača će propustiti dobar deo sadržaja.
 
 ## Špalir (*Gauntlet*)
 
-Long rather than broad, gauntlets have a relatively linear central thread, pruned by branches which end in death, backtracking, or quick rejoining. The Gauntlet generally tells one anointed story, which can be adorned with optional content or prematurely ended with failure; if there are multiple endings, they’re likely to derive from a Final Choice. Gauntlets rarely rely on state to any great extent (if they do, they are likely to evolve into a branch-and-bottleneck structure.)
+Špaliri su obično duži nego širi, sa relativno linearnim centralnim nitima koje se sužavaju kroz grane koje završavaju smrću, povratkom unazad ili ponovnim spajanjem. Špalir obično priča jednu odabranu priču, koja može biti ukrašena opcionim sadržajem. Ako ima više svršetaka, oni su verovatno rezultat finalnog odabira. Špaliri retko zavise od stanja u većoj meri (inače će se verovatno razviti u strukturu *grana i uska grla*).
 
 ![gauntlet](slike/gauntlet.png)
 
-**Efekti**: The player is likely to realise that they are on a constrained path, but the presentation of side-branches matters a great deal – do they mean death? incorrect answers? travel back in time? blocked paths, footnotes,  or scenic details? Most often, the gauntlet creates an atmosphere of a hazardous, difficult or constrained world. Sometimes this can be punishing or depressing; sometimes it can be darkly comic; sometimes it’s a sign that you’re in a work heavily dependent on reflective or rhetorical choice. Perhaps the easiest structure to author, gauntlets can be conceived of in similar terms to linear stories, and ensure that most players will see most of the important content.
-
-There are two major varieties of gauntlet: deadly and friendly. Deadly gauntlets mostly prune the tree with failure; friendly ones mostly do so with short-range rejoining, and look a bit more like simple branch-and-bottleneck structures. Friendly gauntlets have been vastly more common in recent years, making up a high proportion of Twine works.
+**Efekti**: Igrač će vjerojatno shvatiti da se nalazi na ograničenom putu, ali bočne grane igraju veliku ulogu - da li to znači smrt? netačne odgovore? putovanje unazad u vreme? blokirane staze? Najčešće, špalir stvara atmosferu opasnog, teškog ili ograničenog svijeta. Ponekad to može biti zastrašujuće ili tužno; ponekad mračno komično; ponekad to znači da ste u delu koje se pretežno oslanja na refleksivne ili retoričke izbore. Možda najlakša struktura za autora, špaliri su poput linearne priče i omogućuju da većina igrača vidi većinu važnog sadržaja.
 
 ## Grane i uska grla (*Branch and Bottleneck*)
 
-The game branches, but the branches regularly rejoin, usually around events that are common to all versions of the story. To avoid obliterating the effect of past choices, branch-and-bottleneck structures almost always rely on heavy use of state-tracking (if a game doesn’t do this, chances are you are dealing with a gauntlet).
+Igra se grana, ali grane se redovno spajaju, obično oko događaja koji su zajednički za sve verzije priče. Da bi se izbeglo brisanje efekata prošlih izbora, strukture grana i uskih grla se skoro uvek oslanjaju na intenzivno praćenje stanja (ako igra to ne radi, velike su šanse da imate posla sa *rukavicom*).
 
-Somewhat rarely, the bottlenecks may be invisible – the plot branches and never reaches an explicit rejoining node, but the choices at the end of each branch are the same or similar, creating an exquisite-corpse effect.
+Donekle retko, uska grla mogu biti nevidljiva – zaplet se grana i nikada ne dostiže eksplicitni čvor za ponovno spajanje, ali izbori na kraju svake grane su isti ili slični.
 
 ![bottlebranch](slike/bottlebranch.png)
 
-**Efekti**: Branch-and-bottleneck games tend to be heavily governed by the passage of time, while still allowing the player fairly strong grasp. The branch-and-bottleneck structure is most often used to reflect the growth of the player-character: it allows the player to construct a somewhat-distinctive story and/or personality, while still allowing for a manageable plot. There’s a tendency – not a necessary one, by any means – for playthroughs to be very similar in the early game, then diverge as the effects of earlier choices accumulate. In order for the approach to work, it has to be used in a fairly large piece; you need time to accumulate change before producing results that reflect it.
+**Efekti**: Igre sa granama i uskim grlom imaju tendenciju da su pretežno vođene protokom vremena. Ova struktura najčešće se koristi da odražava rast karaktera igrača: omogućava igraču da konstruiše donekle prepoznatljivu priču i ličnost, dok i dalje dozvoljava radnju kojom se može upravljati. Postoji tendencija da igranja budu dosta slična u ranoj igri, a zatim se razilaze kako se efekti ranijih izbora gomilaju. 
 
 ## Potraga (*Quest*)
 
-The quest structure forms distinct branches, though they tend to rejoin to reach a relatively small number of winning endings (often only one). The elements of these branches have a modular structure: small, tightly-grouped clusters of nodes allowing many ways to approach a single situation, with lots of interconnection within each cluster and relatively little outside it. Re-merging is fairly common; backtracking rather less so. Quests generally involve some level of state-tracking, and do poorly when they don’t. The minimal size for a quest is relatively large, and this category includes some of the largest CYOAs.
+Struktura potrage formira razne grane, koje imaju tendenciju da se ponovo spoje u relativno mali broj pobedničkih završetaka (često samo jedan). Elementi ovih grana imaju modularnu strukturu: mali, čvrsto grupisani klasteri čvorova koji omogućuju mnogo načina da se pristupi situaciji, sa puno međupovezanosti unutar svakog klastera i relativno malo izvan njega. Ponovno spajanje je prilično uobičajeno; nazadovanje, manje. Potrage generalno uključuju određeni nivo praćenja stanja i loše rade kada to ne čine. Minimalna veličina za misiju je relativno velika, a ova kategorija uključuje neke od najvećih CYOA.
 
 ![quest](slike/quest.png)
 
-**Efekti**: This mode is well-suited for journeys of exploration, focused on setting; the quest’s structure tends to be organised by geography rather than time. Indeed, most works of this kind involve a journey with a specific purpose in mind. Quests work well for grounded, consistent worlds, but within that context the player-character’s situation is constantly changing. The narrative tends to be fragmentary or episodic, like old-school D&D encounters: little chunks of story which might not have any great significance for the big picture.
+**Efekti**: Ovaj režim je veoma pogodan za istraživačko putovanje; struktura potrage obično se organizuje prema geografiji, a ne prema vremenu. Većina radova ove vrste uključuje putovanje sa određenom svrhom. Potrage dobro funkcionišu za utemeljene, dosledne svetove. Narativ ima tendenciju da bude fragmentaran ili epizodan: mali delovi priče koji možda nemaju veliki značaj za širu sliku.
 
 ## Otvorena mapa (*Open Map*)
 
-Even though quests are structured by geography, time still plays an important part: there’s a built-in direction of travel. But take a CYOA structure, make travel between the major nodes reversible, and you have a static geography, a world in which the player can toodle about indefinitely. Often this is a literal geography and relies on extensive state-tracking both explicit and secret for narrative progress. But it’s not an uncommon mode for things with assumptions grounded in the hypertext-novel idiom – static but non-linear works like Le Reprobateur.
+Iako su potrage strukturirane geografijom, vreme i dalje igra važnu ulogu: postoji ugrađeni pravac putovanja. Ali ako učinite putovanje između glavnih čvorova reverzibilnim i imate statičnu geografiju, svet u kome igrač može da se muči neograničeno. Često se oslanja na ekstenzivno praćenje stanja za napredak naracije. 
 
 ![openmap](slike/openmap.png)
 
-**Efekti**: This is often used as an imitation of the default style of parser IF, although some may be parallel derivation from the former’s D&D roots. As with classic map-based parser games, the narrative tends to become slower-paced and less directed; the player has more leisure to explore and grasp the world, but spends less of their time advancing the story.
+**Efekti**: Kao i kod klasičnih igara zasnovanih na mapama, naracija ima tendenciju da bude sporija i manje usmerena. Igrač ima više slobodnog vremena da istražuje svet, ali troši manje vremena na napredovanje priče.
 
 ## Plutajući moduli (*Floating Modules*)
 
-A mode only really possible in computer-based works. There is no tree – or, while there may be scattered twigs and branches, there’s no trunk. No central plot, no through-line: modular encounters become available to the player based largely on state, or perhaps randomly.
+Režim koji je zaista moguć samo u računarskim igrama. Nema stabla - iako može biti razbacanih grančica i grana. Nema centralnog zapleta, nema niza: susreti postaju dostupni igraču uglavnom na osnovu stanja, ili nasumično.
 
-**Efekti**: This is a challenging style to write for, both because it’s difficult to intuitively grasp – writers tend to rebound quickly to a more unified structure – and because few assumptions can ever be made about prior events. Without a large amount of content, the method tends to collapse into a linear system. Because play mechanics are largely about altering stats in order to negotiate a world, there’s a strong incentive to expose those stats to the player; repeated events chosen only to affect a stat (grinding) may be a feature.
-
-There are different approaches to floating-module: Emily Short has a tentative categorisation here.
+**Efekti**: Ovo je izazovan stil za pisanje, i zato što ga je teško intuitivno shvatiti (autori imaju tendenciju da se brzo vrate jedinstvenijoj strukturi) i zato što se o prethodnim događajima može praviti malo pretpostavki. Bez velike količine sadržaja, plutajući moduli imaju tendenciju da se uruše u linearni sistem. Pošto se mehanika igre uglavnom odnosi na menjanje statistika, postoji snažan podsticaj da se te statistike izlože igraču; karakteristika mogu biti ponovljeni događaji samo za uvećanje statistika (*grinding*).
 
 ## Petlja i rast (*Loop and Grow*)
 
 ![cyclegrow](slike/cyclegrow.png)
 
-The game has a central thread of some kind, which loops around, over and over, to the same point: but thanks to state-tracking, each time around new options may be unlocked and others closed off. This is a very general pattern, and can co-exist with many others. Trapped in Time, for instance, is basically a cycle-and-growing Gauntlet; Bee tames its floating-module nature with a year-long loop structure.
+Igra ima neku vrstu centralne niti, koja se vrti ukrug, iznova i iznova, do iste tačke: ali zahvaljujući praćenju stanja, svaki put se nove opcije mogu otključati, a druge zatvoriti. Ovo je veoma opšti obrazac i može koegzistirati sa mnogim drugim. 
 
-**Efekti**: Loop and Grow emphasizes the regularity of the world while retaining narrative momentum. A justification is needed for why whole sections of narrative can repeat: the player-character is often following routine activities in a familiar space, engaged in time-travel, or performing tasks at a certain level of abstraction. This regularity often comes at the price of openness: many stories with a strong Loop and Grow structure involve a struggle against confinement or stagnation.
+**Efekti**: Petlja i rast naglašava pravilnost sveta dok zadržava narativni zamah. Potrebno je opravdanje zašto se čitavi delovi naracije mogu ponavljati: lik igrača često prati rutinske aktivnosti u poznatom prostoru, bavi se putovanjem kroz vreme ili obavlja zadatke na određenom nivou apstrakcije. Ova regularnost često dolazi po cenu otvorenosti: mnoge priče sa snažnom strukturom Petlje i rasta uključuju borbu protiv zatvorenosti ili stagnacije.
 
-An important variation of loop-and-grow structures is spoke and hub: the game has several major branches, but they all originate at and return to a central node or set of nodes. The player may go out along each spoke once, or many times.
+Varijacija petlje i rasta je spica i čvorište (*spoke and hub*): igra ima nekoliko glavnih grana, koje sve potiču i vraćaju se u centralni čvor ili skup čvorova. Igrač može izaći uz svaki spicu jednom ili više puta.
 
 Izvor: https://heterogenoustasks.wordpress.com/2015/01/26/standard-patterns-in-choice-based-games/

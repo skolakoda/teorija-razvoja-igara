@@ -2,13 +2,13 @@
 
 Za početak, potrebno nam je da savladamo osnovnu terminologiju na srpskom i engleskom:
 
-* Linija (*line*) ili prava je neograničena prava linija
+* Linija ili prava (*line*) je neograničena prava linija
 * Poluprava ili zrak (*ray*) je prava linija ograničena tačkom sa jedne strane
 * Duž (*line segment*) je prava linija ograničena tačkama sa obe strane
 
 ## Vrh (*vertex*)
 
-Tačka se u 3D koordinatnom sistemu zove vrh (*vertex*). Different types of objects are built using vertices. Every vertex is described by these attributes:
+Tačka u 3D koordinatnom sistemu zove se vrh (*vertex*). Svaki vrh u 3D grafici ima sledeće atribute:
 
 * Position: Identifies it in a 3D space (x, y, z).
 * Color: Holds an RGBA value (all values range from 0.0 to 1.0).
