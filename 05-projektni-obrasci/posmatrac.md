@@ -1,13 +1,13 @@
 # Posmatrač (*Observer Pattern*)
 
-> have the renderable representation of a character, listen to events from the logical representation, in order to change the visual presentation when necessary, without needing to know anything about rendering code
+> ima renderabilne predstave karaktera, sluša događaje iz logike igre kako bi promenio vizuelnu prezentaciju kada je potrebno, bez potrebe da zna bilo šta o kodu renderera.
 
-In a game, all of your classes should be loosely coupled. This means that your classes should be able to interact with each other, but have little knowledge of each other. Making your classes loosely coupled makes your game modular and flexible to add features without adding unintended bugs.
-
-This pattern is normally implemented when an object wants to send messages to its subscriber (other objects). The object does not need to know anything about how the subscribers work, just that they can communicate.
+U igri, sve naše klase treba da budu labavo povezane. Ovo znači da klase imaju mogućnost da razgovaraju, ali da imaju malo znanja jedna o drugoj. Činjenje klasa labavo povezanim čini igru modularnom i fleksibilnom za razvoj.
 
 ![](slike/observer.jpeg)
 
-Observer is so pervasive that Java put it in its core library (java.util.Observer) and C# baked it right into the language (the event keyword).
+Model posmatrača se obično implementira kada objekt želi da šalje poruke svojim pretplatnicima (drugim objektima). Objekt ne treba da zna ništa o tome kako rade pretplatnici.
 
-Say we’re adding an achievements system to our game. Observer pattern lets one piece of code announce that something interesting happened without actually caring who receives the notification.
+Posmatrač je tako široko rasprostranjen, da ga je Java stavila u svoju osnovnu biblioteku (java.util.Observer), a C# ga je ugradio direktno u jezik (ključna reč event).
+
+Recimo da dodajemo sistem dostignuća u našu igru. Model Posmatrača omogućava jednom delu koda da objavi da se nešto zanimljivo dogodilo, bez da brine ko prima obaveštenje.

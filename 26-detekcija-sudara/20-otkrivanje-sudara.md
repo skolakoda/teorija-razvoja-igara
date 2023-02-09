@@ -12,6 +12,10 @@ And, unfortunately, there’s yet another level of complexity hidden here: if yo
 
 Rolling your own is typically the best way to make sure your game is never finished! However, knowing what an engine does internally to make your life easier is extremely beneficial to you as a developer.
 
+## Široka faza
+
+Široka faza detekcije sudara je deo procesa detekcije sudara u simulaciji fizike. Ova faza je namenjena da filtrira objekte koji nisu u potencijalnom sudaru, tako da se ne obrađuju u detaljnoj fazi detekcije sudara. To se obično postiže korišćenjem algoritama za brzo pretraživanje, kao što su Bounding Volume Hierarchy (BVH) ili Spatial Hashing. 
+
 ## Primena
 
 Collision detection is usually performed in two phases:

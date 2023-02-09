@@ -1,7 +1,7 @@
 ## Jedinstvenik (*Singleton*)
 
-A singleton is a global object for which only one instance exists in the whole application. All games need global objects that must be visible from many different classes and scopes. A texture manager, the joystick controller object, and the player class are all singletons.
+Singleton ili jedinstvenik je globalni objekat za koji postoji samo jedan primerak u celoj aplikaciji. Svim igrama trebaju svima dostupni globalni objekti. Menadžer tekstura, kontroler džojstika i klasa igrača su singletoni.
 
-It starts by declaring a class that has only one public method, which will be used to request an instance of the singleton. All instances actually point at the same structure, so this request call must create the singleton for the first call and just return pointers to it in subsequent calls.
+Svi "primerci" singletona zapravo pokazuju na istu strukturu. Ovaj obrazac se tako implementira da pokušaj kreiranja nove instance kreira singleton samo za prvi poziv, te vraća pokazivače na njega u narednim pozivima.
 
 ![](slike/sington.png)

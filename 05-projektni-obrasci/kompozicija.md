@@ -1,19 +1,20 @@
 ## Kompozitni obrazac (*Composite pattern*)
 
-> make a scene graph of renderable objects
+> pravi graf scene od renderabilnih objekata
 
-The Composite pattern composes objects into tree like structures representing hierarchies. An example may be a game level where we have a number of different pieces e.g. sub levels, trees, enemies etc. and we want to gather them together in a collection.
+Kompozitni obrazac sastavlja objekte u strukture (poput stabla) koje predstavljaju hijerarhije. Primer može biti nivo igre, gde imamo više različitih delova, kao što su podnivoi, drveće, neprijatelji i sl., i želimo ih sakupiti u kolekciju.
 
 ![composite-pattern](slike/composite-pattern.gif)
 
-Many types of applications, games in particular, need to hold heterogeneous collections of data together. A game level can have sublevels, potions, enemies, objects, and so on. The overall data structure can be best described as a part-whole hierarchy with each element being either a primitive or a composite. Having all data in a single structure makes traversal more intuitive. This is what the composite pattern is all about: creating part-whole heterogeneous hierarchies where we can access primitives and composite objects using a standard interface.
+Mnogi tipovi aplikacija, posebno igre, treba da sadrže raznorodnu kolekciju podataka. Nivo igre može imati podnivoe, napitke, neprijatelje, predmete i sl. Ukupna struktura podataka se može opisati kao hijerarhija celina-deo, sa svakim elementom koji je ili primitiv ili kompozit. Čuvanje svih podataka u jednoj strukturi čini pretraživanje lakšim. Tako možemo pristupati primitivima i kompozitima korišćenjem standardnog interfejsa.
 
-As an example, the class Level represents the whole level, and then we use the class LevelItem to describe primitive entities inside that level: potions, objects the user can grab, and so on:
+## Primer
+
+Klasa `Level` predstavlja ceo nivo, a zatim koristimo klasu `LevelItem` da opišemo primitivne entitete unutar tog nivoa: napitke, predmete koje igrač može da uzme i sl.
 
 ```java
 class Level {
   public:
-    virtual ~Level();
     const char* Name() { return _name; }
     virtual float LifePoints();
     virtual int NumEnemies();
@@ -29,13 +30,11 @@ class Level {
 class Potion: public LevelItem {
   public:
     Potion(const char*);
-    virtual ~Potion ();
     virtual float LifePoints();
 };
 
 class CompositeItem : public LevelItem {
   public:
-    virtual ~CompositeItem();
     virtual float LifePoints();
     virtual int NumEnemies();
     virtual void Add(LevelItem*);
@@ -70,7 +69,6 @@ int CompositeItem::NumEnemies() {
 class Enemy : public CompositeItem{
   public:
       Enemy(const char*);
-      virtual ~Enemy();
       virtual float LifePoints();
       virtual int NumEnemies();
 };
@@ -78,7 +76,6 @@ class Enemy : public CompositeItem{
 class SubLevel: public CompositeItem{
   public:
       SubLevel(const char*);
-      virtual ~SubLevel();
       virtual float LifePoints();
       virtual int NumEnemies();
 };
@@ -105,4 +102,4 @@ void LordOfTheRings () {
 }
 ```
 
-This code creates a hierarchy based on The Lord of the Rings. As a result, we create two sublevels (Moria and The Shire) and then a host of creatures and potions in each zone.
+Ovaj kod kreira hijerarhiju na osnovu Gospodara prstenova. Kao rezultat, kreiramo dva podnivoa (`Moria` i `The Shire`) i zatim mnoštvo stvorenja i napitaka u svakoj zoni.
