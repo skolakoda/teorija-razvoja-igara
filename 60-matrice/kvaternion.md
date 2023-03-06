@@ -13,11 +13,9 @@ Thankfully, there is a rotational representation that overcomes these three prob
 
 ### Kvaternion
 
-A quaternion looks a lot like a four-dimensional vector, but it behaves quite differently. We usually write quaternions using non-italic, non-boldface type, like this:
+A quaternion looks a lot like a four-dimensional vector, but it behaves quite differently. We usually write quaternions like this:
 ```
 q = [ qx qy qz qw ]
 ```
 
 For our purposes, it will suffice to know that the unit-length quaternions (i.e., all quaternions obeying the constraint `qx^2 + qy^2 + qz^2 + qw^2 = 1`) represent three-dimensional rotations.
-
-http://graphics.ucsd.edu/courses/cse169_w05/CSE169_04.ppt

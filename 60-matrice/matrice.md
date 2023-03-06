@@ -1,268 +1,159 @@
 # Matrice
 
-Matrica je niz brojeva, poređanih u redove i kolone. Tj. matrice su tabele brojeva.
+Matrica je niz brojeva, poređanih u redove i kolone (tabela brojeva). Tako, matrica `2 x 3` ima 2 reda i 3 kolone. Ako matrica ima isti broj vrsta i kolona, onda je kvadratna matrica.
 
-Za kvadratnu šemu brojeva kažemo da je matrica tipa m x n, to znači da ima m redova i n kolona. Ako matrica ima isti broj vrsta i kolona, za nju kažemo da je kvadratna matrica.
-
-Matrica -A je suprotna matrica za matricu A.
-
-The dimensions of a matrix tells its size: the number of rows and columns of the matrix, in that order.
-
-When working with matrix dimensions, remember rows × columns!
+Matrica `-A` je suprotna matrica matrici `A`.
 
 ## Rotacija matrice?
 
-Matrices are like 2-dimensional vectors. For example, a typical 2x2 matrix might look like this:
-
-   [a c
-    b d]
-
-When you multiply a matrix by a vector, you sum the dot product of each row of the matrix with the vector. For example, if we multiply the above matrix with the vector (x,y), we get:
+Matrice su kao 2-dimenzionalni vektori. Na primer, tipična 2x2 matrica može izgledati ovako:
 
 ```
-(a,c)•(x,y) + (b,d)•(x,y)
+a c
+b d
 ```
 
-Written another way, this is:
+Kada množimo matricu vektorom, sabiramo proizvod (*dot product*) svakog reda matrice sa vektorom. Na primer, ako pomnožimo gornju matricu sa vektorom `(x, y)`, dobijamo:
+
 ```
-x(a,b) + y(c,d)
+(a, c) • (x, y) + (b, d) • (x, y)
 ```
 
-This is the exact same expression that we use when changing the basis vectors! So, multiplying a 2x2 matrix with a 2D vector is the same as changing its basis vectors. For example, if we plug the standard basis vectors (1,0) and (0,1) into the matrix columns, we get:
+Ili napisano na drugi način:
 
-[1 0
- 0 1]
+```
+x(a, b) + y(c, d)
+```
 
-This is the identity matrix, which has no effect, as we would expect. If we plug in our 49-degree rotation bases, we get:
+Ovo je potpuno isti izraz koji koristimo kada menjamo bazne vektore! Dakle, množenje `2x2` matrice sa 2D vektorom je isto što i menjanje njenih baznih vektora. Na primer, ako stavimo standardne bazne vektore (1,0) i (0,1) u kolone matrice, dobijamo:
 
-[0.66 -0.75
- 0.75  0.66]
+```
+1 0
+0 1
+```
 
-This matrix will rotate any 2D vector counter-clockwise by 49 degrees.
+Ovo je matrica identiteta, koja nema efekta. Ako dodamo osnove rotacije od 49 stepeni, dobijamo:
+
+```
+0.66 -0.75
+0.75  0.66
+```
+
+Ova matrica će rotirati bilo koji 2D vektor u smeru suprotnom od kazaljke na satu za 49 stepeni.
 
 ## Operacije nad matricama
 
-Matrices can be added, multiplied, transposed, and inverted.
+Matrice se mogu sabirati, množiti, transponovati i invertovati. 
 
-Matrix operations can be used to move 2D objects around on the screen and manipulate 3D objects within the world coordinate system.
+Matrične operacije se često koriste u razvoju igara. Na primer, množenje matrica može se koristiti za izračunavanje kretanja objekata, a transponiranje za izračunavanje rotacija ili transformacija objekata.
 
 ### Sabiranje i oduzimanje matrica
 
 ![matrix_operations](slike/matrix_operations.jpg)
 
-Mogu se sabirati i oduzimati samo matrice istog tipa.
+Matrice istih dimenzija se mogu sabirati, tako što saberemo pripadajuće elemente (odnosno brojčane vrednosti u istom položaju u obje matrice). 
 
-Always make sure that both matrices are the same size before you attempt to add them. If A and B are both 3x3, so you can add them together.
+Na primer, ako imamo matrice A i B, za svaki element računamo zbir[i][j] = A[i][j] + B[i][j]. 
 
-Here is a sample function that shows how to add matrices in code:
+U kodu:
 
 ```c
 Matrix3X3 addMatrices(Matrix3X3 a, Matrix3X3 b)
 {
-  Matrix3X3 temp;
+  Matrix3X3 newMatrix;
   for(int i = 0; i<3; i++){
     for(int j=0; j<3; j++){
-      temp.index[i][j] = (a.index[i][j] + b.index[i][j]);
+      newMatrix[i][j] = (a[i][j] + b[i][j]);
     }
   }
-  return temp;
+  return newMatrix;
 }
 ```
 
-Subtracting matrices works exactly the same way; you just subtract corresponding entries.
+Oduzimanje matrica radi na isti način, samo oduzimamo pripadajuće elemente.
 
 ### Množenje matrice skalarom
 
-Matrica se množi brojem tako što se svi elementi matrice pomnože tim brojem.
+Matrica se množi nekim brojem tako što se svi elementi matrice pomnože tim brojem.
 
 ### Množenje matrica
 
-Proizvod dve matrice je definisan samo ako je broj kolona prve matrice jednak sa brojem redova druge matrice.
+Množenje dve matrica je moguće samo ako je broj kolona prve jednak broju redova druge. Za matrice ne važi komutativnost množenja: `A x B != B x A`.
 
-Za matrice u opštem slučaju ne važi komutativnost množenja.
-
-You can multiply matrices by taking a series of dot products. Keep in mind two important aspects of the dot product:
-* The two vectors must have the same number of entries to take the dot product.
-* The dot product returns a scalar quantity (a single number).
+Matrice A i B množimo tako što pomnožimo kolone matrice A sa redovima matrice B (tj. redom računamo proizvod (*dot product*) vektora kolone i vektora reda). 
 
 ![mnozenje-matrica](slike/mnozenje-matrica.png)
 
-Here is a function that allows us to multiply two 3x3 matrices:
+Na primer, ovako bismo pomnožili dve 3x3 matrice:
+
 ```cpp
 Matrix3X3 multiply3X3Matrices(Matrix3X3 a, Matrix3X3 b) {
-  Matrix3X3 temp = createFixed3X3Matrix(0);
+  Matrix3X3 newMatrix;
   for (int i = 0; i < 3; i++) {
     for (int j = 0; j < 3; j++) {
       for (int k = 0; k < 3; k++) {
-        temp.index[i][j] += (a.index[i][k] * b.index[k][j]);
+        newMatrix[i][j] += (a[i][k] * b[k][j]);
       }
     }
   }
-  return temp;
+  return newMatrix;
 }
 ```
 
-This process is only slightly different when multiplying two different sized matrices:
+Procedura je drugačija kada množimo dve matrice različitih veličina:
+
 ```cpp
 Matrix3X1 multiplyMatrixNxM(Matrix3X3 a, Matrix3X1 b) {
-  Matrix3X1 temp;
-  temp.index[0] = 0.0 f;
-  temp.index[1] = 0.0 f;
-  temp.index[2] = 0.0 f;
+  Matrix3X1 newMatrix;
+  newMatrix[0] = 0;
+  newMatrix[1] = 0;
+  newMatrix[2] = 0;
   for (int i = 0; i < 3; i++) {
     for (int j = 0; j < 3; j++) {
-      temp.index[i] += (a.index[i][j] * b.index[j]);
+      newMatrix[i] += (a[i][j] * b[j]);
     }
   }
-  return temp;
+  return newMatrix;
 }
 ```
 
-### Transponovana matrica
+Imajte na umu dva važna aspekta množenja matrica:
+* dva vektora moraju imati isti broj elemenata da bi dobili proizvod.
+* proizvod (*dot product*) je skalarna vrednost (običan broj).
 
-The transpose operation simply swaps each entry's row and column.
+### Transponovanje matrica
+
+Transponovanje je zamena redova i kolona matrice. To znači da će elementi koji su bili u istom redu biti u istoj koloni, a elementi koji su bili u istoj koloni biti u istom redu. Na primer, ako imamo matricu od 2 reda i 3 kolone, njena transponovana matrica će imati 3 reda i 2 kolone.
+
+Transponovana matrica A se označava kao AT. To znači da redovi A postaju kolone AT, a kolone A redovi AT.
 
 ![matrix-transpose](slike/matrix-transpose.gif)
 
-How to transpose a 4x4 matrix in code:
+Primer:
+
 ```cpp
 Matrix4X4 transpose4X4Matrix(Matrix4X4 a) {
-  Matrix4X4 temp;
+  Matrix4X4 newMatrix;
   for (int i = 0; i < 4; i++) {
     for (int j = 0; j < 4; j++) {
-      temp.index[i][j] = a.index[j][i];
+      newMatrix[i][j] = a[j][i];
     }
   }
-  return temp;
+  return newMatrix;
 }
 ```
 
-## Linearna transformacija
-> primeri su mahom 2D. The blue original is mapped to the green grid and shapes. The origin (0,0) is marked with a black point.
+### Invertovanje
 
-![](slike/linear-transformations.png)
+Invertovanje matrice je matematička operacija koja se primjenjuje na kvadratne matrice kako bi se dobila inverzna matrica, koja se potom množi s prvotnom matricom da bi se dobila jedinična matrica.
 
-Linearna transformacija vrši se tako što se transformaciona matrica pomnoži sa izvornom matricom.
-
-What makes a transformation linear is the following geometric rule: The origin must remain fixed, and all lines must remain lines.
-
-### Identitet
-
-Jedinična (ili identična) matrica je kvadratna matrica kojoj su elementi na glavnoj dijagonali jedinice, a ostali nule. Ona u množenju ne menja druge matrice (slično kao broj 1).
-
-Za 2D:
-```
-[ 1 0
-  0 1 ]
-```
-
-Za 3D:
-```
-[ 1 0 0
-  0 1 0
-  0 0 1 ]
-```
-
-I tako dalje do N dimenzija...
-
-### Preslikavanja (refleksija)
-
-Reflection through the vertical axis:
-```
-[ -1 0
-   0 1  ]
-```
-![](slike/refleksija.png)
-
-### Stretching
-
-Transformation matrix associated with a stretch by a factor `k` along the x-axis:
+Jedinična matrica je matrica koja ima jedinice na glavnoj dijagonali (od gornjeg levog do donjeg desnog ugla) i nule na svim drugim pozicijama. Na primjer, 2x2 jedinična matrica izgleda ovako:
 
 ```
-[ k 0
-  0 1 ]
+1 0
+0 1
 ```
 
-Similarly, transformation matrix associated with a stretch by a factor `k` along the y-axis:
-```
-[ 1 0
-  0 k ]
-```
+Ne mogu se sve matrice invertirati. Matrice koje se ne mogu invertirati zovu se singularne matrice.
 
-### Skaliranje
-
-Scaling by a factor of 3/2:
-```
-[ 3/2  0
-   0  3/2 ]
-```
-
-![](slike/skaliranje.png)
-
-### Stiskanje (*squeeze*)
-
-Squeeze mapping with r=3/2:
-```
-[ 3/2  0
-   0  2/3 ]
-```
-![](slike/squeeze.png)
-
-### Rotation
-Transformation matrix for a rotation counter-clockwise about the origin:
-```
-[  cos(θ) sin(θ)
-  -sin(θ) cos(θ) ]
-```
-
-Rotation by π/6 (30°):
-
-![](slike/rotacija.png)
-
-### Striganje (*shearing*)
-
-Striganje ili striž paralelan x osi:
-```
-[ 1 k
-  0 1 ]
-```
-
-A shear parallel to the y axis:
-```
-[ 1 0
-  k 1 ]
-```
-
-Horizontal (ili vertikal) shear sa k = 1.5:
-```
-[ 1 1.5
-  0 1  ]
-```
-![](slike/VerticalShear.png)
-
-### Obrtanje (inverzija)
-
-Ako je matrica A:
-```
-[ a b
-  c d  ]
-```
-
-Njena inverzija je:
-
-![](slike/inverzija.gif)
-
-(`a * d - b * c` se naziva determinanta matrice)
-
-## 3D Matrices
-
-Matrices in 3D work just like they do in 2D. You just define three columns for the basis vectors instead of two. If the basis vectors are (a,b,c), (d,e,f) and (g,h,i) then your matrix should be:
-
-[a d g
- b e h
- c f i]
-
-
-http://alfonse.bitbucket.org/oldtut/Positioning/Tut04%20The%20Matrix%20Has%20You.html
-https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Matrix_math_for_the_web
-https://www.tutorialspoint.com/computer_graphics/3d_transformation.htm
+Postupak za invertovanje matrice može biti složen, posebno za velike matrice, ali postoje programi koji ga mogu automatizirati.
