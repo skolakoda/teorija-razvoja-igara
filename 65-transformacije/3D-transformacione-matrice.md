@@ -1,14 +1,6 @@
-# 3D matrice
+# 3D transformacione matrice
 
-3D matrice funkcionišu isto kao 2D, samo imaju tri kolone za osnovne vektore umesto dve. Ako su osnovni vektori (a, b, c), (d, e, f) i (g, h, i), matrica bi bila:
-
-```
-a d g
-b e h
-c f i
-```
-
-## Matrica translacije
+## Translacija
 
 $$
 T = \begin{bmatrix}
@@ -19,7 +11,7 @@ T = \begin{bmatrix}
 \end{bmatrix}
 $$
 
-## Matrica skaliranja
+## Skaliranje
 
 $$
 S = \begin{bmatrix}
@@ -30,7 +22,7 @@ S = \begin{bmatrix}
 \end{bmatrix}
 $$
 
-## Matrice rotacije
+## Rotacija
 
 Matrice za rotaciju po x, y i z osi:
 
