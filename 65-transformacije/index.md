@@ -1,133 +1,131 @@
-# Transformacije
+# 2D linearne transformacije
 
-Transformacije obuhvataju kretanje objekata (napred, nazad, gore, dole), skaliranje (uvećanje ili smanjenje) i rotiranje.
+Linearno preslikavanje (ili linearna transformacija) je funkcija između dva vektorska prostora. 
 
-
-## Linearna transformacija
+Linearne transformacija obuhvataju kretanje objekata (napred, nazad, gore, dole), skaliranje (uvećanje ili smanjenje) i rotiranje. Transformacija se mogu predstaviti kao matrice.
 
 ![](slike/linear-transformations.png)
 
-Linearna transformacija vrši se tako što se transformaciona matrica pomnoži sa izvornom matricom.
+Linearna transformacija funkcioniše tako što se transformaciona matrica pomnoži sa izvornom matricom. Transformaciju linearnom čini sledeće pravilo: ishodište ostaje fiksno a sve linije ostaju prave.
 
-What makes a transformation linear is the following geometric rule: The origin must remain fixed, and all lines must remain lines.
+## Identitet
 
-### Identitet
+Identitetska (ili jedinična) matrica je kvadratna matrica kojoj su brojevi na glavnoj dijagonali jedinice, a ostalo nule. Ona u množenju ne menja druge matrice, slično kao broj 1.
 
-Jedinična (ili identična) matrica je kvadratna matrica kojoj su elementi na glavnoj dijagonali jedinice, a ostali nule. Ona u množenju ne menja druge matrice (slično kao broj 1).
-
-Za 2D:
+2D identitetska matrica:
 ```
-[ 1 0
-  0 1 ]
+1 0
+0 1
 ```
 
-Za 3D:
+3D identitetska matrica:
 ```
-[ 1 0 0
-  0 1 0
-  0 0 1 ]
+1 0 0
+0 1 0
+0 0 1
 ```
 
-I tako dalje do N dimenzija...
+I tako dalje...
 
-### Preslikavanja (refleksija)
+## Refleksija (preslikavanje)
 
-Reflection through the vertical axis:
+Refleksija kroz vertikalnu osu:
+
 ```
-[ -1 0
-   0 1  ]
+-1 0
+ 0 1
 ```
+
 ![](slike/refleksija.png)
 
-### Stretching
+## Istezanje (*stretching*)
 
-Transformation matrix associated with a stretch by a factor `k` along the x-axis:
+Transformaciona matrica za istezanje faktorom `k` duž x ose:
 
 ```
-[ k 0
-  0 1 ]
+k 0
+0 1
 ```
 
-Similarly, transformation matrix associated with a stretch by a factor `k` along the y-axis:
+Slično, transformaciona matrica za istezanje faktorom `k` duž y ose:
+
 ```
-[ 1 0
-  0 k ]
+1 0
+0 k
 ```
 
-### Skaliranje
+## Skaliranje
 
-Scaling by a factor of 3/2:
+Skaliranje faktorom 3/2:
+
 ```
-[ 3/2  0
-   0  3/2 ]
+3/2  0
+ 0  3/2
 ```
 
 ![](slike/skaliranje2.png)
 
-### Stiskanje (*squeeze*)
+## Stiskanje (*squeeze*)
 
-Squeeze mapping with r=3/2:
+Mapiranje stiskanja sa r=3/2:
+
 ```
-[ 3/2  0
-   0  2/3 ]
+3/2  0
+ 0  2/3
 ```
+
 ![](slike/squeeze.png)
 
-### Rotation
-Transformation matrix for a rotation counter-clockwise about the origin:
+## Rotacija
+
+Transformaciona matrica za rotaciju oko ishodišta u smeru suprotnom od kazaljke:
+
 ```
-[  cos(θ) sin(θ)
-  -sin(θ) cos(θ) ]
+ cos(θ) sin(θ)
+-sin(θ) cos(θ)
 ```
 
-Rotation by π/6 (30°):
+Rotacija za π/6 (30°):
 
 ![](slike/rotacija.png)
 
-### Striganje (*shearing*)
+## Striganje (*shearing*)
 
-Striganje ili striž paralelan x osi:
-```
-[ 1 k
-  0 1 ]
-```
+Striganje paralelno x osi:
 
-A shear parallel to the y axis:
 ```
-[ 1 0
-  k 1 ]
+1 k
+0 1
 ```
 
-Horizontal (ili vertikal) shear sa k = 1.5:
+Striganje paralelno y osi:
+
 ```
-[ 1 1.5
-  0 1  ]
+1 0
+k 1
 ```
+
+Horizontalno (ili vertikalno?) striganje sa k = 1.5:
+
+```
+1 1.5
+0 1
+```
+
 ![](slike/VerticalShear.png)
 
-### Obrtanje (inverzija)
+
+## Obrtanje (inverzija)
 
 Ako je matrica A:
+
 ```
-[ a b
-  c d  ]
+a b
+c d
 ```
 
 Njena inverzija je:
 
 ![](slike/inverzija.gif)
 
-(`a * d - b * c` se naziva determinanta matrice)
-
-## 3D Matrices
-
-Matrices in 3D work just like they do in 2D. You just define three columns for the basis vectors instead of two. If the basis vectors are (a,b,c), (d,e,f) and (g,h,i) then your matrix should be:
-
-[a d g
- b e h
- c f i]
-
-
-http://alfonse.bitbucket.org/oldtut/Positioning/Tut04%20The%20Matrix%20Has%20You.html
-https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Matrix_math_for_the_web
-https://www.tutorialspoint.com/computer_graphics/3d_transformation.htm
+`a * d - b * c` se naziva determinanta matrice.
