@@ -1,69 +1,71 @@
 # Rotacija (vrtnja)
 
-In two dimensions, it’s quite easy to express the orientation of a rigid body. Since there is only one possible axis of rotation, the only information we need is the angle.
+U dve dimenzije, prilično je lako izraziti orijentaciju tela. Pošto postoji samo jedna moguća osa rotacije, jedina informacija koja nam je potrebna je ugao.
 
-In three dimensions, however, there are three primary coordinate axes about each of which a body may rotate. Moreover, a body in three dimensions may rotate about any arbitrary axis, not necessarily one of the coordinate axes.
+Međutim, u tri dimenzije postoje tri primarne ose oko svake od kojih telo može da rotira. Štaviše, telo u tri dimenzije može da rotira oko bilo koje proizvoljne ose, ne nužno neke od koordinatnih osa.
 
-## Tarzan
+## Primer: Tarzan
 
-For example, the player can jump on to a rope and swing from one platform to another. You can implement the swinging motion as a rotation around the point where the rope is attached. In order to do this, you need to calculate the vector going from the player to the center of rotation, take the ugao of this vector, increase it a bit, and recalculate the player's position.
+Na primer, igrač može da skoči na konopac i da se ljulja sa jedne platforme na drugu. Možete da primenite ljuljanje kao rotaciju oko tačke gde je konopac pričvršćen. Da biste to uradili, morate izračunati vektor koji ide od igrača do centra rotacije, uzeti ugao ovog vektora, malo ga povećati i ponovo izračunati poziciju igrača.
 
-You have to calculate the ugao of the vector from the player to the center of rotation with atan2(). After you have increased the ugao, you can calculate the new x- and y-coordinates with sin and cos:
+Ugao vektora od igrača do centra rotacije računamo pomoću atan2(). Nakon što povećamo ugao, možemo izračunati nove `x` i `y` koordinate sa `sin` i `cos`:
 
-```c
-ugao = atan2 (y, x);
-duzina = sqrt (x * x + y * y);
-ugao += 1;
-nov_x = duzina * cos (ugao);
-nov_y = duzina * sin (ugao);
+```js
+ugao = atan2(y, x)
+duzina = sqrt(x * x + y * y)
+ugao += 1
+nov_x = duzina * cos (ugao)
+nov_y = duzina * sin (ugao)
 ```
 
-Because you convert from Cartesian coordinates to polar coordinates and then back again, you can lose precision. There is a better way: you can make use of a rotation matrix. Rotation matrices provide a way to rotate a vector without converting to polar coordinates:
+Pošto konvertujemo iz kartezijanskih koordinata u polarne, a zatim ponovo nazad, možemo izgubiti preciznost. Postoji bolji način: matrica rotacija. Matrica rotacija omogućuje rotiranje vektora bez pretvaranja u polarne koordinate:
 
-```
-nov_x = x * cos (ugao) - y * sin (ugao)
-nov_y = x * sin (ugao) + y * cos (ugao)
+```js
+nov_x = x * cos(ugao) - y * sin(ugao)
+nov_y = x * sin(ugao) + y * cos(ugao)
 ```
 
-With this method, you can perform rotations without using atan2. It is sensible to precalculate cos and sin, since you need it twice.
+Ovim metodom možemo praviti rotacije bez `atan2`. 
+
+P.s. Razumno je unapred izračunati `cos` i `sin`, jer nam treba dvaput.
 
 ## Posebni slučajevi
 
 I kod rotacije za 90 stepeni možemo koristiti istu formulu:
-```
-nov_x = x * cos (90) - y * sin (90)
-nov_y = x * sin (90) + y * cos (90)
+
+```js
+nov_x = x * cos(90) - y * sin(90)
+nov_y = x * sin(90) + y * cos(90)
 ```
 
 Ali cos(90) je 0, a sin(90) je 1, pa možemo uprostiti:
-```
-nov_x = x * 0 - y * 1
-nov_y = x * 1 + y * 0
 
-nov_x = -y
-nov_y = x
+```js
+nov_x = x * 0 - y * 1 = -y
+nov_y = x * 1 + y * 0 = x
 ```
 
 Rotacija za 180 stepeni se svodi na:
-```
+
+```js
 nov_x = -x
 nov_y = -y
 ```
 
 Ovde su svi specijalni slučajevi, tj. četvrtine kruga:
 
-| stepeni | 90 | 180 | 270 | 360 |
+| rotacija | 90 | 180 | 270 | 360 |
 | ------- |:--:| :--:|:---:|----:|
 | x       | -y | -x  | y   | x   |
 | y       | x  | -y  | -x  | y   |
 
-## Brodić
+## Primer: Svemirski brod
 
-Let's say we're making an Asteroids game, and we have a simple 2D space ship that can rotate freely. The ship model looks like this:
+Recimo da pravimo igru Asteroidi, i imamo jednostavan 2D svemirski brod koji se može slobodno rotirati. Model broda izgleda ovako:
 
 ![](slike/spaceship.jpg)
 
-So how do we draw it when the player rotates by an arbitrary amount, like 49 degrees counter-clockwise? Well, trigonometry we can create a function for 2D rotation that inputs a point and an angle, and outputs a rotated point:
+Kako ga nacrtati kada se igrač rotira za proizvoljan ugao, na primer za 49 stepeni u smeru suprotnom od kazaljke? Pa, trigonometrijom možemo kreirati funkciju za 2D rotaciju, koja prima jednu tačku i ugao, te vraća rotiranu tačku:
 
 ```java
 vec2 rotate(vec2 point, float angle){
@@ -74,23 +76,24 @@ vec2 rotate(vec2 point, float angle){
 }
 ```
 
-Applying this to our three points gives us the following shape:
+Primenom ovoga na naše tri tačke dobijamo sledeći oblik:
 
 ![](slike/spaceshiprotated.jpg)
 
-Cosine and sine operations are pretty slow, but we're only doing them on three points. But now we decide to upgrade the ship to look like this:
+Operacije kosinusa i sinusa su prilično spore, ali mi ih radimo samo na tri tačke. Međutim, sada odlučujemo da nadogradimo brod da izgleda ovako:
 
 ![](slike/fancyspaceship.jpg)
 
-Now our old method is too slow! There are many ways to solve this problem, but an elegant solution comes to us like this: "What if instead of rotating each point in the model, we just rotate the model's x and y axes instead?"
+Sada je naša stara metoda prespora! Postoji mnogo načina da se reši ovaj problem, ali elegantno rešenje glasi ovako: „Šta ako umesto da rotiramo svaku tačku modela, rotiramo samo `x` i `y` ose modela?“
 
 ![](slike/spaceshiprotated2.jpg)
 
-How does this work? Well, let's look at what coordinates mean. When we talk about the point (3,2), we are saying that its position is three times the x-axis plus two times the y-axis. The default axes are (1,0) for the x-axis and (0,1) for the y-axis, so we get the position 3(1,0) + 2(0,1). But the axes don't have to be (1,0) and (0,1). If we rotate these axes, then we can rotate every point at the same time.
+Kako ovo radi? Pa, hajde da pogledamo šta znače koordinate. Kada govorimo o tački (3,2), kažemo da je njen položaj tri puta `x` osa plus dva puta `y` osa. Podrazumevane ose su (1,0) za x-osu i (0,1) za y-osu, tako da dobijamo poziciju 3(1,0) + 2(0,1). Ali ose ne moraju biti (1,0) i (0,1). Ako rotiramo ove ose, onda možemo rotirati svaku tačku u isto vreme.
 
-To get the rotated x and y axes we just use the trigonometric function above. For example, if we are rotating by 49 degrees, then we get the new x-axis by rotating (1,0) by 49 degrees and we get the y-axis by rotating (0,1) by 49 degrees. Our new x-axis is (0.66, 0.75), and our new y-axis is (-0.75, 0.66).
+Da bismo dobili rotirane `x` i `y` ose, samo koristimo prethodnu trigonometrijsku funkciju. Na primer, ako rotiramo za 49 stepeni, onda dobijamo novu `x` osu rotacijom (1,0) za 49 stepeni a novu `y` osu rotacijom (0,1) za 49 stepeni. Dakle, nova x-osa je (0,66, 0,75), a nova y-osa (-0,75, 0,66).
 
-Whenever you have modified the basis vectors (1,0) and (0,1) to (a,b) and (c,d), then the modified point (x,y) can be found using this expression:
+Kad god modifikujemo osnovne vektore (1,0) i (0,1) u (a,b) i (c,d), onda se modifikovana tačka (x,y) može naći pomoću ovog izraza:
+
 ```
 x(a,b) + y(c,d)
 ```
@@ -104,20 +107,18 @@ Rotate function is more elegantly expressed in matrix form:
 
 ## 3D rotacija
 
-Rotation about the Z axis works just like in 2D. We just have to add an extra column and row:
+Rotacija oko Z ose radi isto kao u 2D. Moramo samo dodati dodatnu kolonu i red:
 
+```
 [cos(θ) -sin(θ) 0
  sin(θ)  cos(θ) 0
  0       0      1]
+```
 
-By default, the rotation matrix rotates objects with respect to the origin, just like the scaling matrix does. The resulting effect is that the object appears to be orbiting about the origin.
+Podrazumevano, matrica rotacije rotira objekat u odnosu na ishodište.
 
-There are actually two different approaches to rotating 3D objects. One method uses quaternions, but the math is complex. This second method is Euler rotation. It is very similar to scaling and translating.
+## Ojlerovi uglovi
 
-## Euler angles
+Postoje dva pristupa rotiranju 3D objekata. Jedna metoda koristi kvaternione, ali matematika je složena. Drugi metod je Ojlerova rotacija, veoma slično skaliranju i prevođenju.
 
-The three Euler angles (roll, pitch, and yaw) represent the orientation of a rigid body in 3D. For example, in an airplane the nose pitches up or down, the plane rolls (or banks) left or right, and the yaw (or heading) changes to the left or right.
-
-http://ogldev.atspace.co.uk/www/tutorial07/tutorial07.html
-http://alfonse.bitbucket.org/oldtut/Positioning/Tut06%20Rotation.html
-http://blog.wolfire.com/2010/07/Linear-algebra-for-game-developers-part-4
+Tri Ojlerova ugla (*roll*, *pitch*, and *yaw*) predstavljaju orijentaciju tela u 3D. Na primer, nos aviona se naginje (*pitches*) naviše ili naniže, avion se uvija (*rolls*) ulevo ili udesno, i skreće (*yaw*) na levu ili desnu stranu.

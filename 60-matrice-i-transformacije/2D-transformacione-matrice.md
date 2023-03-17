@@ -1,3 +1,11 @@
+# Linearne transformacije
+
+Linearna preslikavanja ili transformacije obuhvataju: kretanje tela (napred, nazad, gore, dole), skaliranje (uvećanje ili smanjenje) i rotiranje. Transformaciju čine linearnom dva pravila: ishodište ostaje fiksno a sve linije ostaju prave.
+
+![](slike/linear-transformations.png)
+
+Linearne transformacije se mogu predstaviti matricama. Transformacija nastaje tako što se izvorna matrica pomnoži sa transformacionom matricom. 
+
 # 2D transformacione matrice
 
 ## Identitet
