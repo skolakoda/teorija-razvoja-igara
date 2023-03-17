@@ -49,7 +49,7 @@ $$
 
 ## Primeri
 
-Osnovne transformacija pomoću matrica u Three.js-u:
+Osnovne transformacije pomoću matrica u Three.js-u:
 
 ```js
 const matrix = new THREE.Matrix4()
