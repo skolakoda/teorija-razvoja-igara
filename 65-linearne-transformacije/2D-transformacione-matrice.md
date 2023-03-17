@@ -57,7 +57,7 @@ Skaliranje faktorom 3/2:
 
 ![](slike/skaliranje2.png)
 
-## Stiskanje (*squeeze*)
+## Stiskanje (*squeeze*) ili neujednačeno skaliranje
 
 Mapiranje stiskanja sa r=3/2:
 
