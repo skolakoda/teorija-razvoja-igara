@@ -33,7 +33,7 @@ pomak_x = duzina * cos(ugao)
 pomak_y = duzina * sin(ugao)
 ```
 
-## Prevođenje kartezijanskog u polarni zapis
+## Računanje dužine vektora
 
 S druge strane, ako imamo vektor pomaka (x, y), dužinu možemo računati Pitagorinom teoremom.
 
@@ -41,13 +41,25 @@ S druge strane, ako imamo vektor pomaka (x, y), dužinu možemo računati Pitago
 
 Na primer, ako se nepoznati leteći objekat pomera 4 nadesno i 3 nagore, ovako ćemo saznati njegovu brzinu:
 
-```
-brzina^2 = 3^2 + 4^2
-brzina^2 = 9 + 16
-brzina^2 = 25
-brzina = √25
-brzina = 5
-```
+\[
+\text{brzina}^2 = 3^2 + 4^2
+\]
+
+\[
+\text{brzina}^2 = 9 + 16
+\]
+
+\[
+\text{brzina}^2 = 25
+\]
+
+\[
+\text{brzina} = \sqrt{25}
+\]
+
+\[
+\text{brzina} = 5
+\]
 
 ## Vektori u igrama
 
