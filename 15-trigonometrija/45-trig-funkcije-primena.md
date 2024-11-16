@@ -69,20 +69,3 @@ function animate() {
 
 animate()
 ```
-
-## Prateća raketa
-
-Recimo da pišemo igru u kojoj igrač može ispaljivati prateće rakete. Prvo izračunamo vektor razdaljine između rakete i cilja, tako što oduzmemo koordinate rakete od koordinata cilja:
-
-```js
-razdaljina.x = target.x − raketa.x
-razdaljina.y = target.y − raketa.y
-```
-
-Na osnovu ovoga možemo izračunati ugao pod kojim raketa treba da leti, pomoću funkcije `atan2()`:
-
-```js
-ugao = atan2(razdaljina.y, razdaljina.x)
-```
-
-Ukoliko želimo da raketa prati cilj i nakon lansiranja, potrebno je da povremeno ažuriramo ovaj ugao.

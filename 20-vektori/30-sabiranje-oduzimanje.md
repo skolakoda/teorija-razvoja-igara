@@ -76,10 +76,30 @@ a - b = [(a.x - b.x), (a.y - b.y), (a.z - b.z)]
 
 ### Oduzimanje vektora u igrama
 
-Oduzimanje vektora je korisno za dobijanje vektora koji vodi od jedne pozicije do druge. Na primer, igrač stoji na poziciji (1,2) sa laserskom puškom, a neprijateljski robot na poziciji (4,3). Da dobijemo vektor kojim laser pogađa robota, oduzimamo poziciju igrača od pozicije robota:
+Oduzimanje vektora je korisno za dobijanje vektora pomaka, koji vodi od jedne pozicije do druge. Da bismo to izračunali, oduzimamo početnu tačku od krajnje tačke.
+
+Na primer, igrač sa laserskom puškom stoji na poziciji (1,2), a neprijateljski robot na (4,3). Da dobijemo vektor kojim laser pogađa robota, oduzimamo poziciju igrača od pozicije robota:
 
 ```
 (4, 3) - (1, 2) = (4-1, 3-2) = (3, 1)
 ```
 
 ![](slike/laser.jpg)
+
+
+### Implementacija prateće rakete
+
+Recimo da pišemo igru u kojoj igrač može ispaljivati prateće rakete. Prvo računamo vektor razdaljine, tako što oduzmemo položaj rakete od položaja cilja:
+
+```js
+razdaljina.x = target.x − raketa.x
+razdaljina.y = target.y − raketa.y
+```
+
+Sada možemo izračunati ugao pod kojim raketa treba da ide, pomoću trigonometrijske funkcije `atan2()`:
+
+```js
+ugao = atan2(razdaljina.y, razdaljina.x)
+```
+
+Ukoliko želimo da raketa prati cilj i nakon lansiranja, potrebno je povremeno ažurirati ovaj ugao.
