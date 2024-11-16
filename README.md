@@ -1,6 +1,6 @@
 # Teorija razvoja igara
 
-Programiranje igara je široka oblast koja uključuje geometriju (posebno trigonometriju), matematiku, dosta fizike i veštačku inteligenciju. Za 3D grafiku je posebno bitna linearna algebra.
+Programiranje igara je široka oblast koja uključuje geometriju (posebno trigonometriju), matematiku, fiziku i veštačku inteligenciju. Za 3D grafiku je posebno bitna linearna algebra.
 
 Pitagora, Dekart i Njutn su trojica likova nezaobilaznih u razvoju igara. Posebno Pitagorina teorema, Dekartov koordinatni sistem i Njutnovi zakoni. U 3D programiranju je nezaobilazan Ojler, poznat po Ojlerovim uglovima i još koječemu.
 
