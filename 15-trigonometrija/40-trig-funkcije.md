@@ -1,26 +1,39 @@
 # Trigonometrijske funkcije
 
-Trigonometrijske funkcije, takođe poznate kao kružne funkcije, računaju nepoznati ugao pravouglog trougla pomoću dužine stranica. Ti uglovi mogu ići od 0 do 90 stepeni.
+**Trigonometrijske funkcije povezuju ugao pravouglog trougla sa odnosom dužina dve stranice.** Mogu služiti za računanje nepoznatog ugla ili stranice trougla, a imaju i mnoge druge namene.
 
-Koriste se i za krugove, jer oni imaju uglove, a u neku ruku i hipotenuzu (poluprečnik). Ugao unutar kruga može iznositi bilo koju pozitivnu ili negativnu vrednost (za razliku od pravouglog trougla).
+Koriste se i za krugove, jer oni imaju uglove, kao i neku vrtsu hipotenuze (poluprečnik). Ugao unutar kruga može iznositi bilo koju pozitivnu, pa čak i negativnu vrednost (za razliku od trougla).
 
-Trigonometrijske funkcije su posebno bitne za razvoj igara. Koriste se za računanje rastojanja i ugla ka nekom predmetu, računanje vektora, simulaciju fizike, modelovanje kružnog kretanja, talasa i drugih periodičnih pojava.
+Najpoznatije trigonometrijske funkcije su **sinus**, **kosinus** i **tangens**:
 
-Najpoznatije trigonometrijske funkcije su sinus, kosinus i tangent:
-* sin = opposite / hypotenuse
-* cos = adjacent / hypotenuse
-* tan = opposite / adjacent
-You can memorize them with SOH, CAH, TOA.
+\[
+\text{sinus}(\alpha) = \frac{\text{naspramna strana}}{\text{hipotenuza}}
+\]
+\[
+\text{kosinus}(\alpha) = \frac{\text{priležeća strana}}{\text{hipotenuza}}
+\]
+\[
+\text{tangens}(\alpha) = \frac{\text{naspramna}}{\text{priležeća strana}}
+\]
+
+Možemo ih pamtiti po engleskim skraćenicama SOH, CAH, TOA:
+
+* **s**in(α) = **o**pposite / **h**ypotenuse
+* **c**os(α) = **a**djacent / **h**ypotenuse
+* **t**an(α) = **o**pposite / **a**djacent
 
 ![trigonometrijske-funkcije](slike/trigonometrijske-funkcije.png)
 
+Ove funkcije su ugrađene u digitrone i dostupne su u većini programskih jezika.
+
 ## Sinus i kosinus
 
-`sin()` i `cos()` funkcije primaju jedan parametar, ugao, i vraćaju broj između -1 i 1. Ugao može biti beskonačne veličine, ali se sinusoidni obrazac ponavlja svakih 360°, što se zove osnovni period. Da promeniš period, samo staviš broj (modifikator) ispred x.
+`sin()` i `cos()` se mogu koristiti za razne stvari. Obe funkcije primaju jedan parametar, ugao, i vraćaju broj između -1 i 1. Ugao može biti beskonačne veličine, ali se sinusoidni obrazac ponavlja svakih 360°, što se zove osnovni period.
 
 ![sinus-kosinus-graf.png](slike/sinus-kosinus-graf.png)
 
-C program prikazuje sinusnu funkciju:
+C program koji crta sinusnu funkciju za razne ulaze:
+
 ```c
 void draw_sine ()
 {
@@ -47,43 +60,55 @@ void draw_sine ()
 
 ![](slike/sine.gif)
 
-## Tangent
+## Tangens
 
-There is a mathematical function called the tangent, which can be used to calculate the ratio of `y` to `x`:
+Tangens je funkcija za izračunavanje odnosa naspramne i priležeće strane trougla, koje su na slici označene sa `y` i `x`:
+
 ```
-tan(angle) = y / x
+tan(α) = y / x
 ```
 
 ![](slike/tan.gif)
 
-This can in fact be written as:
+Tangens se može odrediti i ovako:
 
-```
-tan (angle) = sin (angle) / cos (angle)
-```
+\[
+\text{tan(α)} = \frac{\text{naspramna}}{\text{priležeća}} = \frac{\text{sin(α)}}{\text{cos(α)}}
+\]
 
-This means the tan function is a combination of the sin and cos functions.
+To znači da je tangens kombinacija sinus i kosinus funkcija. 
 
-The inverse function of the tangent is called the arctangent:
-```
-angle = atan (y / x)
-```
+https://jsfiddle.net/mudroljub/c10hjzqe/
 
-But there is a minor problem: this will sometimes give you an incorrect result. Two oposite vectors both have the same y-to-x ratio.
+<script async src="//jsfiddle.net/mudroljub/c10hjzqe/embed/"></script>
+
+# Inverzne trigonometrijske funkcije
+
+**Inverzne trigonometrijske funkcije služe da izračunamo nepoznati ugao pravouglog trougla, na osnovu poznatih dužina dve stranice.**
+
+## Arktangens
+
+Inverzna funkcija tangensa zove se arktangens:
+
+\[
+\text{ugao} = \text{atan} \left( \frac{\text{naspramna}}{\text{priležeća strana}} \right)
+\]
+
+Ali ovo nekad može dati netačan rezultat, jer dva suprotna vektora imaju isti odnos dve stranice.
 
 ![](slike/suprotni-vektori.gif)
 
-A partial work-around is possible like this (partial because we don't check for the case where x is 0):
-```
+Delimično rešenje je moguće ovako (delimično jer ne proveravamo slučaj kada je x 0):
+
+```js
 if (x > 0)
-    angle = atan (y / x);
+    angle = atan(y / x)
 else
-    angle = PI + atan (y / x);
-```
-But to simplify things the function atan2() is available for programmers:
-
-```
-angle = atan2 (y / x)
+    angle = PI + atan(y / x)
 ```
 
-https://jsfiddle.net/mudroljub/c10hjzqe/
+Ali da bi se stvari pojednostavile, funkcija `atan2()` je dostupna programerima:
+
+```js
+angle = atan2(y / x)
+```

@@ -1,8 +1,24 @@
 #  Primena trigonometrijskih funkcija
 
+Trigonometrijske funkcije su posebno bitne za razvoj igara. Koriste se za računanje rastojanja i ugla ka nekom predmetu, računanje vektora, simulaciju fizike, modelovanje kružnog kretanja, talasa i drugih periodičnih pojava.
+
 ## Visina drveta
 
+Bez merenja visine drveta, možemo je izračunati pomoću trigonometrije. Dovoljno je da izaberemo neku tačku, odokativno utvrdimo ugao ka vrhu drveta, i izmerimo rastojanje do podnožja.
+
 ![trigonometrija-uzivo](slike/trigonometrija-uzivo.jpg)
+
+Ovde nam može pomoći tangens funkcija:
+
+\[
+\tan(\alpha) = \frac{\text{visina}}{\text{rastojanje}}
+\]
+
+Pošto je visina nepoznata, menjamo mesta u jednačini:
+
+\[
+\text{visina} = \text{rastojanje} \times \tan(\alpha)
+\]
 
 ## Širina reke
 
@@ -10,74 +26,65 @@
 
 ## Crtanje kruga
 
-Pomoću trigonometrijskih funkcija se može nacrtati i krug:
+Pomoću trigonometrijskih funkcija možemo nacrtati krug:
+
 ```js
 draw_circle () {
-    const length = 50;
-    const angle_stepsize = 0.1;
-    let angle = 0.0;
+    const length = 50
+    const angle_stepsize = 0.1
+    let angle = 0.0
 
     while (angle < 2 * PI) {
-      let x = length * cos(angle);
-      let y = length * sin(angle);
+      let x = length * cos(angle)
+      let y = length * sin(angle)
 
-      draw (x + SCREEN_W / 2, y + SCREEN_H / 2);
-      angle += angle_stepsize;
+      draw (x + SCREEN_W / 2, y + SCREEN_H / 2)
+      angle += angle_stepsize
   }
 }
 ```
 
 ## Kruženje nebeskih tela
 
-With can use sin and cos to animate the orbit of a planet:
+Možemo koristiti sinus i kosinus za animaciju orbite planete:
 
-```c
-void orbit ()
-{
-    int x = 0, y = 0;
+```js
+const canvas = document.getElementById('canvas')
+const ctx = canvas.getContext('2d')
 
-    fixed angle = itofix (0);
-    fixed angle_stepsize = itofix (1);
+let angle = 0
+const length_x = 100
+const length_y = 100
 
-    // These determine the radius of the orbit.
-    // See what happens if you change length_x to 100 :)
-    int length_x = 50;
-    int length_y = 50;
+function animate() {
+  const x = canvas.width / 2 + length_x * Math.cos(angle)
+  const y = canvas.height / 2 + length_y * Math.sin(angle)
 
-    // repeat this until a key is pressed
-    while (!keypressed())
-    {
-        // erase the point from the old position
-        putpixel (screen,
-            fixtoi(x) + SCREEN_W / 2, fixtoi(y) + SCREEN_H / 2,
-            makecol (0, 0, 0));
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
+  ctx.fillRect(x - 2, y - 2, 4, 4)
 
-        // calculate the new position
-        x = length_x * fcos (angle);
-        y = length_y * fsin (angle);
-
-        // draw the point in the new position
-        putpixel (screen,
-            fixtoi(x) + SCREEN_W / 2, fixtoi(y) + SCREEN_H / 2,
-            makecol (255, 255, 255));
-
-        // increment the angle so that the point moves around in circles
-        angle += angle_stepsize;
-
-        // make sure angle is in range
-        angle &= 0xFFFFFF;
-
-        // wait 10 milliseconds, or else it'd go too fast
-        rest (10);
-    }
+  angle += 0.05
+  requestAnimationFrame(animate)
 }
+
+animate()
 ```
 
 ## Prateća raketa
 
-Suppose you are writing a game in which the player can fire homing missiles. First you calculate the direction of the target, as seen from the missile. You can visualize it as a vector. The x- and y-coordinates of this vector can be calculated easily - just subtract the coordinates of the missile from the coordinates of the target.
+Pretpostavimo da pišemo igru u kojoj igrač može ispaljivati navođene rakete. 
 
-Given the x- and y-coordinates of the vector, you can calculate its angle and length, using the atan:
+Prvo izračunamo vektor razdaljine, za udaljenost i pravac između rakete i cilja. Vektor razdaljine računamo tako što oduzmemo koordinate rakete od koordinata cilja:
+
+```js
+razdaljina_x = target_x − raketa_x
+razdaljina_y = target_y − raketa_y
 ```
-target_angle = atan2 (target_y - y, target_x - x)
+
+Na osnovu ovoga može izračunati ugao pod kojim raketa treba da leti, pomoću funkcije `atan2()`:
+
+```js
+ugao = atan2(razdaljina_y, razdaljina_x)
 ```
+
+Ukoliko želimo da raketa prati cilj i nakon lansiranja, potrebno je da povremeno ažuriramo ovaj ugao.

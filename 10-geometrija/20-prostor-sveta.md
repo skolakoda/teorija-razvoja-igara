@@ -2,16 +2,17 @@
 
 ![svet-i-kamera-koordinati](slike/svet-i-kamera-koordinati.png)
 
-Our world origin is located at the lower-left corner of the example program’s window with positive x pointing to the right and positive y pointing up.
+Naše ishodište sveta (*world origin*) nalazi se u donjem levom uglu prozora, pri čemu pozitivni x pokazuje udesno, a pozitivni y nagore.
 
-## Normalizovane koordinate uređaja (*Normalized Device Coordinates*)
+## Normalizovane koordinate uređaja 
 
-Normalized Device Coordinates could range from [-1, 1] for both the x and y axis. A programmer does all screen design in NDC. There are three realities of the hardware that NDC hides from us:
-* The actual number of pixels in x and y.
-* Non-uniform pixel spacing in x and y.
-* Up versus down for the Y coordinate. The NDC-to-pixel transformation will invert Y if necessary so that Y in NDC points up.
+Normalizovane koordinate uređaja (*Normalized Device Coordinates*, skraćeno NDC) mogu biti u rasponu od [-1, 1] za obe ose, x i y. Programer dizajnira čitav ekran koristeći NDC. NDC skriva od nas tri stvarnosti hardvera:
 
-If we map directly from WCS to a DCS, then changing our device requires rewriting this mapping. Instead, use Normalized Device Coordinates (NDC) as an intermediate coordinate system that gets mapped to the device layer.
+- Stvarni broj piksela na x i y osi.
+- Neravnomerno raspoređivanje piksela na x i y osi.
+- Pravac Y ose - gore ili dole. Transformacija NDC-a u piksele će obrnuti Y osu ako je potrebno.
+
+Ako direktno mapiramo koordinatni sistem sveta (WCS) na koordinatni sistem uređaja (DCS), promena uređaja zahtevala bi novo mapiranje. Umesto toga, koristimo normalizovane koordinate uređaja kao posredni sloj.
 
 ![](slike/ndc.gif)
 

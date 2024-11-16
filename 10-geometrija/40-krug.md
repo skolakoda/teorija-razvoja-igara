@@ -1,6 +1,8 @@
 # Krug
 
-Kružnica je skup svih tačaka u ravni, udaljenih na poluprečnik od centra. Lopta je skup svih  tačaka u prostoru, udaljenih na poluprečnik od centra. Znači dve stvari, centar i poluprečnik, određuju krug.
+Dve stvari, centar i poluprečnik, određuju krug.
+
+Kružnica je skup svih tačaka u ravni, udaljenih na poluprečnik od centra. Lopta je skup svih  tačaka u prostoru, udaljenih na poluprečnik od centra. 
 
 Pomoću Pitagorine teoreme računamo rastojanje od centra do tačaka na kružnici. Osnovna jednačina kružnice, čiji je centar na ishodištu, glasi:
 ```

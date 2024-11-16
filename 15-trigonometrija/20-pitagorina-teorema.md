@@ -14,23 +14,28 @@ Pitagorina teorema važi samo za pravougle trouglove.
 
 ## Rastojanje između dve tačke
 
-Često u programiranju želite da znate rastojanje između dve tačke na ekranu.
+Često u programiranju želimo da znamo rastojanje između dve tačke na ekranu.
 
 ![rastojanje](slike/rastojanje.png)
 
-Najlakši način da to izračunate je Pitagorina teorema.
+Najlakši način da to izračunamo je Pitagorina teorema.
 
 ![rastojanje-izmedju-tacaka](slike/distance.png)
 
+Pravolinijska razdaljina između dve tačke se naziva Euklidskom razdaljinom. 
+
 Primer u kodu:
 ```js
-a = x1 - x2
-b = y1 - y2
-c = Math.sqrt(a*a + b*b);
+x = x1 - x2
+y = y1 - y2
+distance = Math.sqrt(a*a + b*b)
 ```
 
-Pravolinijska razdaljina između dve tačke se naziva Euklidskom razdaljinom. 3D primer uključuje i `z` osu:
+3D primer uključuje i `z` osu:
 
 ```js
-distance = Math.sqrt( Math.pow(x2 − x1, 2) + Math.pow(y2 − y1, 2) + Math.pow(z2 − z1, 2) )
+x = x2 − x1
+y = y2 − y1
+z = z2 − z1
+distance = Math.sqrt(x*x + y*y + z*z)
 ```

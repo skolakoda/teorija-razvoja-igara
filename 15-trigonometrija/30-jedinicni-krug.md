@@ -1,6 +1,6 @@
 ### Jedinični krug
 
-Jedinični krug je krug sa poluprečnikom `1`, čiji je centar koordinatno izvorište (`0,0`).
+Jedinični krug je krug sa poluprečnikom `1`, čiji je centar koordinatno ishodište (`0,0`).
 
 ![jedinicni-krug](slike/jedinicni-krug.png)
 
