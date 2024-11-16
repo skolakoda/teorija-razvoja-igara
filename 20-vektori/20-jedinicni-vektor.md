@@ -1,17 +1,52 @@
-# Jedinični vektor (normalizacija vektora)
+# Jedinični vektor
 
 ![](slike/unit-vector.gif)
 
-Jedinični vektor je vektor dužine 1. Možemo normalizovati bilo koji vektor u jedinični vektor istog smera. Da bismo normalizovati vektor, podelimo svaku komponentu sa dužinom vektora:
+Jedinični vektor je vektor dužine 1. Možemo normalizovati svaki vektor u jedinični vektor. 
 
-```
-jedinicni_vektor = (vektor.x, vektor.y, vektor.z) / duzina_vektora
-```
+## Normalizacija vektora
 
-Na primer, da bismo normalizovali vektor (3,4), delimo svaku komponentu njegovom dužinom 5 i dobijamo (3/5, 4/5). x osa jediničnog vektora se obično naziva `i`, y osa `j`, a z osa `k`.
+Da bismo normalizovali vektor, podelimo svaku njegovu komponentu sa dužinom vektora:
 
-U igrama, kada radimo sa smerovima (nasuprot položaja i brzina), bitno je da budu jedinične dužine. Na primer, top uperen u smeru (1,0) ispaljuje projektil pri brzini 20 m/s. Koja je vektorska brzina projektila? Obzirom da je dužina 1, jednostavno pomnožimo brzinu projektila da dobijemo vektorsku brzinu: (20,0).
+\[
+\text{jedinični vektor} = \left( \frac{\text{vektor.x}}{\text{dužina vektora}}, \frac{\text{vektor.y}}{\text{dužina vektora}}, \frac{\text{vektor.z}}{\text{dužina vektora}} \right)
+\]
 
-# Normalni vektori
+Dužina vektora \(|\vec{v}|\) se izračunava primenom Pitagorine teoreme, odnosno njenim  proširenjem na 3D:
+
+\[
+|\vec{v}| = \sqrt{x^2 + y^2 + z^2}
+\]
+
+Na primer, da bismo normalizovali vektor (3, 4), prvo računamo dužinu:
+
+\[
+|\vec{v}| = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5
+\]
+
+Potom delimo svaku komponentu njegovom dužinom i dobijamo:
+
+\[
+\hat{v} = \left( \frac{3}{5}, \frac{4}{5} \right)
+\]
+
+Kod jediničnog vektora, osovine se često označavaju kao:
+- x osa se naziva `i`
+- y osa se naziva `j`
+- z osa se naziva `k`
+
+## Upotreba u igrama
+
+U igrama, kada radimo sa smerovima (nasuprot položaja i brzina), bitno je koristiti jedinične vektore. 
+
+Na primer, top uperen u smeru (1,0), dakle udesno, ispaljuje projektil pri brzini 20 m/s. Koja je vektorska brzina projektila? Jednostavno pomnožimo taj jedinični vektor i brzinu projektila da dobijemo vektorsku brzinu: 
+
+\[
+\vec{v} = (1, 0) \cdot 20 = (20, 0)
+\]
+
+dakle projektil leti 20 m/s udesno.
+
+## Normalni vektori
 
 Vektori su normalni u odnosu na površinu kada su pod pravim uglom. Normalni vektori nemaju nikakve veze sa normalizacijom vektora.

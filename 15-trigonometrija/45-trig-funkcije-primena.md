@@ -74,7 +74,7 @@ animate()
 
 Pretpostavimo da pišemo igru u kojoj igrač može ispaljivati navođene rakete. 
 
-Prvo izračunamo vektor razdaljine, za udaljenost i pravac između rakete i cilja. Vektor razdaljine računamo tako što oduzmemo koordinate rakete od koordinata cilja:
+Prvo izračunamo vektor razdaljine, za udaljenost i smer između rakete i cilja. Vektor razdaljine računamo tako što oduzmemo koordinate rakete od koordinata cilja:
 
 ```js
 razdaljina_x = target_x − raketa_x
