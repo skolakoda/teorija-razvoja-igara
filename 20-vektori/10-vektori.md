@@ -17,11 +17,11 @@ duzina = 5
 smer = 0.93 radijana (ili ~53.3 stepeni)
 ```
 
-**Kartezijanskim načinom** zapisujemo pomak vektora po osama (x, y, i eventualno z), na primer `[4, 3]`:
+**Kartezijanskim načinom** zapisujemo pomeraj vektora po osama (x, y, i eventualno z), na primer `[4, 3]`:
 
 ```
-pomak_x = 4
-pomak_y = 3
+pomeraj_x = 4
+pomeraj_y = 3
 ```
 
 ## Prevođenje polarnog u kartezijanski zapis
@@ -29,13 +29,13 @@ pomak_y = 3
 Iz polarnog zapisa lako možemo dobiti `x` i `y` komponentu vektora. Koristimo `cos()` funkciju za računanje `x`, a `sin()` za `y`. Obe funkcije primaju ugao, a vraćaju broj između -1 i 1. Kada pomnožimo taj broj sa dužinom vektora, dobijemo odgovarajuću komponentu:
 
 ```
-pomak_x = duzina * cos(ugao)
-pomak_y = duzina * sin(ugao)
+pomeraj_x = duzina * cos(ugao)
+pomeraj_y = duzina * sin(ugao)
 ```
 
 ## Računanje dužine vektora
 
-S druge strane, ako imamo vektor pomaka (x, y), dužinu možemo računati Pitagorinom teoremom.
+S druge strane, ako imamo vektor pomeraja (x, y), dužinu možemo računati Pitagorinom teoremom.
 
 ![vector-magnitude](slike/vektori-pitagora.jpg)
 

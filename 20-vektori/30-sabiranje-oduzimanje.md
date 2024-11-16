@@ -1,24 +1,25 @@
 # Sabiranje i oduzimanje vektora
 
-Vektori su mogu sabirati prema pravilima linearne algebre.
+Vektori se mogu sabirati i oduzimati prema pravilima linearne algebre.
 
 ## Sabiranje vektora
 
 Vektore sabiramo tako što im saberemo svaku dimenziju ponaosob. Sabiranje 2D vektora:
 ```
-a + b = [ (a.x + b.x ), (a.y + b.y ) ]
+a + b = [(a.x + b.x ), (a.y + b.y )]
 ```
 
 Sabiranje 3D vektora je identično, samo dodamo još jednu dimenziju:
+
 ```
-a + b = [ (a.x + b.x ), (a.y + b.y ), (a.z + b.z ) ]
+a + b = [(a.x + b.x ), (a.y + b.y ), (a.z + b.z )]
 ```
 
 Ovako izgleda sabiranje 2d vektora sa pravim brojevima:
+
 ```
-[0, 1] + [3, -2]
-= [(0 + 3), (1 - 2)]
-= [3, -1]
+[0, 1] + [3, -2] = [(0 + 3), (1 - 2)] 
+                 = [3, -1]
 ```
 
 U kodu:
@@ -30,20 +31,21 @@ const saberi = (v1, v2) => {
     z: v1.z + v2.z,
   }
 }
-
 ```
 
-## Sabiranje vektora u igrama
+### Sabiranje vektora u igrama
 
-U igrama, česta primena sabiranja vektora je integracija fizike. Svaki fizički predmet obično ima vektore za položaj, brzinu i ubrzanje. Za svaki kadar, treba da integrišemo te vektore, tj. da dodamo brzinu položaju, i ubrzanje brzini.
+U igrama, primer sabiranja vektora je implementacija fizike. Svaki fizički predmet obično ima vektore za položaj, brzinu i ubrzanje. Za svaki kadar, treba da integrišemo te vektore, tj. da dodamo brzinu položaju, i ubrzanje brzini.
 
-Let's consider the example of Mario jumping. As he starts the jump, his velocity is (1,3) - he is moving upwards quickly, but also to the right. His acceleration throughout is (0,-1), because gravity is pulling him down. Here is what his jump looks like over the course of 8 frames:
+Uzmimo na primer Super Marija koji skače. Njegova početna brzina skoka je (1,3), a ubrzanje (0,-1), jer ga gravitacija vuče naniže. Evo kako izgleda njegov skok tokom 8 kadrova:
 
 ![](slike/mario.jpg)
 
-Kao što vidiš, svakog kadra se dodaje gravitacija (-1) na njegovu vertikalnu brzinu. Obično u igrama igrač dodaje ubrzanje, a igra računa brzinu i položaj sabiranjem vektora.
+Kao što vidimo, u svakom kadru se dodaje gravitacija (-1) na njegovu vertikalnu brzinu. Obično igrač dodaje ubrzanje, a igra računa brzinu i položaj sabiranjem vektora.
 
-You can think of vector addition as displacement on a map. If you travel along vector `v` and then turn and follow vector `w`, you really go from the beginning of `v` to the end of `w`.
+### Sabiranje vektora kao pomeraj
+
+Možete zamišljati sabiranje vektora kao pomeraj na mapi. Ako putujete duž vektora `v`, a zatim skrenete i pratite vektor `w`, zapravo idete od početka `v` do kraja `w`.
 
 ![vector_addition](slike/vector_addition.png)
 
