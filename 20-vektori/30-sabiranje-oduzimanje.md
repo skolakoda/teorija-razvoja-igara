@@ -6,13 +6,13 @@ Vektori se mogu sabirati i oduzimati prema pravilima linearne algebre.
 
 Vektore sabiramo tako što im saberemo svaku dimenziju ponaosob. Sabiranje 2D vektora:
 ```
-a + b = [(a.x + b.x ), (a.y + b.y )]
+a + b = [(a.x + b.x), (a.y + b.y)]
 ```
 
 Sabiranje 3D vektora je identično, samo dodamo još jednu dimenziju:
 
 ```
-a + b = [(a.x + b.x ), (a.y + b.y ), (a.z + b.z )]
+a + b = [(a.x + b.x), (a.y + b.y), (a.z + b.z)]
 ```
 
 Ovako izgleda sabiranje 2d vektora sa pravim brojevima:
@@ -49,28 +49,37 @@ Možete zamišljati sabiranje vektora kao pomeraj na mapi. Ako putujete duž vek
 
 ![vector_addition](slike/vector_addition.png)
 
+### Sabiranje sila
+
 Sabiranjem vektora izračunavamo ukupnu silu (rezultantu) koja deluje na neki predmet:
 
 ![sabiranje-vektora](slike/sabiranje-vektora.png)
+
+Primer sabiranja sila koje deluju na avion:
 
 ![vector-airplane](slike/vector-airplane.gif)
 
 ## Oduzimanje vektora
 
-We can also subtract one vector from another:
-* first we reverse the direction of the vector we want to subtract,
-* then add them as usual:
+Možemo i oduzimati jedan vektor od drugog:
+
+- prvo obrnemo pravac vektora (b) koji želimo da oduzmemo
+- zatim ih sabiramo
 
 ![vector-subtract](slike/vector-subtract.gif)
 
-Vector subtraction `a – b` is nothing more than addition of `a` and `–b`:
+Oduzimanje vektora `a - b` nije ništa drugo nego sabiranje  `a` i `–b`:
+
 ```
-a – b = [ (a x – b x ), (a y – b y ), (a z – b z ) ]
+a - b = [(a.x - b.x), (a.y - b.y), (a.z - b.z)]
 ```
 
-Vector subtraction is useful for getting a vector from one position to another. For example, let's say the player is standing at (1,2) with a laser rifle, and an enemy robot is at (4,3). To get the vector that the laser must travel to hit the robot, you can subtract the player's position from the robot's position:
+### Oduzimanje vektora u igrama
+
+Oduzimanje vektora je korisno za dobijanje vektora koji vodi od jedne pozicije do druge. Na primer, igrač stoji na poziciji (1,2) sa laserskom puškom, a neprijateljski robot na poziciji (4,3). Da dobijemo vektor kojim laser pogađa robota, oduzimamo poziciju igrača od pozicije robota:
+
 ```
-(4,3) - (1,2) = (4-1, 3-2) = (3,1).
+(4, 3) - (1, 2) = (4-1, 3-2) = (3, 1)
 ```
 
 ![](slike/laser.jpg)
