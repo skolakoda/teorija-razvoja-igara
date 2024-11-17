@@ -1,54 +1,76 @@
 ## Množenje vektora i skalara (skaliranje vektora)
 
-Kada množimo skalar sa vektorom, zapravo skaliramo njegovu dužinu, dok pravac ostaje nepromenjen.
+Kada množimo skalar sa vektorom, zapravo skaliramo njegovu dužinu, dok smer ostaje nepromenjen.
 
 Množenje vektora `v` skalarom `s` vršimo tako što sve pojedinačne komponente vektora množimo skalarom:
 
-```
+```js
 s * v = (s * v.x, s * v.y, s * v.z)
 ```
 
 U kodu:
 
 ```js
-function skaliraj(vektor, skalar) {
+function skaliraj(v, s) {
   return {
-    x: vektor.x * skalar,
-    y: vektor.y * skalar,
-    z: vektor.z * skalar
+    x: v.x * s,
+    y: v.y * s,
+    z: v.z * s
   }
 }
 ```
 
-In games, it is often useful to multiply a vector by a scalar. For example, we can simulate air resistance by multiplying the player's velocity by 0.9 every frame.
+Skaliranjem sa -1 vektor obrće smer, odnosno menja glavu i rep. Na primer:
 
-Obrtanje smera vektora je veoma jednostavno. Samo zamenimo glavu i rep, tj. pomnožimo sa -1.
+\(\vec{v} = (3, -2, 5)\)
 
-## Skalarni proizvod vektora (*dot product*)
+pomnožen sa -1 postaje:  
 
-Skalarni proizvod vektora (engleski *dot product*, jer se piše pomoću tačke) is an operation that, given two vectors, returns a floating-point value. It is usually depicted as:
+\(-\vec{v} = (-3, 2, -5)\)  
+
+### Skaliranje vektora u igrama
+
+U igrama često množimo vektor skalarom. Na primer, možemo simulirati otpor vazduha množeći brzinu igrača sa 0.9 pri svakom kadru.
+
+## Skalarni proizvod (dot proizvod)
+
+Skalarni proizvod vektora ili dot proizvod (*dot product*) je operacija koja za množenje dva vektora vraća realnu vrednost. Piše se pomoću tačke:  
+
+\[
+\vec{u} \cdot \vec{v}
+\]  
+
+Računa se na sledeći način:
+
+```js
+u.x * v.x + u.y * v.y + u.z * v.z
 ```
-u • v
-```
-It is computed as follows:
-```
-ux * vx + uy * vy + uz * vz
-```
 
-When applied to unit vectors, the dot product can be interpreted as the cosine of the angle between the two vectors being multiplied. Thus, the dot product of two parallel vectors equals one, and the dot product of two perpendicular vectors equals zero.
-
-Seems kind of useless at first, but lets look at examples:
+Skalarni proizvod dva jedinična vektora daje kosinus ugla između njih. Ako su vektori paralelni, \(\cos(0^\circ) = 1\), a ako su vektori ortogonalni, \(\cos(90^\circ) = 0\).
 
 ![](slike/dotsimple.jpg)
 
-We see, when the vectors are pointing the same direction, the dot product is positive. When they are perpendicular, the dot product is zero, and when they point in opposite directions, it is negative. Basically, it is proportional to how much the vectors are pointing in the same direction.
+Kao što vidimo, kada vektori pokazuju u istom smeru, dot proizvod je pozitivan, kada su okomiti je  nula, a kada su suprotnog smera negativan. Dakle, dot proizvod je proporcionalan tome koliko se smer vektora poklapa.
 
-Let's say we have a guard at position G (1,3) facing in the direction D (1,1), with a 180 field of view. We have a hero sneaking by at position H (3,2). Is he in the guard's field of view? We can find out by checking the sign of the dotproduct of D and V (vector from the guard to the hero):
+### Dot proizvod u igrama
+
+Recimo da imamo stražara na poziciji `G` (1,3) koji gleda u smeru `D` (1,1), sa vidnim poljem od 180 stepeni. Imamo heroja koji se šunja na poziciji `H` (3,2). Je li on u vidnom polju stražara? 
+
+Da bismo to otkrili, prvo računamo vektor smera `V` od stražara do heroja:
+
 ```
-V = H-G = (3,2)-(1,3) = (3-1,2-3) = (2,-1)
+V = H-G = (3,2)-(1,3) 
+        = (3-1, 2-3) 
+        = (2, -1)
+```
+
+Konačno, računamo skalarni proizvod vektora `D` (pogled stražara) i `V` (smer od stražara ka heroju), da saznamo njihovo poklapanje:
+
+```
 D•V = (1,1)•(2,-1) = 1*2+1*-1 = 2-1 = 1
 ```
-Since 1 is positive, the hero is in the guard's field of view!
+
+Pošto je rezultat pozitivan, heroj je u vidnom polju stražara!
 
 ## Vektorski proizvod (*cross product*)
 

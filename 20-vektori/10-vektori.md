@@ -41,29 +41,25 @@ S druge strane, ako imamo vektor pomeraja (x, y), dužinu možemo računati Pita
 
 Na primer, ako se nepoznati leteći objekat pomera 4 nadesno i 3 nagore, ovako ćemo saznati njegovu brzinu:
 
-\[
+\(
 \text{brzina}^2 = 3^2 + 4^2
-\]
-
-\[
+\)
+\(
 \text{brzina}^2 = 9 + 16
-\]
-
-\[
+\)
+\(
 \text{brzina}^2 = 25
-\]
-
-\[
+\)
+\(
 \text{brzina} = \sqrt{25}
-\]
-
-\[
+\)
+\(
 \text{brzina} = 5
-\]
+\)
 
 ## Vektori u igrama
 
-U programiranju igara, vektori su nezaobilazni. Koriste se za čuvanje položaja, brzine, smera. Ovo su neki 2D primeri:
+U programiranju igara, vektori su nezaobilazni. **Koriste se za čuvanje položaja, brzine, smera**. Ovo su neki 2D primeri:
 
 ![vektori](slike/vektori-u-igrama.jpg)
 
