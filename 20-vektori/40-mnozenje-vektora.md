@@ -72,67 +72,97 @@ D•V = (1,1)•(2,-1) = 1*2+1*-1 = 2-1 = 1
 
 Pošto je rezultat pozitivan, heroj je u vidnom polju stražara!
 
-## Vektorski proizvod (*cross product*)
+## Vektorski proizvod (unakrsni proizvod)
 
-Vektorski proizvod (engleski *cross product*, jer se piše pomoću krstića tj. `x`) is an operation that, given two vectors, returns a third vector:
+Vektorski proizvod ili unakrsni proizvod (eng. *cross product*) je operacija između dva vektora u 3D prostoru koja rezultira novim vektorom, normalnim na oba. Operacija se obeležava znakom `x`.
+
+\(
+\vec{u} \times \vec{v}
+\)
+
+Komponente rezultirajućeg vektora se računaju na sledeći način:
+
+```js
+[
+  u.y * v.z - u.z * v.y, // x
+  u.z * v.x - u.x * v.z, // y
+  u.x * v.y - u-y * v-x  // z
+]
 ```
-u * v
-[uy*vz - uz*vy, uz*vx - ux*vz, ux*vy - uy*vx]
-```
-But notice how cross products are more expensive to compute than the dot version.
 
-![cross-product](slike/cross-product.gif)
+### Redosled je bitan
 
-Let's say you have a boat that has cannons that fire to the left and right. Given that the boat is facing along the direction vector (2,1), in which directions do the cannons fire? This is easy in 2D: to rotate 90 degrees clockwise, just flip the two vector components, and then switch the sign of the second component. (a,b) becomes (b,-a). So, if the boat is facing along (2,1), the right-facing cannons fire towards (1,-2). The left-facing cannons fire in the opposite direction, so we flip both signs to get: (-1,2).
+Redosled činilaca je bitan jer vektorski proizvod nije komutativan:
+
+\[
+\mathbf{a} \times \mathbf{b} \neq \mathbf{b} \times \mathbf{a}
+\]
+
+Rezultirajući vektor ima uvek istu veličinu i normalan je na oba činioca, li mu smer zavisi od njihovog redosleda:
+
+- Ako je redosled \( \mathbf{a} \times \mathbf{b} \), rezultat će biti u pravcu desne ruke.
+- Ako je redosled \( \mathbf{b} \times \mathbf{a} \), rezultat će biti u suprotnom pravcu.
+
+Smer rezultirajućeg vektora možemo vizuelizovati na sledeći način:
+
+![cross-product](https://upload.wikimedia.org/wikipedia/commons/d/d2/Right_hand_rule_cross_product.svg)
+
+### Vektorski proizvod u igrama
+
+Recimo da imamo brod sa topovima levo i desno. Ako je brod okrenut u smeru vektora (2,1), u kom smeru su okrenuti topovi? 
+
+Ovo je prosto u 2D. Da bi rotirali vektor za 90 stepeni (u smeru kazaljke), prvo zamenimo mesta komponentama, a zatim predznak druge komponente. Tako (a,b) postaje (b,-a). Dakle, ako je brod okrenut u smeru (2,1), desni topovi su okrenuti u smeru (1,-2). Levi topovi su suprotni, dakle menjamo predznake oba broja dobivši: (-1,2).
 
 ![cross-product](slike/boat-3.jpg)
 
-So, what if we want to do this in 3D? Let's revisit our sailing ship. We have a vector for the direction of the mast M, going straight up (0,1,0), and the direction of the north-north-east wind W (1,0,2), and we want to find the direction the sail S should stick out in order to best catch the wind. The sail has to be perpendicular to the mast, and also perpendicular to the wind. To solve this, we can use the cross product: S = M x W.
+Sada, recimo da imamo jedrenjak, sa jarbolom `M` okrenutim gore (0,1,0), i vetar `W` u smeru (1,0,2). Želimo jedro `S` da usmerimo da što bolje uhvati vetar, tj. ono mora biti ortogonalno i na jarbol i na vetar. 
 
 ![cross-product](slike/boat2.jpg)
 
-The cross product of A(a1,a2,a3)) and B(b1,b2,b3)) is:
-(a2b3-a3b2, a3b1-a1b3, a1b2-a2b1)
+Da bismo rešili ovo, koristimo vektorski proizvod:
 
-So now we can plug in our numbers and solve our problem:
+```
+S = M x W
+  = (0, 1, 0) x (1, 0, 2) 
+  = (1*2 - 0*0, 0*1 - 0*2, 0*0 - 1*1) 
+  = (2, 0, -1)
+```
 
-S = MxW = (0,1,0)x(1,0,2) = ([1*2-0*0], [0*1-0*2], [0*0-1*1]) = (2,0,-1)
+Ovo naravno nećemo uvek raditi ručno. Za ubuduće, najbolje je vektorski proizvod enkapsulirati u funkciju:
 
-This is pretty ugly to do by hand. For most graphics and game work I would recommend just encapsulating it in a function like the one below, and never thinking about the details again.
-
-```java
-vec3 cross(vec3 a, vec3 b) {
-    vec3 result;
-    result[0] = a[1] * b[2] - a[2] * b[1];
-    result[1] = a[2] * b[0] - a[0] * b[2];
-    result[2] = a[0] * b[1] - a[1] * b[0];
-    return result;
+```js
+function cross(a, b) {
+    return {
+        x: a.y * b.z - a.z * b.y,
+        y: a.z * b.x - a.x * b.z,
+        z: a.x * b.y - a.y * b.x
+    }
 }
 ```
 
-## 2D vektorski proizvod (*cross product*)
+## 2D vektorski proizvod
 
-The 2D cross product, unlike the 3D version, does not return a vector but a scalar. This scalar value actually represents the magnitude of the orthogonal vector along the z-axis, if the cross product were to actually be performed in 3D. In a way, the 2D cross product is just a simplified version of the 3D cross product. But, the order of operations is important: a×b is not the same as b×a.
+2D vektorski proizvod, za razliku od 3D verzije, ne vraća vektor već skalar. Ovaj vrednost zapravo predstavlja dužinu normalnog vektora duž z-ose, ako bi unakrsni proizvod bio izveden u 3D. 
 
-Two vectors can be crossed, a scalar can be crossed with a vector, and a vector can be crossed with a scalar. Here are the operations:
+Na neki način, 2D vektorski proizvod je pojednostavljeni 3D vektorski proizvod. I ovde, redosled operacija je bitan: a×b nije isto što i b×a.
 
-```cpp
-// Two crossed vectors return a scalar
-float CrossProduct(const Vec2& a, const Vec2& b)
-{
-  return a.x * b.y - a.y * b.x;
-}
+Dva vektora se mogu ukrstiti, skalar se može ukrstiti sa vektorom, i vektor se može ukrstiti sa skalarom. Evo operacija:
 
-// cross product with a vector a and scalar s, both returning a vector
-Vec2 CrossProduct(const Vec2& a, float s)
-{
-  return Vec2( s * a.y, -s * a.x );
-}
+```js
+// ukršteni proizvod dva vektora, vraća skalar
+const crossProduct = (a, b) => a.x * b.y - a.y * b.x
 
-Vec2 CrossProduct(float s, const Vec2& a)
-{
-  return Vec2( -s * a.y, s * a.x );
-}
+// ukršteni proizvod vektora i skalara, vraća vektor
+const vectorCrossWithScalar = (a, s) => ({
+    x: s * a.y,
+    y: -s * a.x
+})
+
+// ukršteni proizvod skalara i vektora, vraća vektor
+const scalarCrossWithVector = (s, a) => ({
+    x: -s * a.y,
+    y: s * a.x
+})
 ```
 
-http://gafferongames.com/game-physics/physics-in-3d/
+Kod poslednje dve funkcije razlika je samo u redosledu argumenata, što utiče na smer rezultujućeg vektora, ali ne i na njegovu veličinu.
