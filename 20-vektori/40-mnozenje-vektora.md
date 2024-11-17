@@ -1,13 +1,15 @@
 ## Množenje vektora i skalara (skaliranje vektora)
 
-When you multiply a scalar by the vector, you're actually scaling its magnitude, while leaving its direction unchanged.
+Kada množimo skalar sa vektorom, zapravo skaliramo njegovu dužinu, dok pravac ostaje nepromenjen.
 
-Multiplication of a vector `a` by a scalar `s` is accomplished by multiplying the individual components of `a` by `s`:
+Množenje vektora `v` skalarom `s` vršimo tako što sve pojedinačne komponente vektora množimo skalarom:
+
 ```
-s * a = ( s * ax, s * ay, s * az)
+s * v = (s * v.x, s * v.y, s * v.z)
 ```
 
 U kodu:
+
 ```js
 function skaliraj(vektor, skalar) {
   return {
